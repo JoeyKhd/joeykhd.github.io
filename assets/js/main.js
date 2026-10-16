@@ -426,6 +426,40 @@ function initMenu() {
   matchMedia('(min-width: 1101px)').addEventListener('change', (e) => { if (e.matches) close(false); });
 }
 
+/* ---------- Case-study index: the hovered row's plate trails the cursor ---------- */
+function initWorkIndex() {
+  const list = $('.work__list');
+  if (!list || !finePointer) return;
+  let x = 0, y = 0, tx = 0, ty = 0, cx = 0, cy = 0, running = false;
+  const set = () => {
+    list.style.setProperty('--wx', `${x.toFixed(1)}px`);
+    list.style.setProperty('--wy', `${y.toFixed(1)}px`);
+  };
+  const loop = () => {
+    x += (tx - x) * 0.16;
+    y += (ty - y) * 0.16;
+    set();
+    running = Math.abs(tx - x) + Math.abs(ty - y) > 0.5;
+    if (running) raf(loop);
+  };
+  // the plate hangs just above the cursor, over the dimmed rows rather than the hovered title
+  const target = () => {
+    const r = list.getBoundingClientRect();
+    const half = ($('.work__thumb', list)?.offsetWidth || 220) / 2;
+    tx = clamp(cx - r.left, half, r.width - half);
+    ty = cy - r.top - 28;
+  };
+  const follow = () => {
+    target();
+    if (reduceMotion) { x = tx; y = ty; set(); return; }
+    if (!running) { running = true; raf(loop); }
+  };
+  list.addEventListener('pointerenter', (e) => { cx = e.clientX; cy = e.clientY; target(); x = tx; y = ty; set(); });
+  list.addEventListener('pointermove', (e) => { cx = e.clientX; cy = e.clientY; follow(); });
+  // keep the plate under a resting pointer while the page scrolls
+  addEventListener('scroll', () => { if (list.matches(':hover')) follow(); }, { passive: true });
+}
+
 /* ---------- Cursor + magnetic buttons ---------- */
 function initCursor() {
   if (!finePointer || reduceMotion) return;
@@ -832,6 +866,7 @@ initChipsMore();
 initCompactBlocks();
 initReveals();
 initManifesto();
+initWorkIndex();
 initCursor();
 initChain();
 initPortrait();

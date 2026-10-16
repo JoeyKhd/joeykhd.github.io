@@ -14,7 +14,9 @@ blocks break until you re-mine the chain.
 
 Other details:
 
-- Case studies in `work/` (Auto.fun, FLUF World and its collections), each with linked sources
+- A case study for every company on the chain in `work/` (Avatars Global, OpenServ, Auto.fun, Walker World,
+  FLUF World, Betcha, FUSION), each with its own patent plate, a schematic figure and linked sources; the homepage
+  indexes them under **Case studies**, and every block links to its own
 - An ordered-dither (Bayer 8×8) WebGL portrait, with a true-colour lens that follows the cursor
 - Light and dark themes (system default, remembered toggle) with matching patent-plate illustrations
 - A scroll-scrubbed manifesto, count-up impact stats, and a sticky "current block" aside with era illustrations
@@ -36,6 +38,7 @@ assets/fonts/                   self-hosted Instrument Serif, Geist and Geist Mo
 assets/vendor/lenis/            Lenis 1.3.26 (MIT)
 assets/joey-kheireddine-cv.pdf  two-page CV, built from the print stylesheet
 scripts/build-cv.mjs            rebuilds the CV PDF
+scripts/plates.py               turns a generated plate into its light/dark .webp pair
 robots.txt, sitemap.xml, site.webmanifest
 ```
 
@@ -43,6 +46,11 @@ To add a role, copy a `<li class="block">` in `index.html`, give it the next `da
 number, a `data-time`, `data-org` and `data-fig`, list its technologies in the "Built with"
 tags (the Stack section links skills to roles from these), and add matching
 `era-XX-light.webp` / `era-XX-dark.webp` plates to the sticky aside.
+
+To add a case study, copy a page in `work/`, add it to the nav and menu of every case page, to the
+**Case studies** index in `index.html` and to `sitemap.xml`, and link it from its block. Plates are generated
+as ink-on-paper PNGs with one orange accent, then converted with `python scripts/plates.py <plate.png> case-<name>`
+(needs Pillow and NumPy), which writes the light plate and derives the dark one by inverting the ink.
 
 ## Run locally
 

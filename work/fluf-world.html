@@ -53,14 +53,19 @@
   <div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
   <div class="grain" aria-hidden="true"></div>
 
-  <header class="nav">
+  <header class="nav nav--case">
     <a class="nav__brand" href="../" aria-label="Joey Kheireddine — home">
       <span class="nav__mark">JK</span>
       <span class="nav__name">Joey Kheireddine</span>
     </a>
     <nav class="nav__links" aria-label="Case studies">
-      <a href="auto-fun.html"><span class="mono">01</span> Auto.fun</a>
-      <a href="fluf-world.html" class="is-active" aria-current="page"><span class="mono">02</span> FLUF World</a>
+      <a href="avatars-global.html"><span class="mono">07</span> Avatars</a>
+      <a href="openserv.html"><span class="mono">06</span> OpenServ</a>
+      <a href="auto-fun.html"><span class="mono">05</span> Auto.fun</a>
+      <a href="walker-world.html"><span class="mono">04</span> Walker</a>
+      <a href="fluf-world.html" class="is-active" aria-current="page"><span class="mono">03</span> FLUF</a>
+      <a href="betcha.html"><span class="mono">02</span> Betcha</a>
+      <a href="fusion.html"><span class="mono">01</span> FUSION</a>
     </nav>
     <div class="nav__end">
       <button class="btn btn--icon theme-toggle magnetic" type="button" data-theme-toggle data-current="dark" aria-label="Switch to light theme">
@@ -68,12 +73,36 @@
         <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 14.6A7.75 7.75 0 0 1 9.4 4.5a7.75 7.75 0 1 0 10.1 10.1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
       </button>
       <a class="btn btn--solid btn--sm mono magnetic" href="../#contact">Let’s talk</a>
+      <button class="btn btn--ghost btn--sm mono menu-toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>Menu</button>
     </div>
   </header>
 
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Case studies" data-lenis-prevent hidden>
+    <div class="menu__top mono">
+      <span>Case studies</span>
+      <button class="menu__close mono" type="button" data-menu-close>Close <span aria-hidden="true">✕</span></button>
+    </div>
+    <nav class="menu__links" aria-label="Case studies">
+        <a href="../" style="--i: 0"><span class="mono">←</span>Home</a>
+        <a href="avatars-global.html" style="--i: 1"><span class="mono">07</span>Avatars Global</a>
+        <a href="openserv.html" style="--i: 2"><span class="mono">06</span>OpenServ</a>
+        <a href="auto-fun.html" style="--i: 3"><span class="mono">05</span>Auto.fun</a>
+        <a href="walker-world.html" style="--i: 4"><span class="mono">04</span>Walker World</a>
+        <a href="fluf-world.html" aria-current="page" style="--i: 5"><span class="mono">03</span>FLUF World</a>
+        <a href="betcha.html" style="--i: 6"><span class="mono">02</span>Betcha</a>
+        <a href="fusion.html" style="--i: 7"><span class="mono">01</span>FUSION</a>
+    </nav>
+    <div class="menu__foot mono">
+      <a href="../#contact" data-mail="joey|a1g.io"><span data-mail-label>joey [at] a1g.io</span></a>
+      <a href="https://www.linkedin.com/in/joey-kheireddine/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/joeykhd" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="../assets/joey-kheireddine-cv.pdf" download>Download CV ↓</a>
+    </div>
+  </div>
+
   <main id="main" class="case">
     <header class="case__hero" id="top">
-      <div class="case__crumbs mono"><a href="../#chain">← Back to the chain</a><span>Case study 02 / 02</span></div>
+      <div class="case__crumbs mono"><a href="../#work">← All case studies</a><span>Case study 05 / 07 · Block 03</span></div>
       <div class="case__intro">
         <p class="case__kicker mono">Non-Fungible Labs · 2021 — 2023</p>
         <h1 class="case__title serif">FLUF World &amp; <em>its collections</em></h1>
@@ -215,14 +244,14 @@
     </section>
 
     <nav class="case__next section" aria-label="Next case study">
-      <span class="mono">Next case study</span>
-      <a class="serif" href="auto-fun.html">Auto<em>.fun</em> <span aria-hidden="true">→</span></a>
+      <span class="mono">Next case study · Block 02</span>
+      <a class="serif" href="betcha.html">Betcha — <em>fantasy sports, real money</em> <span aria-hidden="true">→</span></a>
     </nav>
   </main>
 
   <footer class="footer mono">
     <span>© 2026 Joey Kheireddine</span>
-    <span class="hide-sm">Case study 02 of 02 · sources linked above</span>
+    <span class="hide-sm">Case study 05 of 07 · sources linked above</span>
     <span class="footer__actions">
       <a href="../assets/joey-kheireddine-cv.pdf" download>Download CV (PDF)</a>
       <a href="#top">Back to top ↑</a>
