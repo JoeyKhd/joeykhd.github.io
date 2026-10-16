@@ -648,6 +648,16 @@ html.menu-open, html.menu-open body { overflow: hidden; }
 .case__next a em { color: var(--signal); }
 .case__next a:hover { color: var(--signal); }
 
+/* ---------- 404 ---------- */
+.notfound { min-height: 100svh; display: grid; align-content: center; gap: 28px; padding: calc(var(--nav-h) + 32px) var(--gutter) 64px; }
+.notfound__meta { display: flex; flex-wrap: wrap; gap: 8px 24px; color: var(--muted); }
+.notfound__meta span:first-child, .notfound__meta span:last-child { color: var(--danger); }
+.notfound__meta code { font-family: var(--f-mono); text-transform: none; color: var(--fg-dim); }
+.notfound__title { font-size: clamp(72px, 14vw, 240px); line-height: 0.86; letter-spacing: -0.03em; }
+.notfound__title em { color: var(--signal); }
+.notfound__lede { max-width: 46ch; font-size: clamp(1rem, 1.3vw, 1.25rem); color: var(--fg-dim); }
+.notfound__links { display: flex; flex-wrap: wrap; gap: 12px; }
+
 /* ==========================================================================
    Responsive
    ========================================================================== */
