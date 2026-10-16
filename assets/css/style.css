@@ -726,6 +726,12 @@ html.menu-open, html.menu-open body { overflow: hidden; }
 .ledger td { font-size: 0.9375rem; line-height: 1.5; color: var(--fg-dim); }
 .ledger td.num { font: 400 0.75rem/1.5 var(--f-mono); letter-spacing: 0.02em; color: var(--fg); }
 .ledger td.num:not([data-label="Supply"]) { white-space: nowrap; }
+.ledger__sub { display: block; margin-top: 2px; color: var(--muted); }
+.ledger tfoot th, .ledger tfoot td { padding: 22px 16px 4px 0; text-align: left; vertical-align: top; border-top: 1px solid var(--line-strong); }
+.ledger tfoot th { font: 400 clamp(22px, 2vw, 30px)/1.05 var(--f-display); color: var(--signal); }
+.ledger tfoot td.num { font: 400 clamp(22px, 2vw, 30px)/1.05 var(--f-display); letter-spacing: -0.01em; color: var(--fg); }
+.ledger tfoot .ledger__sub { margin-top: 6px; font: 400 0.75rem/1.5 var(--f-mono); letter-spacing: 0.02em; }
+.ledger__span { font: 400 0.6875rem/1.5 var(--f-mono); letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
 .case__stats { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .case__stats li { display: grid; align-content: space-between; gap: 18px; min-height: 170px; padding: clamp(18px, 2vw, 28px); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .case__stats strong { font: 400 clamp(40px, 4.4vw, 76px)/0.9 var(--f-display); letter-spacing: -0.02em; }
@@ -864,7 +870,13 @@ html.menu-open, html.menu-open body { overflow: hidden; }
   .flow li::before { top: 8px; left: -27px; }
   .case__facts div { grid-template-columns: 90px 1fr; }
   .ledger thead { display: none; }
-  .ledger, .ledger tbody, .ledger tr, .ledger tbody th, .ledger td { display: block; }
+  .ledger, .ledger tbody, .ledger tfoot, .ledger tr, .ledger tbody th, .ledger tfoot th, .ledger td { display: block; }
+  .ledger tfoot tr { padding: 18px 0 0; border-top: 1px solid var(--line-strong); }
+  .ledger tfoot th, .ledger tfoot td { padding: 3px 0; border: 0; }
+  .ledger tfoot td.num { font-size: 22px; }
+  .ledger tfoot .ledger__sub { display: inline; margin-left: 8px; }
+  .ledger td:not([data-label])::before { content: none; }
+  .ledger__empty { display: none !important; }
   .ledger tbody tr { padding: 18px 0; border-bottom: 1px solid var(--line); }
   .ledger tbody th { padding: 0 0 8px; border: 0; }
   .ledger td { padding: 3px 0; border: 0; }

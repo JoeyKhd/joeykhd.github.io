@@ -148,7 +148,7 @@
       </header>
       <div class="case__body">
         <ul class="case__list" data-reveal>
-          <li>Shipped the smart contracts behind dozens of mints across the ecosystem — $50M+ in revenue, 30K+ international customers and 65K+ ETH of OpenSea volume.</li>
+          <li>Shipped the smart contracts behind dozens of mints, from Party Bears and Burrows to Scenes &amp; Sounds and Buzzies — in an ecosystem that raised 9,000+ ETH in primary sales and has traded 83K+ ETH ($228M) on OpenSea.</li>
           <li>Ran the mint mechanics across the collections — free claims for holders, staged allowlist windows and signature-gated sales — so each new drop rewarded holders of the last.</li>
           <li>Distributed high-value airdrops to thousands of holders with Merkle proofs, and used ECDSA signatures for gas-free interactions such as renaming.</li>
           <li>Built custom Discord bots to take third-party bot risk out of the community, and recruited, mentored and led a team of 20+ Web3 developers.</li>
@@ -165,29 +165,92 @@
       <div class="case__body">
         <div class="ledger-wrap" data-reveal>
           <table class="ledger">
-            <caption class="mono">FLUF World’s collections, 2021 — 2023</caption>
-            <thead><tr><th scope="col">Collection</th><th scope="col">Launched</th><th scope="col">Supply</th><th scope="col">How it minted</th><th scope="col">Standard</th><th scope="col">OpenSea volume*</th><th scope="col">Notes</th></tr></thead>
+            <caption class="mono">FLUF World’s collections, 2021 — 2022</caption>
+            <thead><tr><th scope="col">Collection</th><th scope="col">Launched</th><th scope="col">Supply</th><th scope="col">How it minted</th><th scope="col">Standard</th><th scope="col">Raised in the mint*</th><th scope="col">OpenSea volume†</th><th scope="col">Notes</th></tr></thead>
             <tbody>
-              <tr><th scope="row">Flufs</th><td data-label="Launched" class="num">Aug 2021</td><td data-label="Supply" class="num">10,000</td><td data-label="How it minted">Allowlist presale, then 0.09 ETH public — sold out in ~40 min</td><td data-label="Standard" class="num">ERC-721</td><td data-label="OpenSea volume*" class="num">$138.1M</td><td data-label="Notes">The genesis 3D rabbits, with soundtracks by Tom Lee.</td></tr>
-              <tr><th scope="row">Thingies</th><td data-label="Launched" class="num">Oct 2021</td><td data-label="Supply" class="num">9,577</td><td data-label="How it minted">Free claim, one per Fluf</td><td data-label="Standard" class="num">ERC-721</td><td data-label="OpenSea volume*" class="num">$16.6M</td><td data-label="Notes">AI-artist spiders running ASM’s AI.</td></tr>
-              <tr><th scope="row">Scenes &amp; Sounds</th><td data-label="Launched" class="num">Oct 2021</td><td data-label="Supply" class="num">99 assets · ~55K editions</td><td data-label="How it minted">Sold in The Underground store</td><td data-label="Standard" class="num">ERC-1155</td><td data-label="OpenSea volume*" class="num">$5.1M</td><td data-label="Notes">Music and backgrounds that lock into a Fluf — by Mike Shinoda, Young &amp; Sick, Tom Lee and more. A charity scene for Ukraine raised $400K+.</td></tr>
-              <tr><th scope="row">Party Bears</th><td data-label="Launched" class="num">Dec 2021</td><td data-label="Supply" class="num">9,669</td><td data-label="How it minted">Two-stage signed mint, 0.09 ETH</td><td data-label="Standard" class="num">ERC-721</td><td data-label="OpenSea volume*" class="num">$26.8M</td><td data-label="Notes">Created with Shadows Interactive; includes a one-of-one Snoop Dogg bear.</td></tr>
-              <tr><th scope="row">Burrows</th><td data-label="Launched" class="num">Jan 2022</td><td data-label="Supply" class="num">10,500</td><td data-label="How it minted">One per token held, 0.22 ETH, in four 24-hour holder windows</td><td data-label="Standard" class="num">ERC721A</td><td data-label="OpenSea volume*" class="num">$24.6M</td><td data-label="Notes">Homes for Flufs, built with Beyond. A “Studio Snoop Dogg” tier — Snoop’s Burrows were auctioned for NZ$1M+ for Auckland City Mission.</td></tr>
-              <tr><th scope="row">Seekers</th><td data-label="Launched" class="num">Mar 2022</td><td data-label="Supply" class="num">47,895</td><td data-label="How it minted">“Community-determined supply”, decaying from 50,000 — sold out in 77 min</td><td data-label="Standard" class="num">—</td><td data-label="OpenSea volume*" class="num">$10.7M</td><td data-label="Notes">With Sylo.</td></tr>
-              <tr><th scope="row">EGGs</th><td data-label="Launched" class="num">Apr 2022</td><td data-label="Supply" class="num">10,000</td><td data-label="How it minted">Free claim, one per Fluf</td><td data-label="Standard" class="num">ERC721A</td><td data-label="OpenSea volume*" class="num">$2.8M</td><td data-label="Notes">The first step toward Gen-2 “Fluflets”.</td></tr>
-              <tr><th scope="row">Dr. Grordbort’s Rayguns</th><td data-label="Launched" class="num">Apr 2022</td><td data-label="Supply" class="num">3,003</td><td data-label="How it minted">Free Merkle allowlist, then a signed sale</td><td data-label="Standard" class="num">ERC721A</td><td data-label="OpenSea volume*" class="num">$1M</td><td data-label="Notes">On Wētā Workshop’s IP.</td></tr>
-              <tr><th scope="row">Buzzies</th><td data-label="Launched" class="num">May 2022</td><td data-label="Supply" class="num">12,662</td><td data-label="How it minted">Free signed claim for Party Bear holders</td><td data-label="Standard" class="num">ERC721A</td><td data-label="OpenSea volume*" class="num">$2M</td><td data-label="Notes">Queen-bee companions for Party Bears.</td></tr>
+              <tr><th scope="row">Flufs</th><td data-label="Launched" class="num">Aug 2021</td><td data-label="Supply" class="num">10,000</td><td data-label="How it minted">Allowlist presale, then 0.09 ETH public — sold out in ~40 min</td><td data-label="Standard" class="num">ERC-721</td><td data-label="Mint raised*" class="num">889 ETH<span class="ledger__sub">$2.68M</span></td><td data-label="OpenSea volume†" class="num">$138.1M</td><td data-label="Notes">The genesis 3D rabbits, with soundtracks by Tom Lee.</td></tr>
+              <tr><th scope="row">Thingies</th><td data-label="Launched" class="num">Oct 2021</td><td data-label="Supply" class="num">9,590</td><td data-label="How it minted">Free claim, one per Fluf</td><td data-label="Standard" class="num">ERC-721</td><td data-label="Mint raised*" class="num">Free</td><td data-label="OpenSea volume†" class="num">$16.6M</td><td data-label="Notes">AI-artist spiders running ASM’s AI.</td></tr>
+              <tr><th scope="row">Scenes &amp; Sounds</th><td data-label="Launched" class="num">Oct 2021</td><td data-label="Supply" class="num">99 assets · ~55K editions</td><td data-label="How it minted">Sold in The Underground store</td><td data-label="Standard" class="num">ERC-1155</td><td data-label="Mint raised*" class="num">280 ETH<span class="ledger__sub">$842K</span></td><td data-label="OpenSea volume†" class="num">$5.1M</td><td data-label="Notes">Music and backgrounds that lock into a Fluf — by Mike Shinoda, Young &amp; Sick, Tom Lee and more. A charity scene for Ukraine raised 80 ETH on-chain.</td></tr>
+              <tr><th scope="row">Party Bears</th><td data-label="Launched" class="num">Dec 2021</td><td data-label="Supply" class="num">9,669</td><td data-label="How it minted">Two-stage signed mint, 0.09 ETH</td><td data-label="Standard" class="num">ERC-721</td><td data-label="Mint raised*" class="num">870 ETH<span class="ledger__sub">$3.41M</span></td><td data-label="OpenSea volume†" class="num">$26.8M</td><td data-label="Notes">Created with Shadows Interactive; includes a one-of-one Snoop Dogg bear.</td></tr>
+              <tr><th scope="row">Burrows</th><td data-label="Launched" class="num">Jan 2022</td><td data-label="Supply" class="num">10,500</td><td data-label="How it minted">One per token held, 0.22 ETH, in four 24-hour holder windows</td><td data-label="Standard" class="num">ERC721A</td><td data-label="Mint raised*" class="num">2,300 ETH<span class="ledger__sub">$7.02M</span></td><td data-label="OpenSea volume†" class="num">$24.6M</td><td data-label="Notes">Homes for Flufs, built with Beyond. A “Studio Snoop Dogg” tier — Snoop’s Burrows were auctioned for NZ$1M+ for Auckland City Mission.</td></tr>
+              <tr><th scope="row">FLUF Haus</th><td data-label="Launched" class="num">Feb 2022</td><td data-label="Supply" class="num">1,500</td><td data-label="How it minted">Two 0.05 ETH sales, February and March</td><td data-label="Standard" class="num">ERC-1155</td><td data-label="Mint raised*" class="num">47 ETH<span class="ledger__sub">$143K</span></td><td data-label="OpenSea volume†" class="num">Delisted</td><td data-label="Notes">Tied to FLUF Haus, FLUF World’s live events — including SXSW 2022.</td></tr>
+              <tr><th scope="row">Seekers</th><td data-label="Launched" class="num">Mar 2022</td><td data-label="Supply" class="num">47,895</td><td data-label="How it minted">“Community-determined supply”, decaying from 50,000 — sold out in 77 min</td><td data-label="Standard" class="num">ERC-721</td><td data-label="Mint raised*" class="num">4,633 ETH<span class="ledger__sub">$15.27M</span></td><td data-label="OpenSea volume†" class="num">$10.7M</td><td data-label="Notes">Sylo’s genesis collection, launched inside FLUF World — most of the proceeds went to Sylo.</td></tr>
+              <tr><th scope="row">EGGs</th><td data-label="Launched" class="num">Apr 2022</td><td data-label="Supply" class="num">10,000</td><td data-label="How it minted">Free claim, one per Fluf</td><td data-label="Standard" class="num">ERC721A</td><td data-label="Mint raised*" class="num">Free</td><td data-label="OpenSea volume†" class="num">$2.8M</td><td data-label="Notes">The first step toward Gen-2 “Fluflets”.</td></tr>
+              <tr><th scope="row">Dr. Grordbort’s Rayguns</th><td data-label="Launched" class="num">Apr 2022</td><td data-label="Supply" class="num">2,748 of 3,003</td><td data-label="How it minted">Free Merkle allowlist claim; the paid stage never opened</td><td data-label="Standard" class="num">ERC721A</td><td data-label="Mint raised*" class="num">Free</td><td data-label="OpenSea volume†" class="num">$1M</td><td data-label="Notes">On Wētā Workshop’s IP.</td></tr>
+              <tr><th scope="row">Buzzies</th><td data-label="Launched" class="num">May 2022</td><td data-label="Supply" class="num">12,662</td><td data-label="How it minted">Free signed claim for Party Bear holders</td><td data-label="Standard" class="num">ERC721A</td><td data-label="Mint raised*" class="num">Free</td><td data-label="OpenSea volume†" class="num">$2M</td><td data-label="Notes">Queen-bee companions for Party Bears.</td></tr>
             </tbody>
+            <tfoot><tr><th scope="row">Total</th><td colspan="4" class="ledger__span">Ten collections, ten paid sale contracts</td><td data-label="Mint raised*" class="num">9,020 ETH<span class="ledger__sub">$29.4M</span></td><td data-label="OpenSea volume†" class="num">$227.7M<span class="ledger__sub">83,263 ETH</span></td><td class="ledger__empty"></td></tr></tfoot>
           </table>
         </div>
-        <p class="case__note mono" data-reveal>* All-time OpenSea volume, read October 2026 — includes trading after 2023.</p>
+        <p class="case__note mono" data-reveal>* ETH paid into each collection’s sale contracts during its primary mint, summed from on-chain transactions; USD at each day’s ETH price. I didn’t deploy the genesis Flufs contract. † All-time OpenSea volume, read October 2026 — includes trading after 2023.</p>
       </div>
     </section>
 
     <section class="case__section section" aria-labelledby="s5">
       <header class="section__head">
         <span class="mono section__index">(05)</span>
-        <h2 class="mono section__label" id="s5">How it fits together</h2>
+        <h2 class="mono section__label" id="s5">What each mint raised</h2>
+      </header>
+      <div class="case__body">
+        <figure class="curve" data-reveal>
+          <div class="curve-scroll">
+            <svg viewBox="0 0 800 462" role="img" aria-labelledby="raised-t raised-d">
+              <title id="raised-t">ETH raised in each FLUF World primary sale</title>
+              <desc id="raised-d">Measured on-chain: Seekers raised 4,633 ETH (about $15.3M), Burrows 2,300 ETH ($7.0M), Flufs 889 ETH ($2.7M), Party Bears 870 ETH ($3.4M), Scenes and Sounds 280 ETH ($842K) and FLUF Haus 47 ETH ($143K) — 9,020 ETH, about $29.4M at the time, across ten sale contracts. Thingies, EGGs, Rayguns and Buzzies were free claims for holders.</desc>
+              <text x="20" y="34">ETH RAISED IN EACH PRIMARY SALE, ON-CHAIN</text>
+              <text x="780" y="34" text-anchor="end">USD AT THE TIME</text>
+              <path class="c-grid" d="M20,106 H780"/>
+              <text x="20" y="80" class="c-strong">SEEKERS</text>
+              <text x="20" y="97">MAR 2022 · WITH SYLO</text>
+              <rect x="228" y="68" width="400.0" height="26" class="c-dim"/>
+              <text x="640.0" y="86" class="c-strong">4,633 ETH</text>
+              <text x="780" y="86" text-anchor="end">$15.3M</text>
+              <path class="c-grid" d="M20,156 H780"/>
+              <text x="20" y="130" class="c-strong">BURROWS</text>
+              <text x="20" y="147">JAN 2022</text>
+              <rect x="228" y="118" width="198.5" height="26" class="c-fill"/>
+              <text x="438.5" y="136" class="c-strong">2,300 ETH</text>
+              <text x="780" y="136" text-anchor="end">$7.0M</text>
+              <path class="c-grid" d="M20,206 H780"/>
+              <text x="20" y="180" class="c-strong">FLUFS</text>
+              <text x="20" y="197">AUG 2021</text>
+              <rect x="228" y="168" width="76.8" height="26" class="c-fill"/>
+              <text x="316.8" y="186" class="c-strong">889 ETH</text>
+              <text x="780" y="186" text-anchor="end">$2.7M</text>
+              <path class="c-grid" d="M20,256 H780"/>
+              <text x="20" y="230" class="c-strong">PARTY BEARS</text>
+              <text x="20" y="247">DEC 2021</text>
+              <rect x="228" y="218" width="75.1" height="26" class="c-fill"/>
+              <text x="315.1" y="236" class="c-strong">870 ETH</text>
+              <text x="780" y="236" text-anchor="end">$3.4M</text>
+              <path class="c-grid" d="M20,306 H780"/>
+              <text x="20" y="280" class="c-strong">SCENES &amp; SOUNDS</text>
+              <text x="20" y="297">OCT 2021 — MAR 2022</text>
+              <rect x="228" y="268" width="24.2" height="26" class="c-fill"/>
+              <text x="264.2" y="286" class="c-strong">280 ETH</text>
+              <text x="780" y="286" text-anchor="end">$842K</text>
+              <path class="c-grid" d="M20,356 H780"/>
+              <text x="20" y="330" class="c-strong">FLUF HAUS</text>
+              <text x="20" y="347">FEB — MAR 2022</text>
+              <rect x="228" y="318" width="4.1" height="26" class="c-fill"/>
+              <text x="244.1" y="336" class="c-strong">47 ETH</text>
+              <text x="780" y="336" text-anchor="end">$143K</text>
+              <path class="c-axis" d="M20,378 H780"/>
+              <text x="20" y="418" class="c-sig">TOTAL · 10 SALE CONTRACTS</text>
+              <text x="228" y="422" class="c-big">9,020 ETH</text>
+              <text x="780" y="418" text-anchor="end" class="c-strong">$29.4M</text>
+              <text x="20" y="448">THINGIES, EGGS, RAYGUNS AND BUZZIES WERE FREE CLAIMS FOR HOLDERS</text>
+            </svg>
+          </div>
+          <figcaption class="mono"><span>Fig. 03b — primary sales, measured on-chain</span><span>ETH paid into each sale contract · USD at each day’s price</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s6">
+      <header class="section__head">
+        <span class="mono section__index">(06)</span>
+        <h2 class="mono section__label" id="s6">How it fits together</h2>
       </header>
       <div class="case__body">
         <ol class="flow" data-reveal>
@@ -200,19 +263,19 @@
       </div>
     </section>
 
-    <section class="case__section section" aria-labelledby="s6">
+    <section class="case__section section" aria-labelledby="s7">
       <header class="section__head">
-        <span class="mono section__index">(06)</span>
-        <h2 class="mono section__label" id="s6">Outcome</h2>
+        <span class="mono section__index">(07)</span>
+        <h2 class="mono section__label" id="s7">Outcome</h2>
       </header>
       <div class="case__body">
         <ul class="case__stats" data-reveal style="--cols: 3">
+          <li><strong>9,020 ETH</strong><span>raised in primary sales — about $29.4M at the time</span></li>
+          <li><strong>$228M</strong><span>traded on OpenSea across nine collections — 83K+ ETH</span></li>
+          <li><strong>30K+</strong><span>wallets have held a FLUF World NFT</span></li>
+          <li><strong>13K+</strong><span>wallets minted, 11K+ of them in paid sales</span></li>
           <li><strong>~40 min</strong><span>for 10,000 Flufs to sell out</span></li>
-          <li><strong>14</strong><span>collections by June 2022</span></li>
-          <li><strong>195K+</strong><span>NFTs minted across the ecosystem</span></li>
-          <li><strong>340K+</strong><span>on-chain transactions</span></li>
           <li><strong>NZ$1M+</strong><span>raised for Auckland City Mission with Snoop Dogg</span></li>
-          <li><strong>$400K+</strong><span>raised for Ukraine with a charity scene</span></li>
         </ul>
         <p data-reveal>In December 2022, Non-Fungible Labs joined the eight-company merger that formed Futureverse, with more than 300 people.</p>
         <figure class="quote case__quote" data-reveal>
@@ -222,10 +285,10 @@
       </div>
     </section>
 
-    <section class="case__section section" aria-labelledby="s7">
+    <section class="case__section section" aria-labelledby="s8">
       <header class="section__head">
-        <span class="mono section__index">(07)</span>
-        <h2 class="mono section__label" id="s7">Sources</h2>
+        <span class="mono section__index">(08)</span>
+        <h2 class="mono section__label" id="s8">Sources</h2>
       </header>
       <div class="case__body">
         <ul class="case__sources" data-reveal>
@@ -237,7 +300,11 @@
           <li><a href="https://medium.com/seekers-xyz/the-seekers-are-coming-7581f7a4c18b" target="_blank" rel="noopener"><span>The Seekers are coming</span><span class="mono">Sylo · Medium ↗</span></a></li>
           <li><a href="https://ripple.com/ripple-press/ripple-and-fluf-world-announce-partnership-introduce-the-root-network" target="_blank" rel="noopener"><span>Ripple and FLUF World announce partnership, introduce The Root Network</span><span class="mono">Ripple · Jun 2022 ↗</span></a></li>
           <li><a href="https://www.prnewswire.com/news-releases/futureverse-announces-merger-of-eight-web3-companies-with-united-goal-of-creating-an-open-metaverse-ecosystem-301704394.html" target="_blank" rel="noopener"><span>Futureverse announces merger of eight Web3 companies</span><span class="mono">PR Newswire · Dec 2022 ↗</span></a></li>
-          <li><a href="https://etherscan.io/address/0xe51aac67b09eaed6d3d43e794d6bae679cbe09d8#code" target="_blank" rel="noopener"><span>Verified collection contracts</span><span class="mono">Etherscan ↗</span></a></li>
+          <li><a href="https://etherscan.io/address/0xe51aac67b09eaed6d3d43e794d6bae679cbe09d8#code" target="_blank" rel="noopener"><span>Burrows contract</span><span class="mono">Etherscan ↗</span></a></li>
+          <li><a href="https://etherscan.io/address/0x35471f47c3C0BC5FC75025b97A19ECDDe00F78f8#code" target="_blank" rel="noopener"><span>Party Bears contract</span><span class="mono">Etherscan ↗</span></a></li>
+          <li><a href="https://etherscan.io/address/0xaAF03a65CbD8f01b512Cd8d530a675b3963dE255#code" target="_blank" rel="noopener"><span>Seekers contract</span><span class="mono">Etherscan ↗</span></a></li>
+          <li><a href="https://medium.com/fluf-world/fuck-the-war-charity-scene-mint-guide-7e4d2ecb6d1b" target="_blank" rel="noopener"><span>Charity scene for Ukraine: mint guide</span><span class="mono">FLUF World · Medium ↗</span></a></li>
+          <li><a href="https://sxsw.com/news/2022/fluf-world-unveils-fluf-haus-sxsw-edition/" target="_blank" rel="noopener"><span>FLUF World unveils FLUF Haus: SXSW Edition</span><span class="mono">SXSW · Mar 2022 ↗</span></a></li>
           <li><a href="https://x.com/walkerworld_/status/1699397682756751843" target="_blank" rel="noopener"><span>Walker World welcomes Joey as Head of Engineering</span><span class="mono">Walker World · X ↗</span></a></li>
         </ul>
       </div>
