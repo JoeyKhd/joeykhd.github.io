@@ -227,6 +227,28 @@ function initChrome() {
   $('[data-print]')?.addEventListener('click', () => window.print());
 }
 
+/* ---------- Stack: show where each skill shipped (derived from the role "Built with" lists) ---------- */
+function initStackUsage() {
+  const norm = (t) => t.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const used = new Map();
+  $$('.block').forEach((b) => {
+    $$('.tags li', b).forEach((li) => {
+      const k = norm(li.textContent);
+      if (!used.has(k)) used.set(k, []);
+      if (!used.get(k).includes(b.dataset.org)) used.get(k).push(b.dataset.org);
+    });
+  });
+  $$('.stack__core li, .chips li').forEach((li) => {
+    const orgs = used.get(norm(li.dataset.tech || li.textContent)) || [];
+    const oss = li.hasAttribute('data-oss');
+    if (!orgs.length && !oss) return;
+    const where = orgs.length ? `Used at ${orgs.join(' · ')}${oss ? ' · open source' : ''}` : 'In my open-source work';
+    li.dataset.used = where;
+    li.tabIndex = 0;
+    li.setAttribute('aria-label', `${li.textContent}: ${where.replace(/ · /g, ', ')}`);
+  });
+}
+
 /* ---------- Email: assembled at runtime so the address isn't in the HTML ---------- */
 function initMail() {
   $$('[data-mail]').forEach((a) => {
@@ -636,6 +658,7 @@ splitHeroTitle();
 runLoader();
 initChrome();
 initMail();
+initStackUsage();
 initReveals();
 initManifesto();
 initCursor();
