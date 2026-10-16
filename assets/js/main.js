@@ -181,7 +181,11 @@ function initCursor() {
   const label = $('.cursor__label');
   let x = innerWidth / 2, y = innerHeight / 2, tx = x, ty = y;
 
-  addEventListener('pointermove', (e) => { tx = e.clientX; ty = e.clientY; }, { passive: true });
+  cur.style.opacity = '0';
+  addEventListener('pointermove', (e) => {
+    if (cur.style.opacity === '0') { x = e.clientX; y = e.clientY; cur.style.opacity = '1'; }
+    tx = e.clientX; ty = e.clientY;
+  }, { passive: true });
   document.addEventListener('pointerleave', () => { cur.style.opacity = '0'; });
   document.addEventListener('pointerenter', () => { cur.style.opacity = '1'; });
   document.addEventListener('pointerover', (e) => {
@@ -355,7 +359,7 @@ function initChain() {
       const powOk = b.liveHash.startsWith(DIFFICULTY) && b.liveHash === b.hash;
       b.hashEl.textContent = short(b.liveHash);
       b.hashEl.title = b.liveHash;
-      if (powOk && linkOk) setStatus(b, 'is-valid', 'Verified');
+      if (powOk && linkOk) setStatus(b, firstBad < 0 ? 'is-valid' : 'is-invalid', firstBad < 0 ? 'Verified' : 'Orphaned');
       else {
         if (firstBad < 0) firstBad = i;
         setStatus(b, 'is-invalid', linkOk ? 'Invalid hash' : 'Broken link');
@@ -408,7 +412,7 @@ uniform float uHover;
 uniform float uPx;
 uniform float uIntro;
 uniform vec3 uInk;
-uniform vec3 uSig;
+uniform vec3 uDot;
 
 float bayer2(vec2 a) { a = floor(a); return fract(a.x * 0.5 + a.y * a.y * 0.75); }
 float bayer4(vec2 a) { return bayer2(0.5 * a) * 0.25 + bayer2(a); }
@@ -419,9 +423,12 @@ void main() {
   vec2 cuv = (cell + 0.5) * uPx / uRes;
   vec3 c = texture2D(uTex, cuv).rgb;
   float l = dot(c, vec3(0.299, 0.587, 0.114));
-  l = clamp((l - 0.45) * 1.45 + 0.5, 0.0, 1.0);
+  // vignette: let the busy background fall away from the subject
+  float v = length((cuv - vec2(0.54, 0.5)) * vec2(1.0, 0.8));
+  l *= mix(1.0, 0.28, smoothstep(0.22, 0.62, v));
+  l = clamp((l - 0.5) * 1.3 + 0.48, 0.0, 1.0);
   float on = step(bayer8(cell), l);
-  vec3 dith = mix(uInk, uSig, on);
+  vec3 dith = mix(uInk, uDot, on);
 
   float r = uRes.x * 0.34;
   float d = length(gl_FragCoord.xy - uMouse);
@@ -476,13 +483,16 @@ function initPortrait() {
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
 
     const u = (n) => gl.getUniformLocation(prog, n);
-    const U = { res: u('uRes'), mouse: u('uMouse'), hover: u('uHover'), px: u('uPx'), intro: u('uIntro'), ink: u('uInk'), sig: u('uSig') };
+    const U = { res: u('uRes'), mouse: u('uMouse'), hover: u('uHover'), px: u('uPx'), intro: u('uIntro'), ink: u('uInk'), dot: u('uDot') };
     gl.uniform3f(U.ink, 10 / 255, 10 / 255, 11 / 255);
-    gl.uniform3f(U.sig, 1, 91 / 255, 35 / 255);
+    gl.uniform3f(U.dot, 237 / 255, 234 / 255, 227 / 255);
 
     const dpr = Math.min(devicePixelRatio || 1, 2);
-    const state = { hover: 0, hoverTarget: 0, mx: 0, my: 0, px: reduceMotion ? 2.5 * dpr : 22 * dpr, intro: reduceMotion ? 1 : 0, visible: true };
-    const pxTarget = 2.5 * dpr;
+    const pxTarget = 2 * dpr;
+    const state = { hover: 0, hoverTarget: 0, mx: 0, my: 0, tx: 0, ty: 0, px: reduceMotion ? pxTarget : 22 * dpr, intro: reduceMotion ? 1 : 0, visible: true };
+    // Until a visitor hovers (and always on touch screens), the lens drifts slowly over the face.
+    let userHover = false;
+    let lastLeave = -Infinity;
 
     const resize = () => {
       const w = Math.max(1, Math.round(canvas.clientWidth * dpr));
@@ -494,17 +504,18 @@ function initPortrait() {
 
     const host = wrap.closest('figure') || wrap;
     host.addEventListener('pointermove', (e) => {
+      if (e.pointerType !== 'mouse') return;
       const r = canvas.getBoundingClientRect();
-      state.mx = (e.clientX - r.left) * dpr;
-      state.my = (r.bottom - e.clientY) * dpr;
-      state.hoverTarget = 1;
+      state.tx = (e.clientX - r.left) * dpr;
+      state.ty = (r.bottom - e.clientY) * dpr;
+      userHover = true;
     });
-    host.addEventListener('pointerleave', () => { state.hoverTarget = 0; });
+    host.addEventListener('pointerleave', () => { userHover = false; lastLeave = performance.now(); });
 
     new IntersectionObserver(([e]) => { state.visible = e.isIntersecting; }).observe(canvas);
 
     let introStarted = reduceMotion;
-    const frame = () => {
+    const frame = (now = 0) => {
       raf(frame);
       if (!state.visible) return;
       if (!introStarted && root.classList.contains('is-loaded')) introStarted = true;
@@ -512,6 +523,18 @@ function initPortrait() {
         state.intro += (1 - state.intro) * 0.035;
         state.px += (pxTarget - state.px) * 0.045;
       }
+      if (userHover) {
+        state.hoverTarget = 1;
+      } else if (state.intro > 0.9 && now - lastLeave > 900) {
+        const t = reduceMotion ? 0 : now / 1000;
+        state.tx = (0.52 + 0.1 * Math.sin(t * 0.5)) * canvas.width;
+        state.ty = (0.56 + 0.07 * Math.cos(t * 0.37)) * canvas.height;
+        state.hoverTarget = 0.85;
+      } else {
+        state.hoverTarget = 0;
+      }
+      state.mx += (state.tx - state.mx) * (userHover ? 0.35 : 0.08);
+      state.my += (state.ty - state.my) * (userHover ? 0.35 : 0.08);
       state.hover += (state.hoverTarget - state.hover) * 0.12;
       gl.uniform2f(U.res, canvas.width, canvas.height);
       gl.uniform2f(U.mouse, state.mx, state.my);
