@@ -163,6 +163,9 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
 .link-btn { text-transform: inherit; letter-spacing: inherit; font-size: inherit; font-family: inherit; color: inherit; }
 .link-btn:hover, .footer a:hover { color: var(--signal); }
 
+/* ---------- No-JS fallback: hide the live-hashing UI ---------- */
+.no-js .block__hash, .no-js .block__status, .no-js .chain__controls { display: none; }
+
 /* ---------- Reveal system (JS only) ---------- */
 .js [data-reveal] { opacity: 0; transform: translate3d(0, 40px, 0); transition: opacity 1s var(--ease-out), transform 1.2s var(--ease-out); transition-delay: var(--d, 0s); }
 .js [data-reveal].is-in { opacity: 1; transform: none; }
