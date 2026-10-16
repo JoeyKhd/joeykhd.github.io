@@ -656,6 +656,35 @@ html.menu-open, html.menu-open body { overflow: hidden; }
 .case__next a em { color: var(--signal); }
 .case__next a:hover { color: var(--signal); }
 
+/* ---------- Case study components: ledger, stats, curve ---------- */
+.case__body > .ledger-wrap, .case__body > .case__stats, .case__body > .curve { grid-column: 1 / -1; }
+.ledger { width: 100%; border-collapse: collapse; }
+.ledger caption { caption-side: top; padding-bottom: 14px; text-align: left; color: var(--signal); }
+.ledger thead th { padding: 0 16px 12px 0; text-align: left; vertical-align: bottom; font: 400 0.6875rem/1.4 var(--f-mono); letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--line-strong); }
+.ledger tbody th, .ledger td { padding: 18px 16px 18px 0; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+.ledger tbody th { min-width: 8ch; font: 400 clamp(22px, 2vw, 30px)/1.05 var(--f-display); color: var(--fg); transition: color 0.25s; }
+.ledger tbody tr:hover th { color: var(--signal); }
+.ledger td { font-size: 0.9375rem; line-height: 1.5; color: var(--fg-dim); }
+.ledger td.num { font: 400 0.75rem/1.5 var(--f-mono); letter-spacing: 0.02em; color: var(--fg); }
+.ledger td.num:not([data-label="Supply"]) { white-space: nowrap; }
+.case__stats { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.case__stats li { display: grid; align-content: space-between; gap: 18px; min-height: 170px; padding: clamp(18px, 2vw, 28px); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.case__stats strong { font: 400 clamp(40px, 4.4vw, 76px)/0.9 var(--f-display); letter-spacing: -0.02em; }
+.case__stats span { font: 400 0.75rem/1.5 var(--f-mono); letter-spacing: 0.04em; text-transform: uppercase; color: var(--fg-dim); }
+.case__stats + p { margin-top: 20px; }
+.curve { margin: 0; }
+.curve svg { width: 100%; height: auto; overflow: visible; }
+.curve .c-grid { fill: none; stroke: var(--line); stroke-width: 1; stroke-dasharray: 2 6; }
+.curve .c-axis { fill: none; stroke: var(--line-strong); stroke-width: 1.2; }
+.curve .c-line { fill: none; stroke: var(--fg); stroke-width: 2.2; stroke-linecap: round; }
+.curve .c-area { fill: var(--signal); opacity: 0.16; }
+.curve .c-mark { fill: none; stroke: var(--signal); stroke-width: 1.4; stroke-dasharray: 4 5; }
+.curve .c-dot { fill: var(--signal); }
+.curve text { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.05em; fill: var(--muted); }
+.curve text.c-strong { fill: var(--fg); }
+.curve text.c-sig { fill: var(--signal); }
+.curve figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; margin-top: 14px; color: var(--muted); }
+
 /* ---------- 404 ---------- */
 .notfound { min-height: 100svh; display: grid; align-content: center; gap: 28px; padding: calc(var(--nav-h) + 32px) var(--gutter) 64px; }
 .notfound__meta { display: flex; flex-wrap: wrap; gap: 8px 24px; color: var(--muted); }
@@ -680,6 +709,7 @@ html.menu-open, html.menu-open body { overflow: hidden; }
   .case__plate { max-width: 420px; }
   .case__body > * { grid-column: 1 / -1; }
   .case__body > .flow { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 8px; }
+  .case__stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .nav { grid-template-columns: 1fr auto; }
   .focus__grid { grid-template-columns: 1fr; }
   .focus__x { justify-self: center; padding: 0; font-size: 96px; line-height: 0.6; }
@@ -741,6 +771,15 @@ html.menu-open, html.menu-open body { overflow: hidden; }
   .flow li { padding: 0 0 26px; }
   .flow li::before { top: 8px; left: -27px; }
   .case__facts div { grid-template-columns: 90px 1fr; }
+  .ledger thead { display: none; }
+  .ledger, .ledger tbody, .ledger tr, .ledger tbody th, .ledger td { display: block; }
+  .ledger tbody tr { padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .ledger tbody th { padding: 0 0 8px; border: 0; }
+  .ledger td { padding: 3px 0; border: 0; }
+  .ledger td.num { white-space: normal; }
+  .ledger td::before { content: attr(data-label); display: inline-block; min-width: 11.5em; margin-right: 8px; font: 400 0.625rem/1.6 var(--f-mono); letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+  .case__stats { grid-template-columns: 1fr; }
+  .curve text { font-size: 16px; }
   .nav__status { display: none; }
   .discipline__proof li { grid-template-columns: 1fr; }
   .btn--lg { height: 56px; padding: 0 24px; font-size: 1.25rem; }
