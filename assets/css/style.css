@@ -459,12 +459,22 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
 /* ---------- Stack ---------- */
 .stack__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(48px, 6vw, 96px) var(--gutter); }
 .stack__group h3 { color: var(--signal); margin-bottom: 18px; }
-.stack__group ul { display: flex; flex-wrap: wrap; font-size: clamp(30px, 3.4vw, 56px); line-height: 1.12; letter-spacing: 0; }
-.stack__group li { transition: color 0.3s; }
-.stack__group li::after { content: "/"; color: var(--line-strong); margin: 0 0.28em; font-style: normal; }
-.stack__group li:last-child::after { content: none; }
-.stack__group li:hover { color: var(--signal); font-style: italic; }
+.stack__core { display: flex; flex-wrap: wrap; font-size: clamp(30px, 3.4vw, 56px); line-height: 1.12; letter-spacing: 0; }
+.stack__core li { transition: color 0.3s; }
+.stack__core li::after { content: "/"; color: var(--line-strong); margin: 0 0.28em; font-style: normal; }
+.stack__core li:last-child::after { content: none; }
+.stack__core li:hover { color: var(--signal); font-style: italic; }
 .stack__group--wide { grid-column: 1 / -1; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.chips li { padding: 5px 11px; border: 1px solid var(--line); border-radius: 999px; color: var(--fg-dim); font-size: 0.6875rem; transition: border-color 0.25s, color 0.25s; }
+.chips li:hover { border-color: var(--signal); color: var(--signal); }
+.opensource {
+  display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); row-gap: 18px; align-items: center;
+  margin-top: clamp(56px, 7vw, 112px); padding-top: 22px; border-top: 1px solid var(--line-strong);
+}
+.opensource__label { grid-column: 1 / 4; color: var(--signal); }
+.opensource p { grid-column: 4 / 10; font-size: clamp(24px, 2.4vw, 38px); line-height: 1.12; }
+.opensource .btn { grid-column: 10 / 13; justify-self: end; }
 .stack__group:nth-child(3) { --d: 0.1s; } .stack__group:nth-child(5) { --d: 0.1s; }
 
 /* ---------- Foundations ---------- */
@@ -508,6 +518,7 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
   .focus__meet > .mono, .focus__meet p { grid-column: 1 / -1; }
   .leadership { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .quotes { grid-template-columns: 1fr; }
+  .opensource__label, .opensource p, .opensource .btn { grid-column: 1 / -1; justify-self: start; }
   .hero__kicker { grid-column: 1 / 8; }
   .hero__portrait { grid-column: 8 / 13; }
   .hero__intro { grid-column: 1 / 8; }
@@ -628,7 +639,7 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
   .tags { display: none; }
   .sidechain { width: 100%; margin-top: 8pt; padding: 6pt; }
   .stack__grid { grid-template-columns: 1fr 1fr; gap: 8pt; }
-  .stack__group ul { font-size: 12pt; }
+  .stack__core { font-size: 12pt; }
   .stack__group h3 { margin-bottom: 2pt; }
   .foundations__grid { grid-template-columns: repeat(3, 1fr); gap: 12pt; }
   .hero__intro { max-width: none; }
