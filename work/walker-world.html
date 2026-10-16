@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Walker World: Area 6545 — Case study · Joey Kheireddine</title>
+  <meta name="description" content="Case study: Joey Kheireddine as Head of Engineering at Walker Labs — Area 6545, the hub that made Walker World’s staking gas-free, and the Lost Walkers minted with OOZE.">
+  <meta name="theme-color" content="#0a0a0b" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#efebe2" media="(prefers-color-scheme: light)">
+  <meta name="color-scheme" content="dark light">
+
+  <link rel="canonical" href="https://joeykhd.github.io/work/walker-world.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Walker World: Area 6545 — case study by Joey Kheireddine">
+  <meta property="og:description" content="Case study: Joey Kheireddine as Head of Engineering at Walker Labs — Area 6545, the hub that made Walker World’s staking gas-free, and the Lost Walkers minted with OOZE.">
+  <meta property="og:url" content="https://joeykhd.github.io/work/walker-world.html">
+  <meta property="og:image" content="https://joeykhd.github.io/assets/img/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="preload" href="../assets/fonts/instrument-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.replace('no-js', 'js');
+      try { var t = localStorage.getItem('jk-theme'); if (t === 'light' || t === 'dark') d.dataset.theme = t; } catch (e) {}
+    })();
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Walker World: Area 6545",
+  "description": "Case study: Joey Kheireddine as Head of Engineering at Walker Labs — Area 6545, the hub that made Walker World’s staking gas-free, and the Lost Walkers minted with OOZE.",
+  "url": "https://joeykhd.github.io/work/walker-world.html",
+  "image": "https://joeykhd.github.io/assets/img/case-walker-light.webp",
+  "author": {
+    "@type": "Person",
+    "name": "Joey Kheireddine",
+    "url": "https://joeykhd.github.io/"
+  }
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="progress" aria-hidden="true"><span></span></div>
+  <div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav nav--case">
+    <a class="nav__brand" href="../" aria-label="Joey Kheireddine — home">
+      <span class="nav__mark">JK</span>
+      <span class="nav__name">Joey Kheireddine</span>
+    </a>
+    <nav class="nav__links" aria-label="Case studies">
+      <a href="avatars-global.html"><span class="mono">07</span> Avatars</a>
+      <a href="openserv.html"><span class="mono">06</span> OpenServ</a>
+      <a href="auto-fun.html"><span class="mono">05</span> Auto.fun</a>
+      <a href="walker-world.html" class="is-active" aria-current="page"><span class="mono">04</span> Walker</a>
+      <a href="fluf-world.html"><span class="mono">03</span> FLUF</a>
+      <a href="betcha.html"><span class="mono">02</span> Betcha</a>
+      <a href="fusion.html"><span class="mono">01</span> FUSION</a>
+    </nav>
+    <div class="nav__end">
+      <button class="btn btn--icon theme-toggle magnetic" type="button" data-theme-toggle data-current="dark" aria-label="Switch to light theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 2.5v2.25M12 19.25v2.25M2.5 12h2.25M19.25 12h2.25M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 14.6A7.75 7.75 0 0 1 9.4 4.5a7.75 7.75 0 1 0 10.1 10.1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      </button>
+      <a class="btn btn--solid btn--sm mono magnetic" href="../#contact">Let’s talk</a>
+      <button class="btn btn--ghost btn--sm mono menu-toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>Menu</button>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Case studies" data-lenis-prevent hidden>
+    <div class="menu__top mono">
+      <span>Case studies</span>
+      <button class="menu__close mono" type="button" data-menu-close>Close <span aria-hidden="true">✕</span></button>
+    </div>
+    <nav class="menu__links" aria-label="Case studies">
+        <a href="../" style="--i: 0"><span class="mono">←</span>Home</a>
+        <a href="avatars-global.html" style="--i: 1"><span class="mono">07</span>Avatars Global</a>
+        <a href="openserv.html" style="--i: 2"><span class="mono">06</span>OpenServ</a>
+        <a href="auto-fun.html" style="--i: 3"><span class="mono">05</span>Auto.fun</a>
+        <a href="walker-world.html" aria-current="page" style="--i: 4"><span class="mono">04</span>Walker World</a>
+        <a href="fluf-world.html" style="--i: 5"><span class="mono">03</span>FLUF World</a>
+        <a href="betcha.html" style="--i: 6"><span class="mono">02</span>Betcha</a>
+        <a href="fusion.html" style="--i: 7"><span class="mono">01</span>FUSION</a>
+    </nav>
+    <div class="menu__foot mono">
+      <a href="../#contact" data-mail="joey|a1g.io"><span data-mail-label>joey [at] a1g.io</span></a>
+      <a href="https://www.linkedin.com/in/joey-kheireddine/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/joeykhd" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="../assets/joey-kheireddine-cv.pdf" download>Download CV ↓</a>
+    </div>
+  </div>
+
+  <main id="main" class="case">
+    <header class="case__hero" id="top">
+      <div class="case__crumbs mono"><a href="../#work">← All case studies</a><span>Case study 04 / 07 · Block 04</span></div>
+      <div class="case__intro">
+        <p class="case__kicker mono">Walker Labs · 2023 — 2025</p>
+        <h1 class="case__title serif">Area <em>6545</em></h1>
+        <p class="case__lede serif">Taking the gas out of a game community: one hub where Walker World holders stake, earn and spend OOZE without paying a fee — and mint the next collection with it.</p>
+        <dl class="case__facts mono">
+          <div><dt>Role</dt><dd>Head of Engineering (Web3)</dd></div>
+          <div><dt>When</dt><dd>September 2023 — February 2025</dd></div>
+          <div><dt>Chain</dt><dd>Ethereum · an off-chain OOZE ledger</dd></div>
+          <div><dt>Built with</dt><dd>Solidity · ERC-721 · ECDSA mint passes · soft staking · off-chain economies · React · wagmi</dd></div>
+        </dl>
+      </div>
+      <figure class="plate case__plate">
+        <div class="plate__img"><picture><source srcset="../assets/img/case-walker-light.webp" media="(prefers-color-scheme: light)" data-theme-light><img src="../assets/img/case-walker-dark.webp" alt="Patent-style drawing of a tall two-legged walking machine on a block of contoured terrain, with a small open vault at its feet holding an egg in a nest." width="800" height="1000"></picture></div>
+        <figcaption class="mono"><span>Fig. 04</span><span>Walker and vault</span></figcaption>
+      </figure>
+    </header>
+
+    <section class="case__section section" aria-labelledby="s1">
+      <header class="section__head">
+        <span class="mono section__index">(01)</span>
+        <h2 class="mono section__label" id="s1">Context</h2>
+      </header>
+      <div class="case__body">
+        <p data-reveal>Walker Labs is a Stockholm studio founded in 2021 by developers from EA, DICE, Ubisoft and Rovio. In November 2022 it announced Walker World, an Unreal Engine 5 open-world shooter, backed by a $2M token seed round led by Merit Circle and Citizen X. Its universe lives on Ethereum: 6,545 Genesis Walkers, then Women, Weapons and Jetpacks — and OOZE, the off-chain currency holders earn by staking them.</p>
+        <p data-reveal>Walker World announced me as its Web3 Head of Engineering in September 2023.</p>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s2">
+      <header class="section__head">
+        <span class="mono section__index">(02)</span>
+        <h2 class="mono section__label" id="s2">The challenge</h2>
+      </header>
+      <div class="case__body">
+        <p data-reveal>Holders already earned OOZE by staking, but every stake, unstake and reward claim was an Ethereum transaction — they were paying gas just to take part. The brief: keep the NFTs in holders’ wallets, take gas out of everyday participation, carry every existing OOZE balance across without losing a point, and put staking, a store, customisation and a staker-only mint for the next collection into one hub.</p>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s3">
+      <header class="section__head">
+        <span class="mono section__index">(03)</span>
+        <h2 class="mono section__label" id="s3">What I did</h2>
+      </header>
+      <div class="case__body">
+        <ul class="case__list" data-reveal>
+          <li>Recruited and led the team building Walker World’s Web3 platform across its Ethereum collections.</li>
+          <li>Shipped Area 6545 about ten weeks after joining: staking moved off-chain — NFTs stay in the wallet, no gas to stake, unstake or claim — replacing an on-chain staking contract, with every OOZE balance carried over.</li>
+          <li>Launched the Lost Walkers in December 2023: a staker-only collection minted with 500,000 OOZE through single-use, server-signed mint passes that the contract verifies and never accepts twice.</li>
+          <li>Kept the collections useful after the studio refocused from the Walker World game to OPEN, a battle royale with Readyverse, in April 2024 — missions, daily OOZE streaks, a 3D viewer, one-click downloads and partner staking, starting with FLUF World EGGs.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s4">
+      <header class="section__head">
+        <span class="mono section__index">(04)</span>
+        <h2 class="mono section__label" id="s4">How it works</h2>
+      </header>
+      <div class="case__body">
+        <ol class="flow" data-reveal>
+          <li><span class="mono flow__n">01</span><strong class="serif">Connect</strong><span>Holders connect a wallet and pick a username — nothing is transferred, no gas is paid.</span></li>
+          <li><span class="mono flow__n">02</span><strong class="serif">Discover</strong><span>The hub reads every Walker the wallet holds, with a 3D viewer, downloads and renaming that shows on OpenSea.</span></li>
+          <li><span class="mono flow__n">03</span><strong class="serif">Stake</strong><span>One click stakes everything; each asset accrues OOZE every 24 hours while it stays in the wallet.</span></li>
+          <li><span class="mono flow__n">04</span><strong class="serif">Earn</strong><span>Claims, daily streaks, missions and community events all credit the same off-chain ledger.</span></li>
+          <li><span class="mono flow__n">05</span><strong class="serif">Spend</strong><span>OOZE buys store items gas-free, or a signed mint pass redeemed on-chain for a Lost Walker.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s5">
+      <header class="section__head">
+        <span class="mono section__index">(05)</span>
+        <h2 class="mono section__label" id="s5">OOZE, spent on-chain</h2>
+      </header>
+      <div class="case__body">
+        <figure class="curve" data-reveal>
+          <div class="curve-scroll">
+            <svg viewBox="0 0 800 412" role="img" aria-labelledby="lw-t lw-d">
+              <title id="lw-t">Lost Walkers minted with OOZE, December 2023 to February 2025</title>
+              <desc id="lw-d">On-chain supply of the Lost Walkers contract: minting opened on 6 December 2023, three weeks after Area 6545 went live gas-free. 404 were minted by 31 December 2023, 737 by March 2024, 1,090 by August 2024, 1,356 by the end of 2024 and 1,444 by 27 February 2025, out of a cap of 3,455, each costing 500,000 OOZE.</desc>
+              <path class="c-grid" d="M70,262.5 H750"/>
+              <text x="62" y="266.5" text-anchor="end">500</text>
+              <path class="c-grid" d="M70,175 H750"/>
+              <text x="62" y="179" text-anchor="end">1,000</text>
+              <path class="c-grid" d="M70,87.5 H750"/>
+              <text x="62" y="91.5" text-anchor="end">1,500</text>
+              <path class="c-axis" d="M70,40 V350 H760"/>
+              <path class="c-area" d="M119,350 L119,350 L154,279.3 L270.1,221 L466,159.2 L666,112.7 L747.2,97.3 L747.2,350 Z"/>
+              <path class="c-line" d="M119,350 L154,279.3 L270.1,221 L466,159.2 L666,112.7 L747.2,97.3"/>
+              <circle cx="154" cy="279.3" r="4" class="c-dot"/>
+              <circle cx="270.1" cy="221" r="4" class="c-dot"/>
+              <circle cx="466" cy="159.2" r="4" class="c-dot"/>
+              <circle cx="666" cy="112.7" r="4" class="c-dot"/>
+              <circle cx="747.2" cy="97.3" r="4" class="c-dot"/>
+              <text x="155.3" y="374" text-anchor="middle">JAN 2024</text>
+              <text x="410" y="374" text-anchor="middle">JUL 2024</text>
+              <text x="667.4" y="374" text-anchor="middle">JAN 2025</text>
+              <path class="c-mark" d="M92.4,350 V106"/>
+              <text x="100.4" y="120" class="c-sig">AREA 6545 LIVE, GAS-FREE</text><text x="100.4" y="138" class="c-sig">17 NOV 2023</text>
+              <path class="c-mark" d="M305.1,350 V76" style="stroke: var(--line-strong)"/>
+              <text x="313.1" y="90">STUDIO REFOCUSES ON OPEN</text><text x="313.1" y="108">APR 2024</text>
+              <path class="c-mark" d="M612.9,350 V280" style="stroke: var(--line-strong)"/>
+              <text x="604.9" y="298" text-anchor="end">FLUF EGGS STAKEABLE</text><text x="604.9" y="316" text-anchor="end">NOV 2024</text>
+              <text x="735.2" y="63.3" text-anchor="end" class="c-strong">1,444 MINTED BY FEB 2025</text><text x="735.2" y="81.3" text-anchor="end">CAP 3,455 · 500K OOZE EACH</text>
+              <text x="78" y="46">LOST WALKERS MINTED, ON-CHAIN ↑</text>
+            </svg>
+          </div>
+          <figcaption class="mono"><span>Fig. 04b — Lost Walkers minted, Dec 2023 to Feb 2025</span><span>totalSupply() read at historical blocks</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s6">
+      <header class="section__head">
+        <span class="mono section__index">(06)</span>
+        <h2 class="mono section__label" id="s6">Outcome</h2>
+      </header>
+      <div class="case__body">
+        <ul class="case__stats" data-reveal style="--cols: 3">
+          <li><strong>~10 wks</strong><span>from joining to Area 6545 going live</span></li>
+          <li><strong>0 gas</strong><span>to stake, unstake or claim — every one was a transaction before</span></li>
+          <li><strong>1,444</strong><span>Lost Walkers minted by February 2025</span></li>
+          <li><strong>500K</strong><span>OOZE for each staker’s mint pass</span></li>
+          <li><strong>13,924</strong><span>Walkers in circulation by June 2024</span></li>
+          <li><strong>5 + EGGs</strong><span>Walker collections, plus FLUF World EGGs, stakeable</span></li>
+        </ul>
+        <p data-reveal>The Walker World game itself was never released — in April 2024 the studio refocused on OPEN — so Area 6545 became the community’s home. It is still live today.</p>
+        <figure class="quote case__quote" data-reveal>
+          <blockquote class="serif"><p>“He has executed some of the most <em>flawless mints</em> ever done in digital collectibles, including his contribution to the @Flufworld ecosystem!”</p></blockquote>
+          <figcaption class="mono"><span>Walker World, announcing Joey as Web3 Head of Engineering</span><a href="https://x.com/walkerworld_/status/1699397682756751843" target="_blank" rel="noopener" data-cursor="Read ↗">X · Sep 2023 ↗</a></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s7">
+      <header class="section__head">
+        <span class="mono section__index">(07)</span>
+        <h2 class="mono section__label" id="s7">Sources</h2>
+      </header>
+      <div class="case__body">
+        <ul class="case__sources" data-reveal>
+          <li><a href="https://x.com/walkerworld_/status/1699397682756751843" target="_blank" rel="noopener"><span>Walker World welcomes its new Web3 Head of Engineering</span><span class="mono">Walker World · X · Sep 2023 ↗</span></a></li>
+          <li><a href="https://walkerworld.io/blog/the-new-hub-area-6545" target="_blank" rel="noopener"><span>Area 6545 — patch notes: “staking is now fully gasless”</span><span class="mono">Walker World · Nov 2023 ↗</span></a></li>
+          <li><a href="https://walkerworld.io/blog/the-lost-walkers-collection/" target="_blank" rel="noopener"><span>The Lost Walkers collection: 500,000 OOZE, stakers only</span><span class="mono">Walker World · Dec 2023 ↗</span></a></li>
+          <li><a href="https://etherscan.io/address/0xcc2be05a69b52e27fd550f19169b4d6bfb144605#code" target="_blank" rel="noopener"><span>LostWalkers contract: signed claims, replay protection</span><span class="mono">Etherscan ↗</span></a></li>
+          <li><a href="https://area6545.walkerworld.io/" target="_blank" rel="noopener"><span>Area 6545, live</span><span class="mono">Walker Labs ↗</span></a></li>
+          <li><a href="https://walkerworld.io/blog/all-you-need-to-know-walker-world-and-partners" target="_blank" rel="noopener"><span>All you need to know: Walker World and partners</span><span class="mono">Walker World · Apr 2024 ↗</span></a></li>
+          <li><a href="https://x.com/walkerworld_/status/1869106656308510852" target="_blank" rel="noopener"><span>Area 6545 walkthrough: missions, streaks, 3D viewer, store</span><span class="mono">Walker World · X · Dec 2024 ↗</span></a></li>
+          <li><a href="https://www.prweb.com/releases/walker-labs-unveils-walker-world-an-open-world-third-person-shooter-and-adventure-game-designed-for-the-metaverse-877523411.html" target="_blank" rel="noopener"><span>Walker Labs unveils Walker World</span><span class="mono">PRWeb · Nov 2022 ↗</span></a></li>
+          <li><a href="https://techcrunch.com/2024/03/11/ready-player-one-creator-debuts-open-a-metaverse-battle-royale-experience-readyverse" target="_blank" rel="noopener"><span>Ready Player One creator debuts OPEN</span><span class="mono">TechCrunch · Mar 2024 ↗</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <nav class="case__next section" aria-label="Next case study">
+      <span class="mono">Next case study · Block 03</span>
+      <a class="serif" href="fluf-world.html">FLUF World &amp; <em>its collections</em> <span aria-hidden="true">→</span></a>
+    </nav>
+  </main>
+
+  <footer class="footer mono">
+    <span>© 2026 Joey Kheireddine</span>
+    <span class="hide-sm">Case study 04 of 07 · sources linked above</span>
+    <span class="footer__actions">
+      <a href="../assets/joey-kheireddine-cv.pdf" download>Download CV (PDF)</a>
+      <a href="#top">Back to top ↑</a>
+    </span>
+  </footer>
+
+  <script src="../assets/vendor/lenis/lenis.min.js" defer></script>
+  <script src="../assets/js/main.js" type="module"></script>
+</body>
+</html>
