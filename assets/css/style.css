@@ -442,7 +442,19 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
   padding: 20px clamp(24px, 2.6vw, 40px); border: 1px dashed var(--line-strong); border-radius: 4px; color: var(--fg-dim);
 }
 .sidechain__label { color: var(--signal); }
+.sidechain + .sidechain { margin-top: 16px; }
 .sidechain strong { font-size: 1.5rem; color: var(--fg); font-weight: 400; }
+
+/* ---------- Press ---------- */
+.quote, .quote blockquote { margin: 0; }
+.quote--lead blockquote p { font-size: clamp(36px, 4.8vw, 84px); line-height: 1.05; letter-spacing: -0.01em; max-width: 22ch; }
+.quote--lead em { color: var(--signal); }
+.quote figcaption { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 22px; color: var(--muted); }
+.quote figcaption a { color: var(--signal); transition: color 0.25s; }
+.quote figcaption a:hover { color: var(--fg); }
+.quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gutter); margin-top: clamp(56px, 7vw, 112px); }
+.quotes .quote { display: flex; flex-direction: column; justify-content: space-between; padding-top: 20px; border-top: 1px solid var(--line-strong); }
+.quotes blockquote p { font-size: clamp(22px, 1.8vw, 28px); line-height: 1.24; color: var(--fg-dim); }
 
 /* ---------- Stack ---------- */
 .stack__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(48px, 6vw, 96px) var(--gutter); }
@@ -495,6 +507,7 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
   .focus__x { justify-self: center; padding: 0; font-size: 96px; line-height: 0.6; }
   .focus__meet > .mono, .focus__meet p { grid-column: 1 / -1; }
   .leadership { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .quotes { grid-template-columns: 1fr; }
   .hero__kicker { grid-column: 1 / 8; }
   .hero__portrait { grid-column: 8 / 13; }
   .hero__intro { grid-column: 1 / 8; }
@@ -593,6 +606,11 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
   .leadership { margin-top: 8pt; }
   .leadership li { padding: 4pt 6pt; gap: 2pt; }
   .leadership .serif { font-size: 16pt; }
+  .quote--lead blockquote p { font-size: 15pt; max-width: none; }
+  .quotes { grid-template-columns: repeat(3, 1fr); gap: 10pt; margin-top: 8pt; }
+  .quotes blockquote p { font-size: 9.5pt; }
+  .quote figcaption { margin-top: 4pt; font-size: 7pt; }
+  .quote, .sidechain { break-inside: avoid; }
   .stats { grid-template-columns: repeat(3, 1fr); }
   .stat { min-height: 0; padding: 6pt; gap: 4pt; break-inside: avoid; }
   .stat__num { font-size: 22pt; }

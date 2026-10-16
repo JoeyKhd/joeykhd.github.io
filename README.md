@@ -3,7 +3,7 @@
 Personal resume site for Joey Kheireddine, CTO and AI & Web3 engineering leader.
 Static HTML/CSS/JS with no build step, hosted on GitHub Pages.
 
-**Live:** https://joeykhd.github.io/joey-resume.github.io/
+**Live:** https://joeykhd.github.io/
 
 ## Concept
 
@@ -44,11 +44,8 @@ non-cryptographic hash.
 
 ## Deploy
 
-Settings → Pages → *Deploy from a branch* → `main` / `/ (root)`.
-
-To serve the site at `https://joeykhd.github.io/` instead of the project path, rename the
-repository to `joeykhd.github.io`, then update the absolute URLs (canonical, Open Graph and
-JSON-LD) in the `<head>` of `index.html`.
+GitHub Pages serves `main` / `/ (root)` of `JoeyKhd/joeykhd.github.io` at https://joeykhd.github.io/.
+The absolute URLs (canonical, Open Graph, JSON-LD) live in the `<head>` of `index.html`.
 
 ## Privacy
 
