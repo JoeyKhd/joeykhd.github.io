@@ -326,6 +326,45 @@ function initMail() {
   });
 }
 
+/* ---------- Mobile / tablet menu ---------- */
+function initMenu() {
+  const menu = $('#menu');
+  const toggle = $('[data-menu-toggle]');
+  if (!menu || !toggle) return;
+  let lastFocus = null;
+  const isOpen = () => menu.classList.contains('is-open');
+  const open = () => {
+    lastFocus = document.activeElement;
+    menu.hidden = false;
+    raf(() => raf(() => menu.classList.add('is-open')));
+    toggle.setAttribute('aria-expanded', 'true');
+    root.classList.add('menu-open');
+    $('.menu__links a', menu)?.focus({ preventScroll: true });
+  };
+  const close = (restoreFocus = true) => {
+    if (!isOpen()) return;
+    menu.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    root.classList.remove('menu-open');
+    setTimeout(() => { if (!isOpen()) menu.hidden = true; }, reduceMotion ? 0 : 600);
+    if (restoreFocus) lastFocus?.focus?.({ preventScroll: true });
+  };
+  toggle.addEventListener('click', () => (isOpen() ? close() : open()));
+  $('[data-menu-close]', menu)?.addEventListener('click', () => close());
+  $$('a', menu).forEach((a) => a.addEventListener('click', () => close(false)));
+  addEventListener('keydown', (e) => {
+    if (!isOpen()) return;
+    if (e.key === 'Escape') { close(); return; }
+    if (e.key !== 'Tab') return;
+    const focusables = $$('a[href], button', menu);
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+  matchMedia('(min-width: 1101px)').addEventListener('change', (e) => { if (e.matches) close(false); });
+}
+
 /* ---------- Cursor + magnetic buttons ---------- */
 function initCursor() {
   if (!finePointer || reduceMotion) return;
@@ -723,6 +762,7 @@ initTheme();
 splitHeroTitle();
 runLoader();
 initChrome();
+initMenu();
 initMail();
 initStackUsage();
 initChipsMore();

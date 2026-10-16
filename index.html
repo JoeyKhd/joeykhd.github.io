@@ -99,8 +99,31 @@
         <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 14.6A7.75 7.75 0 0 1 9.4 4.5a7.75 7.75 0 1 0 10.1 10.1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
       </button>
       <a class="btn btn--solid btn--sm mono magnetic" href="#contact">Let’s talk</a>
+      <button class="btn btn--ghost btn--sm mono menu-toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>Menu</button>
     </div>
   </header>
+
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site menu" hidden>
+    <div class="menu__top mono">
+      <span>Index</span>
+      <button class="menu__close mono" type="button" data-menu-close>Close <span aria-hidden="true">✕</span></button>
+    </div>
+    <nav class="menu__links" aria-label="Sections">
+        <a href="#manifesto" style="--i: 0"><span class="mono">01</span>About</a>
+        <a href="#focus" style="--i: 1"><span class="mono">02</span>AI × Web3</a>
+        <a href="#impact" style="--i: 2"><span class="mono">03</span>Impact</a>
+        <a href="#chain" style="--i: 3"><span class="mono">04</span>Experience</a>
+        <a href="#press" style="--i: 4"><span class="mono">05</span>Press</a>
+        <a href="#stack" style="--i: 5"><span class="mono">06</span>Stack</a>
+        <a href="#education" style="--i: 6"><span class="mono">07</span>Education</a>
+        <a href="#contact" style="--i: 7"><span class="mono">08</span>Contact</a>
+    </nav>
+    <div class="menu__foot mono">
+      <a href="#contact" data-mail="joey|a1g.io"><span data-mail-label>joey [at] a1g.io</span></a>
+      <a href="https://www.linkedin.com/in/joey-kheireddine/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/joeykhd" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </div>
 
   <main id="main">
     <!-- ───────────── HERO ───────────── -->

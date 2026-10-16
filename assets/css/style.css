@@ -203,6 +203,33 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
 .pulse::after { content: ""; position: absolute; inset: -4px; border-radius: 50%; border: 1px solid var(--signal); animation: pulse 2s var(--ease-out) infinite; }
 @keyframes pulse { from { transform: scale(0.4); opacity: 1; } to { transform: scale(1.6); opacity: 0; } }
 
+/* ---------- Mobile / tablet menu ---------- */
+.menu-toggle { display: none; }
+html.menu-open, html.menu-open body { overflow: hidden; }
+.menu {
+  position: fixed; inset: 0; z-index: 160; display: flex; flex-direction: column; gap: 32px; overflow-y: auto;
+  padding: calc(var(--nav-h) + 16px) var(--gutter) 32px; background: var(--bg); color: var(--fg);
+  clip-path: inset(0 0 100% 0); transition: clip-path 0.6s var(--ease-in-out);
+}
+.menu.is-open { clip-path: inset(0 0 0 0); }
+.menu__top { position: absolute; top: 0; left: var(--gutter); right: var(--gutter); height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; color: var(--muted); border-bottom: 1px solid var(--line); }
+.menu__close { color: var(--fg); padding: 10px 0; }
+.menu__close:hover { color: var(--signal); }
+.menu__links { display: grid; }
+.menu__links a {
+  display: flex; align-items: baseline; gap: 16px; padding: 8px 0; border-bottom: 1px solid var(--line);
+  font-family: var(--f-display); font-size: clamp(40px, 9vw, 72px); line-height: 1.05;
+  opacity: 0; transform: translate3d(0, 18px, 0);
+  transition: opacity 0.5s var(--ease-out), transform 0.7s var(--ease-out), color 0.25s;
+  transition-delay: calc(0.15s + var(--i) * 0.04s);
+}
+.menu.is-open .menu__links a { opacity: 1; transform: none; }
+.menu__links a .mono { min-width: 2.5ch; font-size: 0.75rem; color: var(--signal); }
+.menu__links a:hover { color: var(--signal); font-style: italic; }
+.menu__foot { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: auto; color: var(--fg-dim); }
+.menu__foot a { text-transform: none; }
+.menu__foot a:hover { color: var(--signal); }
+
 /* ---------- Layout primitives ---------- */
 .section { padding: clamp(80px, 10vw, 150px) var(--gutter) 0; }
 .section__head {
@@ -569,6 +596,7 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
 
 @media (max-width: 1100px) {
   .nav__links { display: none; }
+  .js .menu-toggle { display: inline-flex; }
   .nav { grid-template-columns: 1fr auto; }
   .focus__grid { grid-template-columns: 1fr; }
   .focus__x { justify-self: center; padding: 0; font-size: 96px; line-height: 0.6; }
