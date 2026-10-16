@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FUSION — Case study · Joey Kheireddine</title>
+  <meta name="description" content="Case study: Joey Kheireddine at the FUSION Foundation — main author of the official wallet and block explorer that took a new cross-chain finance protocol to mainnet in 2019.">
+  <meta name="theme-color" content="#0a0a0b" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#efebe2" media="(prefers-color-scheme: light)">
+  <meta name="color-scheme" content="dark light">
+
+  <link rel="canonical" href="https://joeykhd.github.io/work/fusion.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="FUSION — case study by Joey Kheireddine">
+  <meta property="og:description" content="Case study: Joey Kheireddine at the FUSION Foundation — main author of the official wallet and block explorer that took a new cross-chain finance protocol to mainnet in 2019.">
+  <meta property="og:url" content="https://joeykhd.github.io/work/fusion.html">
+  <meta property="og:image" content="https://joeykhd.github.io/assets/img/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="preload" href="../assets/fonts/instrument-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.replace('no-js', 'js');
+      try { var t = localStorage.getItem('jk-theme'); if (t === 'light' || t === 'dark') d.dataset.theme = t; } catch (e) {}
+    })();
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "FUSION: a new chain’s front door",
+  "description": "Case study: Joey Kheireddine at the FUSION Foundation — main author of the official wallet and block explorer that took a new cross-chain finance protocol to mainnet in 2019.",
+  "url": "https://joeykhd.github.io/work/fusion.html",
+  "image": "https://joeykhd.github.io/assets/img/case-fusion-light.webp",
+  "author": {
+    "@type": "Person",
+    "name": "Joey Kheireddine",
+    "url": "https://joeykhd.github.io/"
+  }
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="progress" aria-hidden="true"><span></span></div>
+  <div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav nav--case">
+    <a class="nav__brand" href="../" aria-label="Joey Kheireddine — home">
+      <span class="nav__mark">JK</span>
+      <span class="nav__name">Joey Kheireddine</span>
+    </a>
+    <nav class="nav__links" aria-label="Case studies">
+      <a href="avatars-global.html"><span class="mono">07</span> Avatars</a>
+      <a href="openserv.html"><span class="mono">06</span> OpenServ</a>
+      <a href="auto-fun.html"><span class="mono">05</span> Auto.fun</a>
+      <a href="walker-world.html"><span class="mono">04</span> Walker</a>
+      <a href="fluf-world.html"><span class="mono">03</span> FLUF</a>
+      <a href="betcha.html"><span class="mono">02</span> Betcha</a>
+      <a href="fusion.html" class="is-active" aria-current="page"><span class="mono">01</span> FUSION</a>
+    </nav>
+    <div class="nav__end">
+      <button class="btn btn--icon theme-toggle magnetic" type="button" data-theme-toggle data-current="dark" aria-label="Switch to light theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 2.5v2.25M12 19.25v2.25M2.5 12h2.25M19.25 12h2.25M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 14.6A7.75 7.75 0 0 1 9.4 4.5a7.75 7.75 0 1 0 10.1 10.1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      </button>
+      <a class="btn btn--solid btn--sm mono magnetic" href="../#contact">Let’s talk</a>
+      <button class="btn btn--ghost btn--sm mono menu-toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>Menu</button>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Case studies" data-lenis-prevent hidden>
+    <div class="menu__top mono">
+      <span>Case studies</span>
+      <button class="menu__close mono" type="button" data-menu-close>Close <span aria-hidden="true">✕</span></button>
+    </div>
+    <nav class="menu__links" aria-label="Case studies">
+        <a href="../" style="--i: 0"><span class="mono">←</span>Home</a>
+        <a href="avatars-global.html" style="--i: 1"><span class="mono">07</span>Avatars Global</a>
+        <a href="openserv.html" style="--i: 2"><span class="mono">06</span>OpenServ</a>
+        <a href="auto-fun.html" style="--i: 3"><span class="mono">05</span>Auto.fun</a>
+        <a href="walker-world.html" style="--i: 4"><span class="mono">04</span>Walker World</a>
+        <a href="fluf-world.html" style="--i: 5"><span class="mono">03</span>FLUF World</a>
+        <a href="betcha.html" style="--i: 6"><span class="mono">02</span>Betcha</a>
+        <a href="fusion.html" aria-current="page" style="--i: 7"><span class="mono">01</span>FUSION</a>
+    </nav>
+    <div class="menu__foot mono">
+      <a href="../#contact" data-mail="joey|a1g.io"><span data-mail-label>joey [at] a1g.io</span></a>
+      <a href="https://www.linkedin.com/in/joey-kheireddine/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/joeykhd" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="../assets/joey-kheireddine-cv.pdf" download>Download CV ↓</a>
+    </div>
+  </div>
+
+  <main id="main" class="case">
+    <header class="case__hero" id="top">
+      <div class="case__crumbs mono"><a href="../#work">← All case studies</a><span>Case study 07 / 07 · Block 01</span></div>
+      <div class="case__intro">
+        <p class="case__kicker mono">FUSION Foundation · 2018 — 2021</p>
+        <h1 class="case__title serif">A new chain’s <em>front door</em></h1>
+        <p class="case__lede serif">From volunteer community site to main author of the official wallet and block explorer — the two ways people entered and saw FUSION when its mainnet launched in 2019.</p>
+        <dl class="case__facts mono">
+          <div><dt>Role</dt><dd>Blockchain System Analyst · Head of the Developers Community</dd></div>
+          <div><dt>When</dt><dd>October 2018 — September 2021</dd></div>
+          <div><dt>Code</dt><dd>1,444 of the wallet’s 1,674 commits · 235 of the explorer’s 240</dd></div>
+          <div><dt>Built with</dt><dd>JavaScript · AngularJS · React · Node.js · web3.js · MongoDB · Go (go-ethereum fork) · Ledger &amp; Trezor</dd></div>
+        </dl>
+      </div>
+      <figure class="plate case__plate">
+        <div class="plate__img"><picture><source srcset="../assets/img/case-fusion-light.webp" media="(prefers-color-scheme: light)" data-theme-light><img src="../assets/img/case-fusion-dark.webp" alt="Patent-style drawing of a strongbox safe with a combination dial, three gears on its side each driving a separate chain, a key on a ring and a ledger book beside it." width="800" height="1000"></picture></div>
+        <figcaption class="mono"><span>Fig. 01</span><span>Universal wallet mechanism</span></figcaption>
+      </figure>
+    </header>
+
+    <section class="case__section section" aria-labelledby="s1">
+      <header class="section__head">
+        <span class="mono section__index">(01)</span>
+        <h2 class="mono section__label" id="s1">Context</h2>
+      </header>
+      <div class="case__body">
+        <p data-reveal>FUSION is an open-source protocol built to connect traditional and crypto finance, founded by DJ Qian and funded by a token sale of about $42M in February 2018. By the end of that year it had 36+ people across New York, Shanghai, Singapore and South Africa, and a new chain heading for mainnet.</p>
+        <p data-reveal>I started as a volunteer — I built the Fusion community website — and in July 2018 FUSION announced me as its Developers Community Leader. I joined full-time that autumn, leaving university to do it, as Blockchain System Analyst.</p>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s2">
+      <header class="section__head">
+        <span class="mono section__index">(02)</span>
+        <h2 class="mono section__label" id="s2">The challenge</h2>
+      </header>
+      <div class="case__body">
+        <p data-reveal>FUSION introduced primitives that standard Ethereum tooling can’t represent: time-locked balances, short account numbers, ticket-based staking and atomic multi-asset swaps. Holders had to use all of it from a browser while their ERC-20 tokens migrated to a brand-new chain — against a fixed mainnet date of 30 June 2019. That meant a wallet that understood the new primitives, and an explorer that could decode transaction types no explorer had seen before.</p>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s3">
+      <header class="section__head">
+        <span class="mono section__index">(03)</span>
+        <h2 class="mono section__label" id="s3">What I did</h2>
+      </header>
+      <div class="case__body">
+        <ul class="case__list" data-reveal>
+          <li>Main author of MyFusionWallet, FUSION’s official “universal wallet” — 1,444 of its 1,674 commits — turning a MyEtherWallet fork into a wallet for time-locks, Quantum Swaps, asset creation and Short Account Numbers, with Ledger and Trezor support. Used by 50K+ people.</li>
+          <li>Built the official block explorer — 235 of its 240 commits — and the indexer queries behind it, decoding tickets, time-locks and swaps; switched it to mainnet on launch day.</li>
+          <li>Shipped the wallet and explorer for the PSN testnet in December 2018 and for mainnet on 30 June 2019.</li>
+          <li>Led the developers community and built its tooling: the node manager script and staking guide for the Go node, the network stats monitor, a command-line tool and a React dApp starter.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s4">
+      <header class="section__head">
+        <span class="mono section__index">(04)</span>
+        <h2 class="mono section__label" id="s4">How it works</h2>
+      </header>
+      <div class="case__body">
+        <ol class="flow" data-reveal>
+          <li><span class="mono flow__n">01</span><strong class="serif">Migrate</strong><span>ERC-20 FSN holders swap one-to-one into native FSN on the new chain.</span></li>
+          <li><span class="mono flow__n">02</span><strong class="serif">Open</strong><span>The wallet opens by keystore, key, Ledger or Trezor — and a 3–5 digit short account number replaces the 0x address.</span></li>
+          <li><span class="mono flow__n">03</span><strong class="serif">Transact</strong><span>Create assets without contracts, send time-locked balances and run Quantum Swaps.</span></li>
+          <li><span class="mono flow__n">04</span><strong class="serif">Stake</strong><span>Nodes lock 5,000-FSN tickets for 30 days; a lottery picks the ticket that signs each block.</span></li>
+          <li><span class="mono flow__n">05</span><strong class="serif">See</strong><span>An indexer feeds the explorer, which shows blocks, assets, tickets, time-locks and swaps.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s5">
+      <header class="section__head">
+        <span class="mono section__index">(05)</span>
+        <h2 class="mono section__label" id="s5">The road to mainnet</h2>
+      </header>
+      <div class="case__body">
+        <figure class="curve" data-reveal>
+          <div class="curve-scroll">
+            <svg viewBox="0 0 800 400" role="img" aria-labelledby="fsn-t fsn-d">
+              <title id="fsn-t">Joey’s monthly commits to FUSION’s wallet and block explorer, November 2018 to June 2020</title>
+              <desc id="fsn-d">Wallet commits start in November 2018 and peak at 277 in December 2018, when the PSN testnet launched. Explorer commits start in May 2019, about 200 of them landing in the three months around mainnet on 30 June 2019. Activity tapers through 2020: 1,444 wallet commits and 235 explorer commits in total.</desc>
+              <path class="c-grid" d="M70,256.7 H750"/>
+              <text x="62" y="260.7" text-anchor="end">100</text>
+              <path class="c-grid" d="M70,163.3 H750"/>
+              <text x="62" y="167.3" text-anchor="end">200</text>
+              <path class="c-grid" d="M70,70 H750"/>
+              <text x="62" y="74" text-anchor="end">300</text>
+              <path class="c-axis" d="M70,40 V350 H760"/>
+              <rect x="76" y="215.6" width="22" height="134.4" class="c-ink"/>
+              <rect x="110" y="91.5" width="22" height="258.5" class="c-ink"/>
+              <rect x="144" y="171.7" width="22" height="178.3" class="c-ink"/>
+              <rect x="178" y="210" width="22" height="140" class="c-ink"/>
+              <rect x="212" y="212.8" width="22" height="137.2" class="c-ink"/>
+              <rect x="246" y="305.2" width="22" height="44.8" class="c-ink"/>
+              <rect x="280" y="316.4" width="22" height="33.6" class="c-ink"/>
+              <rect x="280" y="250.1" width="22" height="66.3" class="c-fill"/>
+              <rect x="314" y="249.2" width="22" height="100.8" class="c-ink"/>
+              <rect x="314" y="189.5" width="22" height="59.7" class="c-fill"/>
+              <rect x="348" y="294" width="22" height="56" class="c-ink"/>
+              <rect x="348" y="233.3" width="22" height="60.7" class="c-fill"/>
+              <rect x="382" y="261.3" width="22" height="88.7" class="c-ink"/>
+              <rect x="382" y="245.5" width="22" height="15.9" class="c-fill"/>
+              <rect x="416" y="267.9" width="22" height="82.1" class="c-ink"/>
+              <rect x="416" y="259.5" width="22" height="8.4" class="c-fill"/>
+              <rect x="450" y="293.1" width="22" height="56.9" class="c-ink"/>
+              <rect x="450" y="286.5" width="22" height="6.5" class="c-fill"/>
+              <rect x="484" y="332.3" width="22" height="17.7" class="c-ink"/>
+              <rect x="484" y="331.3" width="22" height="0.9" class="c-fill"/>
+              <rect x="518" y="336.9" width="22" height="13.1" class="c-ink"/>
+              <rect x="518" y="336" width="22" height="0.9" class="c-fill"/>
+              <rect x="552" y="345.3" width="22" height="4.7" class="c-ink"/>
+              <rect x="722" y="349.1" width="22" height="0.9" class="c-ink"/>
+              <text x="87" y="374" text-anchor="middle">NOV 2018</text>
+              <text x="359" y="374" text-anchor="middle">JUL 2019</text>
+              <text x="563" y="374" text-anchor="middle">JAN 2020</text>
+              <text x="733" y="374" text-anchor="middle">JUN 2020</text>
+              <path class="c-mark" d="M104,350 V64" style="stroke: var(--line-strong)"/>
+              <text x="114" y="64" class="c-strong">PSN TESTNET</text><text x="114" y="82">DEC 2018</text>
+              <path class="c-mark" d="M342,350 V64"/>
+              <text x="352" y="64" class="c-sig">MAINNET</text><text x="352" y="82" class="c-sig">30 JUN 2019</text>
+              <rect x="520" y="36" width="12" height="12" class="c-ink"/><text x="540" y="46">WALLET · 1,444 COMMITS</text>
+              <rect x="520" y="56" width="12" height="12" class="c-fill"/><text x="540" y="66" class="c-sig">EXPLORER · 235</text>
+              <text x="78" y="46">JOEY’S COMMITS PER MONTH ↑</text>
+            </svg>
+          </div>
+          <figcaption class="mono"><span>Fig. 01b — commits per month, wallet and explorer</span><span>From the public Git history</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s6">
+      <header class="section__head">
+        <span class="mono section__index">(06)</span>
+        <h2 class="mono section__label" id="s6">Outcome</h2>
+      </header>
+      <div class="case__body">
+        <ul class="case__stats" data-reveal style="--cols: 3">
+          <li><strong>1,444</strong><span>commits to the official wallet — 86% of its history</span></li>
+          <li><strong>235 / 240</strong><span>commits to the official block explorer</span></li>
+          <li><strong>50K+</strong><span>people using the wallet</span></li>
+          <li><strong>250+</strong><span>nodes and 10M+ FSN staked within days of mainnet</span></li>
+          <li><strong>364K+</strong><span>transactions and 69 assets in the first three weeks</span></li>
+          <li><strong>1M+</strong><span>transactions on the PSN testnet before launch</span></li>
+        </ul>
+        <p data-reveal>FUSION’s mainnet went live on 30 June 2019. The wallet and explorer stayed its official front ends, and FUSION’s CTO went on to co-found Betcha — where I worked next.</p>
+        <figure class="quote case__quote" data-reveal>
+          <blockquote class="serif"><p>“Joey has already demonstrated a passionate and <em>meticulous approach</em> to the tech projects that motivate him.”</p></blockquote>
+          <figcaption class="mono"><span>FUSION Foundation, announcing its Developers Community Leader</span><a href="https://medium.com/@fusionprotocol/key-team-members-join-fusion-ffdd19ed98" target="_blank" rel="noopener" data-cursor="Read ↗">Medium · Jul 2018 ↗</a></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s7">
+      <header class="section__head">
+        <span class="mono section__index">(07)</span>
+        <h2 class="mono section__label" id="s7">Sources</h2>
+      </header>
+      <div class="case__body">
+        <ul class="case__sources" data-reveal>
+          <li><a href="https://medium.com/@fusionprotocol/key-team-members-join-fusion-ffdd19ed98" target="_blank" rel="noopener"><span>Key team members join FUSION</span><span class="mono">FUSION Foundation · Jul 2018 ↗</span></a></li>
+          <li><a href="https://web.archive.org/web/20191022221150/https://www.fusion.org/about-us" target="_blank" rel="noopener"><span>FUSION team: Joey Kheireddine, Blockchain System Analyst</span><span class="mono">fusion.org (archived) ↗</span></a></li>
+          <li><a href="https://github.com/FUSIONFoundation/myfusionwallet" target="_blank" rel="noopener"><span>MyFusionWallet, the official wallet — code and contributors</span><span class="mono">GitHub ↗</span></a></li>
+          <li><a href="https://github.com/FUSIONFoundation/BlockExplorer" target="_blank" rel="noopener"><span>The official block explorer — code and contributors</span><span class="mono">GitHub ↗</span></a></li>
+          <li><a href="https://www.globenewswire.com/news-release/2019/06/19/1871193/0/en/fusion-foundation-announces-mainnet-launch-of-its-open-source-protocol-to-bring-blockchain-finance-to-the-masses.html" target="_blank" rel="noopener"><span>Fusion Foundation announces mainnet launch</span><span class="mono">GlobeNewswire · Jun 2019 ↗</span></a></li>
+          <li><a href="https://fusionprotocol.medium.com/fusions-june-newsletter-122837e2545c" target="_blank" rel="noopener"><span>June newsletter: mainnet live, nodes and staking</span><span class="mono">FUSION Foundation · Jul 2019 ↗</span></a></li>
+          <li><a href="https://medium.com/fusionfoundation/staking-lottery-tickets-and-earning-rewards-on-fusions-payable-staged-network-d03285f31803" target="_blank" rel="noopener"><span>Staking, “lottery” tickets and rewards on the PSN</span><span class="mono">FUSION Foundation · Dec 2018 ↗</span></a></li>
+          <li><a href="https://web.archive.org/web/20190723074555/https://api.fusionnetwork.io/fsnprice" target="_blank" rel="noopener"><span>Network totals three weeks after mainnet</span><span class="mono">FUSION API (archived) ↗</span></a></li>
+          <li><a href="https://web.archive.org/web/20181205232455/https://fusion.org/" target="_blank" rel="noopener"><span>fusion.org: “36+ employees, 12+ languages”</span><span class="mono">fusion.org (archived) · Dec 2018 ↗</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <nav class="case__next section" aria-label="Next case study">
+      <span class="mono">Next case study · Block 07</span>
+      <a class="serif" href="avatars-global.html">Avatars Global — <em>AI with a human face</em> <span aria-hidden="true">→</span></a>
+    </nav>
+  </main>
+
+  <footer class="footer mono">
+    <span>© 2026 Joey Kheireddine</span>
+    <span class="hide-sm">Case study 07 of 07 · sources linked above</span>
+    <span class="footer__actions">
+      <a href="../assets/joey-kheireddine-cv.pdf" download>Download CV (PDF)</a>
+      <a href="#top">Back to top ↑</a>
+    </span>
+  </footer>
+
+  <script src="../assets/vendor/lenis/lenis.min.js" defer></script>
+  <script src="../assets/js/main.js" type="module"></script>
+</body>
+</html>
