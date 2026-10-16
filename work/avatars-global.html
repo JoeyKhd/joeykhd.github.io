@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Avatars Global — Case study · Joey Kheireddine</title>
+  <meta name="description" content="Case study: Joey Kheireddine as CTO of Avatars Global and AverCare — avatar-led AI agents, and a health platform where the avatar has to be grounded, private and safe.">
+  <meta name="theme-color" content="#0a0a0b" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#efebe2" media="(prefers-color-scheme: light)">
+  <meta name="color-scheme" content="dark light">
+
+  <link rel="canonical" href="https://joeykhd.github.io/work/avatars-global.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Avatars Global — case study by Joey Kheireddine">
+  <meta property="og:description" content="Case study: Joey Kheireddine as CTO of Avatars Global and AverCare — avatar-led AI agents, and a health platform where the avatar has to be grounded, private and safe.">
+  <meta property="og:url" content="https://joeykhd.github.io/work/avatars-global.html">
+  <meta property="og:image" content="https://joeykhd.github.io/assets/img/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="preload" href="../assets/fonts/instrument-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.replace('no-js', 'js');
+      try { var t = localStorage.getItem('jk-theme'); if (t === 'light' || t === 'dark') d.dataset.theme = t; } catch (e) {}
+    })();
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Avatars Global: AI with a human face",
+  "description": "Case study: Joey Kheireddine as CTO of Avatars Global and AverCare — avatar-led AI agents, and a health platform where the avatar has to be grounded, private and safe.",
+  "url": "https://joeykhd.github.io/work/avatars-global.html",
+  "image": "https://joeykhd.github.io/assets/img/case-avatars-light.webp",
+  "author": {
+    "@type": "Person",
+    "name": "Joey Kheireddine",
+    "url": "https://joeykhd.github.io/"
+  }
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="progress" aria-hidden="true"><span></span></div>
+  <div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav nav--case">
+    <a class="nav__brand" href="../" aria-label="Joey Kheireddine — home">
+      <span class="nav__mark">JK</span>
+      <span class="nav__name">Joey Kheireddine</span>
+    </a>
+    <nav class="nav__links" aria-label="Case studies">
+      <a href="avatars-global.html" class="is-active" aria-current="page"><span class="mono">07</span> Avatars</a>
+      <a href="openserv.html"><span class="mono">06</span> OpenServ</a>
+      <a href="auto-fun.html"><span class="mono">05</span> Auto.fun</a>
+      <a href="walker-world.html"><span class="mono">04</span> Walker</a>
+      <a href="fluf-world.html"><span class="mono">03</span> FLUF</a>
+      <a href="betcha.html"><span class="mono">02</span> Betcha</a>
+      <a href="fusion.html"><span class="mono">01</span> FUSION</a>
+    </nav>
+    <div class="nav__end">
+      <button class="btn btn--icon theme-toggle magnetic" type="button" data-theme-toggle data-current="dark" aria-label="Switch to light theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 2.5v2.25M12 19.25v2.25M2.5 12h2.25M19.25 12h2.25M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 14.6A7.75 7.75 0 0 1 9.4 4.5a7.75 7.75 0 1 0 10.1 10.1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      </button>
+      <a class="btn btn--solid btn--sm mono magnetic" href="../#contact">Let’s talk</a>
+      <button class="btn btn--ghost btn--sm mono menu-toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>Menu</button>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Case studies" data-lenis-prevent hidden>
+    <div class="menu__top mono">
+      <span>Case studies</span>
+      <button class="menu__close mono" type="button" data-menu-close>Close <span aria-hidden="true">✕</span></button>
+    </div>
+    <nav class="menu__links" aria-label="Case studies">
+        <a href="../" style="--i: 0"><span class="mono">←</span>Home</a>
+        <a href="avatars-global.html" aria-current="page" style="--i: 1"><span class="mono">07</span>Avatars Global</a>
+        <a href="openserv.html" style="--i: 2"><span class="mono">06</span>OpenServ</a>
+        <a href="auto-fun.html" style="--i: 3"><span class="mono">05</span>Auto.fun</a>
+        <a href="walker-world.html" style="--i: 4"><span class="mono">04</span>Walker World</a>
+        <a href="fluf-world.html" style="--i: 5"><span class="mono">03</span>FLUF World</a>
+        <a href="betcha.html" style="--i: 6"><span class="mono">02</span>Betcha</a>
+        <a href="fusion.html" style="--i: 7"><span class="mono">01</span>FUSION</a>
+    </nav>
+    <div class="menu__foot mono">
+      <a href="../#contact" data-mail="joey|a1g.io"><span data-mail-label>joey [at] a1g.io</span></a>
+      <a href="https://www.linkedin.com/in/joey-kheireddine/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/joeykhd" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="../assets/joey-kheireddine-cv.pdf" download>Download CV ↓</a>
+    </div>
+  </div>
+
+  <main id="main" class="case">
+    <header class="case__hero" id="top">
+      <div class="case__crumbs mono"><a href="../#work">← All case studies</a><span>Case study 01 / 07 · Block 07</span></div>
+      <div class="case__intro">
+        <p class="case__kicker mono">Avatars Global · 2026 — now</p>
+        <h1 class="case__title serif">AI with a <em>human face</em></h1>
+        <p class="case__lede serif">Domain-specialist AI agents with a face and a voice — and a health platform where the avatar has to be grounded, private and safe before anyone talks to it.</p>
+        <dl class="case__facts mono">
+          <div><dt>Role</dt><dd>Chief Technology Officer · also CTO of AverCare</dd></div>
+          <div><dt>When</dt><dd>April 2026 — present</dd></div>
+          <div><dt>Company</dt><dd>Auckland, NZ · ~15 people in 11 countries</dd></div>
+          <div><dt>Built with</dt><dd>AI agents · retrieval over clinical sources · voice · wearables · mobile &amp; web · Unreal Engine</dd></div>
+        </dl>
+      </div>
+      <figure class="plate case__plate">
+        <div class="plate__img"><picture><source srcset="../assets/img/case-avatars-light.webp" media="(prefers-color-scheme: light)" data-theme-light><img src="../assets/img/case-avatars-dark.webp" alt="Patent-style drawing of a sculpted bust on a turntable, half of its face drawn as skin and half as a wireframe mesh, with a ribbon microphone on an arm and a small control box with dials." width="800" height="1000"></picture></div>
+        <figcaption class="mono"><span>Fig. 07</span><span>Digital human, half rendered</span></figcaption>
+      </figure>
+    </header>
+
+    <section class="case__section section" aria-labelledby="s1">
+      <header class="section__head">
+        <span class="mono section__index">(01)</span>
+        <h2 class="mono section__label" id="s1">Context</h2>
+      </header>
+      <div class="case__body">
+        <p data-reveal>Avatars Global is an Auckland studio founded in 2023 by a team that met at Futureverse. It designs and delivers avatar-powered products for enterprise customers — cinematic character design, AI agents and real-time 3D, built to move brands beyond chatbots into interactive products.</p>
+        <p data-reveal>I joined as Chief Technology Officer in April 2026. The studio’s flagship build is AverCare, a personalised health and longevity platform fronted by an avatar called Aver — and I’m AverCare’s CTO as well.</p>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s2">
+      <header class="section__head">
+        <span class="mono section__index">(02)</span>
+        <h2 class="mono section__label" id="s2">The challenge</h2>
+      </header>
+      <div class="case__body">
+        <p data-reveal>Health is one of the most constrained places to put an AI agent. Aver has to explain real medical data credibly without drifting into diagnosis, read continuous signals from wearables that each speak their own format, and pass security and privacy review — SOC 2, HIPAA, GDPR — before a single member talks to it. And because it has a face and a voice, every answer carries more trust than a chatbot’s.</p>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s3">
+      <header class="section__head">
+        <span class="mono section__index">(03)</span>
+        <h2 class="mono section__label" id="s3">What I do</h2>
+      </header>
+      <div class="case__body">
+        <ul class="case__list" data-reveal>
+          <li>Lead technology across the studio’s avatar products — the AI-agent layer behind each character (personality, guardrails, knowledge), and the mobile, web and real-time 3D apps around it.</li>
+          <li>As CTO of AverCare, own its platform architecture, system integrity and long-term technical evolution — integrating AI, data and decentralised components with a focus on reliability and security.</li>
+          <li>Keep the agent grounded: answers come from a retrieval layer over thousands of medical documents, not from a general model improvising, with escalation to human clinicians built into the flow.</li>
+          <li>Treat compliance as architecture — a SOC 2 control environment and HIPAA safeguards designed into the platform, not bolted on before launch.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s4">
+      <header class="section__head">
+        <span class="mono section__index">(04)</span>
+        <h2 class="mono section__label" id="s4">How AverCare works</h2>
+      </header>
+      <div class="case__body">
+        <ol class="flow" data-reveal>
+          <li><span class="mono flow__n">01</span><strong class="serif">Capture</strong><span>The Aver band, other wearables and member-reported data flow into one normalised health record.</span></li>
+          <li><span class="mono flow__n">02</span><strong class="serif">Ground</strong><span>Retrieval over clinician-vetted literature supplies the context for every answer.</span></li>
+          <li><span class="mono flow__n">03</span><strong class="serif">Converse</strong><span>Aver explains the markers against the member’s own baseline — by voice, chat or video, with memory between sessions.</span></li>
+          <li><span class="mono flow__n">04</span><strong class="serif">Guard</strong><span>SOC 2 controls and HIPAA safeguards wrap the data; Aver stops short of diagnosis.</span></li>
+          <li><span class="mono flow__n">05</span><strong class="serif">Escalate</strong><span>A human stays in the loop — Aver routes members to medical professionals.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s5">
+      <header class="section__head">
+        <span class="mono section__index">(05)</span>
+        <h2 class="mono section__label" id="s5">The architecture</h2>
+      </header>
+      <div class="case__body">
+        <figure class="curve" data-reveal>
+          <div class="curve-scroll">
+            <svg viewBox="0 0 800 352" role="img" aria-labelledby="arch-t arch-d">
+              <title id="arch-t">AverCare platform, schematic</title>
+              <desc id="arch-d">Wearables and member data feed one health record per person, which feeds Aver, the avatar. A retrieval layer over clinical literature grounds Aver’s answers. Aver talks with the member by voice, chat or video, and escalates to human clinicians. All of it sits inside a SOC 2 control environment with HIPAA safeguards.</desc>
+              <defs>
+                <marker id="av-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="c-arrow"/></marker>
+                <marker id="av-arr-sig" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="c-arrow-sig"/></marker>
+              </defs>
+              <rect x="6" y="14" width="788" height="296" rx="6" class="c-grid"/>
+              <rect x="16" y="60" width="188" height="64" rx="4" class="c-box"/>
+              <text x="32" y="88" class="c-strong">WEARABLES</text>
+              <text x="32" y="108">BAND · DEVICES · LABS</text>
+              <rect x="236" y="60" width="196" height="64" rx="4" class="c-box"/>
+              <text x="252" y="88" class="c-strong">ONE HEALTH RECORD</text>
+              <text x="252" y="108">ONE PER MEMBER</text>
+              <rect x="466" y="40" width="172" height="104" rx="4" class="c-box-sig"/>
+              <text x="552" y="92" text-anchor="middle" class="c-big c-ital c-sig">Aver</text>
+              <text x="552" y="122" text-anchor="middle" class="c-sig">VOICE · CHAT · VIDEO</text>
+              <rect x="676" y="60" width="112" height="64" rx="4" class="c-box"/>
+              <text x="690" y="88" class="c-strong">MEMBER</text>
+              <text x="690" y="108">OWN BASELINE</text>
+              <rect x="466" y="206" width="172" height="64" rx="4" class="c-box"/>
+              <text x="482" y="234" class="c-strong">CLINICAL RETRIEVAL</text>
+              <text x="482" y="254">VETTED LITERATURE</text>
+              <rect x="676" y="206" width="112" height="64" rx="4" class="c-box"/>
+              <text x="690" y="234" class="c-strong">CLINICIAN</text>
+              <text x="690" y="254">IN THE LOOP</text>
+              <path d="M204,92 H232" class="c-flow" marker-end="url(#av-arr)"/>
+              <path d="M432,92 H462" class="c-flow" marker-end="url(#av-arr)"/>
+              <path d="M642,92 H672" class="c-flow-sig" marker-start="url(#av-arr-sig)" marker-end="url(#av-arr-sig)"/>
+              <path d="M552,206 V148" class="c-flow" marker-end="url(#av-arr)"/>
+              <path d="M638,132 H656 V238 H672" class="c-flow-sig" marker-end="url(#av-arr-sig)"/>
+              <text x="562" y="184">GROUNDS</text>
+              <text x="668" y="166" class="c-sig">ESCALATES</text>
+              <text x="22" y="292" class="c-sig">SOC 2 CONTROL ENVIRONMENT · HIPAA SAFEGUARDS · GDPR</text>
+              <text x="22" y="340">MEMORY PERSISTS BETWEEN SESSIONS · NO DIAGNOSIS · A HUMAN IS ALWAYS IN THE LOOP</text>
+            </svg>
+          </div>
+          <figcaption class="mono"><span>Fig. 07b — AverCare, one record to one avatar</span><span>Schematic · from Avatars Global and AverCare</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s6">
+      <header class="section__head">
+        <span class="mono section__index">(06)</span>
+        <h2 class="mono section__label" id="s6">Where it stands</h2>
+      </header>
+      <div class="case__body">
+        <ul class="case__stats" data-reveal style="--cols: 3">
+          <li><strong>2</strong><span>enterprise platforms at MVP completion — AverCare and FitFur (Jul 2026)</span></li>
+          <li><strong>20+</strong><span>intelligent avatars built by the studio</span></li>
+          <li><strong>30+</strong><span>health modules in nine categories on AverCare</span></li>
+          <li><strong>3</strong><span>ways to talk to Aver — voice, chat and video</span></li>
+          <li><strong>11</strong><span>countries, one team</span></li>
+          <li><strong>Finalist</strong><span>Best Emerging Business, Auckland Business Awards 2026</span></li>
+        </ul>
+        <p data-reveal>AverCare is preparing for a global launch with its waitlist open; FitFur, an AI pet-health and training companion with its own cast of veterinary avatars, is the studio’s second enterprise build. Studio figures are Avatars Global’s own.</p>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s7">
+      <header class="section__head">
+        <span class="mono section__index">(07)</span>
+        <h2 class="mono section__label" id="s7">Sources</h2>
+      </header>
+      <div class="case__body">
+        <ul class="case__sources" data-reveal>
+          <li><a href="https://work.avatarsglobal.com" target="_blank" rel="noopener"><span>Our work: intelligent avatar products, end to end</span><span class="mono">Avatars Global ↗</span></a></li>
+          <li><a href="https://www.avatarsglobal.com/ai-agents" target="_blank" rel="noopener"><span>AI agents: design, integration, back end, front end, content</span><span class="mono">Avatars Global ↗</span></a></li>
+          <li><a href="https://nz.linkedin.com/company/avatars-global" target="_blank" rel="noopener"><span>Company page and leadership</span><span class="mono">Avatars Global · LinkedIn ↗</span></a></li>
+          <li><a href="https://www.avercare.global/team.html" target="_blank" rel="noopener"><span>AverCare team: Joey Kheireddine, Chief Technology Officer</span><span class="mono">AverCare ↗</span></a></li>
+          <li><a href="https://www.avercare.global/faq.html" target="_blank" rel="noopener"><span>AverCare FAQ: privacy, compliance and devices</span><span class="mono">AverCare ↗</span></a></li>
+          <li><a href="https://www.linkedin.com/posts/trevor-topfer_avatars-global-is-in-the-completion-stage-activity-7485910135823998977-4YuO" target="_blank" rel="noopener"><span>“In the completion stage of MVP for 2 major enterprise projects”</span><span class="mono">Trevor Topfer · LinkedIn · Jul 2026 ↗</span></a></li>
+          <li><a href="https://www.aucklandbusinessawards.co.nz/2026-north-and-west-finalists" target="_blank" rel="noopener"><span>Our 2026 North and West finalists</span><span class="mono">Auckland Business Awards ↗</span></a></li>
+          <li><a href="https://nzentrepreneur.co.nz/avatars-global" target="_blank" rel="noopener"><span>Founder Focus: Avatars Global</span><span class="mono">NZ Entrepreneur ↗</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <nav class="case__next section" aria-label="Next case study">
+      <span class="mono">Next case study · Block 06</span>
+      <a class="serif" href="openserv.html">OpenServ — <em>agent launches on Base</em> <span aria-hidden="true">→</span></a>
+    </nav>
+  </main>
+
+  <footer class="footer mono">
+    <span>© 2026 Joey Kheireddine</span>
+    <span class="hide-sm">Case study 01 of 07 · sources linked above</span>
+    <span class="footer__actions">
+      <a href="../assets/joey-kheireddine-cv.pdf" download>Download CV (PDF)</a>
+      <a href="#top">Back to top ↑</a>
+    </span>
+  </footer>
+
+  <script src="../assets/vendor/lenis/lenis.min.js" defer></script>
+  <script src="../assets/js/main.js" type="module"></script>
+</body>
+</html>
