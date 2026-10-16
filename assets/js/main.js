@@ -229,6 +229,8 @@ function initChrome() {
 
 /* ---------- Stack: show where each skill shipped (derived from the role "Built with" lists) ---------- */
 function initStackUsage() {
+  const stack = $('.stack');
+  if (!stack) return;
   const norm = (t) => t.toLowerCase().replace(/[^a-z0-9]/g, '');
   const used = new Map();
   $$('.block').forEach((b) => {
@@ -244,8 +246,26 @@ function initStackUsage() {
     if (!orgs.length && !oss) return;
     const where = orgs.length ? `Used at ${orgs.join(' · ')}${oss ? ' · open source' : ''}` : 'In my open-source work';
     li.dataset.used = where;
-    li.tabIndex = 0;
-    li.setAttribute('aria-label', `${li.textContent}: ${where.replace(/ · /g, ', ')}`);
+    // Read by screen readers in place, shown inline by the toggle; no extra Tab stops.
+    const note = document.createElement('span');
+    note.className = 'used';
+    note.textContent = where;
+    li.append(note);
+  });
+
+  // Touch has no hover: a tap pins the note.
+  stack.addEventListener('click', (e) => {
+    const li = e.target.closest('[data-used]');
+    $$('.is-tip', stack).forEach((x) => { if (x !== li) x.classList.remove('is-tip'); });
+    li?.classList.toggle('is-tip');
+  });
+
+  const toggle = $('[data-used-toggle]');
+  toggle?.addEventListener('click', () => {
+    const on = stack.classList.toggle('stack--detail');
+    toggle.setAttribute('aria-pressed', String(on));
+    toggle.textContent = on ? 'Hide where each skill shipped' : 'Show where each skill shipped';
+    stack.dispatchEvent(new CustomEvent('stackdetail', { detail: on }));
   });
 }
 
