@@ -482,8 +482,10 @@ void main() {
   vec3 c = texture2D(uTex, cuv).rgb;
   float l = dot(c, vec3(0.299, 0.587, 0.114));
   // vignette: let the busy background fall away into the page (dark or light)
-  float v = smoothstep(0.22, 0.62, length((cuv - vec2(0.54, 0.5)) * vec2(1.0, 0.8)));
-  l = mix(l * mix(1.0, 0.28, v), mix(l, 1.0, v * 0.92), uMode);
+  float d = length((cuv - vec2(0.54, 0.5)) * vec2(1.0, 0.8));
+  float vDark = smoothstep(0.22, 0.62, d);
+  float vLight = smoothstep(0.14, 0.48, d);
+  l = mix(l * mix(1.0, 0.28, vDark), mix(pow(l, 0.8), 1.0, vLight), uMode);
   l = clamp((l - 0.5) * 1.3 + 0.48, 0.0, 1.0);
   float on = step(bayer8(cell), l);
   vec3 dith = mix(uInk, uDot, on);
