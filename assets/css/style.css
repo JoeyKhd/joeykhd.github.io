@@ -125,6 +125,7 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
   transition: top 0.2s;
 }
 .skip:focus { top: 12px; }
+.print-only { display: none; }
 
 /* ---------- Ambient layers ---------- */
 .grain {
@@ -677,71 +678,85 @@ html.menu-open, html.menu-open body { overflow: hidden; }
 }
 
 /* ==========================================================================
-   Print — a clean, one-column resume
+   Print — a tight, two-page A4 CV (also used to build assets/joey-kheireddine-cv.pdf)
    ========================================================================== */
 @media print {
-  @page { margin: 14mm 14mm 16mm; }
-  :root:not([data-theme="print"]), :root[data-theme] { color-scheme: light; --bg: #fff; --bg-2: #fff; --bg-3: #fff; --fg: #111; --fg-dim: #333; --muted: #666; --line: #ccc; --line-strong: #999; --signal: #c7361b; --signal-soft: rgba(199, 54, 27, 0.1); }
-  html, body { background: #fff !important; color: #111; font-size: 10pt; }
-  .loader, .progress, .cursor, .grain, .nav, .skip, .marquee, .hero__portrait, .hero__scroll, .hero__meta,
-  .chain__aside, .chain__controls, .chain__hint, .block__fig, .block__hash, .block__status, .block + .block::before,
-  .contact__bg, .contact__links, .contact::after, .footer, .stat::before, .plate { display: none !important; }
-  .js [data-reveal], .js .hero__line .char, .js .hero__kicker, .js .hero__foot, .js .manifesto__text .word { opacity: 1 !important; transform: none !important; }
-  .section { padding: 0; margin-top: 18pt; }
-  .section__head { margin-bottom: 8pt; padding-bottom: 4pt; }
-  .hero { display: block; min-height: 0; padding: 0; }
-  .hero__title { margin: 0; line-height: 1; }
-  .hero__line { display: inline; font-size: 30pt !important; font-style: normal !important; }
-  .hero__line--first::after { content: " "; }
-  .hero__line--first { -webkit-text-stroke: 0; }
-  .hero__kicker { margin-top: 4pt; font-size: 13pt; max-width: none; }
-  .hero__kicker em { display: inline; }
-  .hero__foot { display: block; margin-top: 10pt; padding-top: 8pt; }
-  .hero__facts { margin-top: 8pt; }
-  .hero__facts::after { content: "joey@a1g.io  ·  linkedin.com/in/joey-kheireddine  ·  github.com/joeykhd"; display: block; margin-top: 4pt; color: #111; }
-  .manifesto__text { font-size: 13pt; line-height: 1.35; max-width: none; }
-  .focus__grid { grid-template-columns: 1fr 1fr; gap: 12pt; }
-  .focus__x, .discipline__lede, .focus__meet { display: none; }
-  .discipline { gap: 4pt; padding-top: 6pt; break-inside: avoid; }
-  .discipline__title { font-size: 16pt; }
-  .discipline__title em { display: inline; }
-  .discipline__proof li { padding: 3pt 0; grid-template-columns: 1fr; gap: 0; font-size: 9pt; }
-  .leadership { margin-top: 8pt; }
-  .leadership li { padding: 4pt 6pt; gap: 2pt; }
-  .leadership .serif { font-size: 16pt; }
-  .quote--lead blockquote p { font-size: 15pt; max-width: none; }
-  .quotes { grid-template-columns: repeat(3, 1fr); gap: 10pt; margin-top: 8pt; }
-  .quotes blockquote p { font-size: 9.5pt; }
-  .quote figcaption { margin-top: 4pt; font-size: 7pt; }
-  .quote, .sidechain { break-inside: avoid; }
-  .stats { grid-template-columns: repeat(3, 1fr); }
-  .stat { min-height: 0; padding: 6pt; gap: 4pt; break-inside: avoid; }
-  .stat__num { font-size: 22pt; }
-  .stat__label { font-size: 7pt; }
-  .chain__intro { display: block; margin-bottom: 8pt; }
-  .chain__title { font-size: 0; }
-  .chain__lede { display: none; }
-  .chain__body { display: block; }
-  .block { background: none; border: 0; border-bottom: 1px solid #ddd; border-radius: 0; padding: 0 0 8pt; break-inside: avoid; }
-  .block + .block { margin-top: 8pt; }
-  .block__meta { border: 0; padding: 0; margin-bottom: 2pt; }
-  .block__org { font-size: 16pt; }
-  .block__role { margin-top: 2pt; font-size: 10pt; }
-  .block__list { margin-top: 4pt; gap: 2pt; color: #222; }
-  .stack__bar, .block__more, .chips__more { display: none; }
-  .tags__label { margin-top: 4pt; font-size: 6.5pt; }
-  .tags { margin-top: 1pt; gap: 0 6pt; }
-  .tags li { padding: 0; border: 0; font-size: 6.5pt; color: #444; }
-  .sidechain { width: 100%; margin-top: 8pt; padding: 6pt; }
-  .stack__grid { grid-template-columns: 1fr 1fr; gap: 8pt; }
-  .stack__core { font-size: 12pt; }
-  .stack__group h3 { margin-bottom: 2pt; }
-  .foundations__grid { grid-template-columns: repeat(3, 1fr); gap: 12pt; }
-  .hero__intro { max-width: none; }
-  .edu h3, .langs ul { font-size: 13pt; }
-  .contact { min-height: 0; margin-top: 18pt; border: 0; display: block; }
-  .contact__inner { padding: 0; gap: 4pt; }
-  .contact__title { font-size: 16pt; max-width: none; }
-  .contact__lede::after { content: " joey@a1g.io · linkedin.com/in/joey-kheireddine"; color: #111; }
+  @page { size: A4; margin: 12mm 14mm 13mm; }
+  :root:not([data-theme="print"]), :root[data-theme] {
+    color-scheme: light; --bg: #fff; --bg-2: #fff; --bg-3: #fff; --fg: #111; --fg-dim: #2b2b2b; --muted: #666;
+    --line: #dcdcdc; --line-strong: #9a9a9a; --signal: #b8380c; --signal-soft: transparent;
+  }
+  html, body { background: #fff !important; color: #111; font-size: 8.4pt; line-height: 1.36; }
   a { color: inherit !important; }
+
+  /* only CV content */
+  .loader, .progress, .cursor, .grain, .nav, .menu, .skip, .marquee, .hero__meta, .hero__portrait, .hero__scroll, .hero__kicker, .hero__facts,
+  #manifesto, #focus, #press, .chain__intro, .chain__aside, .block__fig, .block__hash, .block__status, .block__domain, .block__more, .block__case,
+  .block + .block::before, .stack__bar, .chips__more, .opensource .btn, .opensource__label, .plate, .contact, .footer, .stat::before,
+  .section__index, .used { display: none !important; }
+  .js [data-reveal], .js .hero__line .char, .js .hero__foot, .js .manifesto__text .word { opacity: 1 !important; transform: none !important; }
+  .stack [data-used]::before { content: none !important; }
+
+  .section { padding: 0; margin-top: 9pt; }
+  .section__head { margin: 0 0 4pt; padding: 0 0 2pt; border-bottom: 1px solid var(--line-strong); }
+  .section__label { color: #111; font-size: 7pt; letter-spacing: 0.1em; }
+
+  /* header */
+  .hero { display: block; min-height: 0; padding: 0; }
+  .hero__title { display: none !important; }
+  .print-name { display: block; margin: 0; font-size: 23pt; line-height: 1; letter-spacing: -0.01em; }
+  .print-name::after { content: "CTO · AI & Web3 Engineering Leader"; display: block; margin-top: 3pt; font: 400 7.6pt/1.3 var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--signal); }
+  .hero__foot { display: block; margin: 5pt 0 0; padding: 5pt 0 0; border-top: 1px solid var(--line-strong); }
+  .hero__intro { max-width: none; font-size: 8.8pt; color: #222; }
+  .hero__intro strong { font-weight: 500; }
+  .hero__foot::after { content: "joey@a1g.io   ·   linkedin.com/in/joey-kheireddine   ·   github.com/joeykhd   ·   The Netherlands, remote"; display: block; margin-top: 4pt; font: 400 7.2pt/1.3 var(--f-mono); letter-spacing: 0.03em; color: #111; }
+
+  /* impact: one row */
+  .stats { grid-template-columns: repeat(6, minmax(0, 1fr)); border: 0; gap: 0 8pt; }
+  .stat { min-height: 0; padding: 0; border: 0; gap: 1pt; justify-content: flex-start; break-inside: avoid; }
+  .stat__num { font-size: 13pt; letter-spacing: -0.01em; }
+  .stat__label { font-size: 5.9pt; line-height: 1.25; letter-spacing: 0.02em; color: #444; }
+
+  /* experience */
+  .chain__body { display: block; }
+  .block { background: none; border: 0; border-radius: 0; padding: 0; box-shadow: none; break-inside: auto; }
+  .block__meta, .block__org, .block__role { break-after: avoid; }
+  .block__list li { break-inside: avoid; }
+  .block + .block { margin-top: 5pt; padding-top: 5pt; border-top: 1px solid var(--line); }
+  .block__meta { display: flex; gap: 0 10pt; padding: 0; margin: 0 0 1pt; border: 0; font-size: 6.4pt; }
+  .block__org { font-size: 12pt; line-height: 1.05; }
+  .block__org small { font-size: 6.3pt; margin-left: 5pt; }
+  .block__role { margin-top: 1pt; font-size: 8.4pt; gap: 0 8pt; }
+  .block__role span { font-size: 6.3pt; }
+  .block__list { margin-top: 2pt; gap: 0.5pt; color: #222; }
+  .block__list li { max-width: none; padding-left: 9pt; }
+  .block__list li::before { width: 5pt; top: 0.68em; }
+  .tags__label { display: inline; margin: 0 4pt 0 0; font-size: 5.9pt; }
+  .tags { display: inline; margin: 0; }
+  .tags li { display: inline; padding: 0; border: 0; font-size: 5.9pt; color: #555; }
+  .tags li + li::before { content: " · "; }
+  .sidechain { display: block; width: 100%; margin: 4pt 0 0; padding: 0; border: 0; font-size: 7.8pt; }
+  .sidechain + .sidechain { margin-top: 1pt; }
+  .sidechain__label { margin-right: 5pt; font-size: 6pt; }
+  .sidechain strong { font-size: 8.8pt; }
+
+  /* stack: compact */
+  .stack__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4pt 14pt; }
+  .stack__group { break-inside: avoid; }
+  .stack__group h3 { margin: 0 0 1pt; font-size: 6.2pt; }
+  .stack__core { font-size: 9.2pt; line-height: 1.2; }
+  .chips { display: block; margin-top: 1pt; }
+  .chips li { display: inline; padding: 0; border: 0; font-size: 5.9pt; color: #444; }
+  .chips li:not(:last-child)::after { content: " · "; }
+  .opensource { display: block; margin-top: 4pt; padding-top: 3pt; border-top: 1px solid var(--line); }
+  .opensource p { font-size: 8pt; }
+
+  /* education + languages: one row */
+  .foundations__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 10pt; }
+  .edu, .langs { gap: 1pt; padding-top: 0; border: 0; break-inside: avoid; }
+  .edu__when { font-size: 6.2pt; }
+  .edu h3, .langs ul { font-size: 9.5pt; }
+  .edu p { font-size: 7.2pt; max-width: none; }
+  .langs li { padding: 0; border: 0; }
+  .langs li .mono { font-size: 5.9pt; }
 }

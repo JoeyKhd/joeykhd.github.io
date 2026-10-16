@@ -178,15 +178,20 @@ function initReveals() {
   items.forEach((el) => io.observe(el));
 }
 
+// Printing (or building the PDF) always shows final numbers, never a frame of the count-up.
+let printing = false;
+addEventListener('beforeprint', () => { printing = true; $$('[data-count]').forEach((el) => { el.textContent = el.dataset.count; }); });
+addEventListener('afterprint', () => { printing = false; });
+
 function countUp(el) {
   const to = Number(el.dataset.count);
   const from = Number(el.dataset.from ?? 0);
-  if (reduceMotion) { el.textContent = to; return; }
+  if (reduceMotion || printing) { el.textContent = to; return; }
   const dur = 1800;
   const t0 = performance.now();
   const ease = (t) => (t === 1 ? 1 : 1 - 2 ** (-10 * t));
   const step = (now) => {
-    const t = clamp((now - t0) / dur);
+    const t = printing ? 1 : clamp((now - t0) / dur);
     el.textContent = Math.round(from + (to - from) * ease(t));
     if (t < 1) raf(step);
   };

@@ -16,7 +16,7 @@ Other details:
 
 - An ordered-dither (Bayer 8×8) WebGL portrait, with a true-colour lens that follows the cursor
 - A scroll-scrubbed manifesto, count-up impact stats, and a sticky "current block" aside with era illustrations
-- A print stylesheet: **Print resume** in the footer (or Ctrl/Cmd + P) gives a clean, light, paginated CV
+- A two-page A4 CV, built from the print stylesheet and offered as **Download CV** (`assets/joey-kheireddine-cv.pdf`)
 - `prefers-reduced-motion` support, a no-JS fallback, semantic HTML and JSON-LD `Person` schema
 
 ## Structure
@@ -41,6 +41,16 @@ python -m http.server 8000
 Serve the site over HTTP rather than opening the file directly: browsers only expose
 SHA-256 (`crypto.subtle`) in secure contexts, and on `file://` the chain falls back to a
 non-cryptographic hash.
+
+## Rebuild the CV PDF
+
+After editing content, regenerate the PDF from the print stylesheet (needs Edge or Chrome):
+
+```sh
+python -m http.server 8787          # in one terminal
+npm i --no-save playwright-core     # once
+node scripts/build-cv.mjs           # writes assets/joey-kheireddine-cv.pdf
+```
 
 ## Deploy
 
