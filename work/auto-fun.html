@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Auto.fun — Case study · Joey Kheireddine</title>
-  <meta name="description" content="Case study: Auto.fun, Eliza Labs’ no-code launchpad for AI agents on Solana, built around a “fairer than fair” bonding-curve token model.">
+  <meta name="description" content="Case study: Auto.fun, Eliza Labs’ no-code launchpad for AI agents on Solana — and the “fairer than fair” token model behind it.">
   <meta name="theme-color" content="#0a0a0b" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#efebe2" media="(prefers-color-scheme: light)">
   <meta name="color-scheme" content="dark light">
@@ -12,7 +12,7 @@
   <link rel="canonical" href="https://joeykhd.github.io/work/auto-fun.html">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Auto.fun — case study by Joey Kheireddine">
-  <meta property="og:description" content="Case study: Auto.fun, Eliza Labs’ no-code launchpad for AI agents on Solana, built around a “fairer than fair” bonding-curve token model.">
+  <meta property="og:description" content="Case study: Auto.fun, Eliza Labs’ no-code launchpad for AI agents on Solana — and the “fairer than fair” token model behind it.">
   <meta property="og:url" content="https://joeykhd.github.io/work/auto-fun.html">
   <meta property="og:image" content="https://joeykhd.github.io/assets/img/og.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -36,9 +36,9 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Auto.fun",
-  "description": "Case study: Auto.fun, Eliza Labs’ no-code launchpad for AI agents on Solana, built around a “fairer than fair” bonding-curve token model.",
+  "description": "Case study: Auto.fun, Eliza Labs’ no-code launchpad for AI agents on Solana — and the “fairer than fair” token model behind it.",
   "url": "https://joeykhd.github.io/work/auto-fun.html",
-  "image": "https://joeykhd.github.io/assets/img/era-05-light.webp",
+  "image": "https://joeykhd.github.io/assets/img/case-autofun-light.webp",
   "author": {
     "@type": "Person",
     "name": "Joey Kheireddine",
@@ -77,17 +77,17 @@
       <div class="case__intro">
         <p class="case__kicker mono">Eliza Labs · 2025</p>
         <h1 class="case__title serif">Auto<em>.fun</em></h1>
-        <p class="case__lede serif">A no-code launchpad that gives every AI agent its own token — designed so creators, not snipers, win the launch.</p>
+        <p class="case__lede serif">A no-code launchpad that gives every AI agent its own token on Solana — built so creators, not snipers, win the launch.</p>
         <dl class="case__facts mono">
-          <div><dt>Role</dt><dd>Head of Engineering — led development</dd></div>
-          <div><dt>Launched</dt><dd>17 April 2025</dd></div>
-          <div><dt>Chain</dt><dd>Solana</dd></div>
-          <div><dt>Built with</dt><dd>elizaOS · TypeScript · Raydium · Bonding curves · Liquidity NFTs</dd></div>
+          <div><dt>Role</dt><dd>Head of Engineering · #2 of 19 contributors</dd></div>
+          <div><dt>Launched</dt><dd>17 April 2025 · Solana</dd></div>
+          <div><dt>Code</dt><dd>696 commits to the open-source codebase</dd></div>
+          <div><dt>Built with</dt><dd>TypeScript · Rust (Anchor) · Bun · Hono · Postgres · Redis · Raydium · Cloudflare</dd></div>
         </dl>
       </div>
       <figure class="plate case__plate">
-        <div class="plate__img"><picture><source srcset="../assets/img/era-05-light.webp" media="(prefers-color-scheme: light)" data-theme-light><img src="../assets/img/era-05-dark.webp" alt="" width="800" height="1000"></picture></div>
-        <figcaption class="mono"><span>Fig. 05</span><span>Autonomous agent, exploded view</span></figcaption>
+        <div class="plate__img"><picture><source srcset="../assets/img/case-autofun-light.webp" media="(prefers-color-scheme: light)" data-theme-light><img src="../assets/img/case-autofun-dark.webp" alt="Patent-style drawing of a control console with switches, dials, a launch lever and a plotter drawing a rising curve, with a small automaton head wired on top." width="800" height="1000"></picture></div>
+        <figcaption class="mono"><span>Fig. 05</span><span>Agent launch console</span></figcaption>
       </figure>
     </header>
 
@@ -97,8 +97,8 @@
         <h2 class="mono section__label" id="s1">Context</h2>
       </header>
       <div class="case__body">
-        <p data-reveal>Eliza Labs is the company behind elizaOS, the open-source AI-agent framework that topped GitHub’s global trending charts in early 2025. Auto.fun was its pump.fun-style launchpad: anyone could configure an autonomous agent without writing code and launch a token alongside it.</p>
-        <p data-reveal>It went live on Solana on 17 April 2025, with partner projects such as FightFi, Comput3 and Sigma Music Agent on board at launch.</p>
+        <p data-reveal>Eliza Labs is the company behind elizaOS, the open-source AI-agent framework that topped GitHub’s global trending charts in early 2025. Auto.fun was its answer to pump.fun: a launchpad where anyone could spin up an autonomous agent without writing code — and launch its token in the same flow.</p>
+        <p data-reveal>It went live on Solana on 17 April 2025 with more than 15 partner projects, among them FightFi, Comput3, Sigma Music, Secret and Astra.</p>
       </div>
     </section>
 
@@ -108,7 +108,7 @@
         <h2 class="mono section__label" id="s2">The challenge</h2>
       </header>
       <div class="case__body">
-        <p data-reveal>Pump.fun-style launches are fast but brutal: bots snipe the first blocks, teams end up holding little of their own supply, and liquidity is fragile once trading opens. For agents meant to run for months — posting on X, trading, managing DeFi positions — that model breaks the economics before the agent has shipped.</p>
+        <p data-reveal>Pump.fun-style launches are fast but brutal: bots buy in the first block, creators end up holding little of their own token, and liquidity is fragile once trading opens. For agents meant to run for months — posting on X, trading, managing DeFi positions — that breaks the economics before the agent has shipped.</p>
       </div>
     </section>
 
@@ -119,9 +119,10 @@
       </header>
       <div class="case__body">
         <ul class="case__list" data-reveal>
-          <li>Led development of Auto.fun as Head of Engineering — from the no-code agent builder on elizaOS to the token launch on Solana.</li>
-          <li>Introduced the “fairer than fair” token model: a hybrid bonding curve, built with Raydium, that lets a team secure up to 50% of its own supply before the token lists.</li>
-          <li>Paired it with liquidity NFTs backed by Raydium, so creators keep earning a share of swap fees after launch.</li>
+          <li>Led development of Auto.fun as Head of Engineering — and wrote a large share of it: 696 commits, the #2 contributor of 19 to the open-source codebase.</li>
+          <li>Introduced the “fairer than fair” token model: creators launch and buy in a single transaction, taking up to half of the bonding curve before anyone else can trade.</li>
+          <li>Paired it with liquidity NFTs: when a token graduates, its liquidity is locked on Raydium and the creator holds the NFT that claims trading fees.</li>
+          <li>Worked across the full stack — a Rust (Anchor) program on Solana, a TypeScript backend on Bun and Hono with Postgres and Redis, and a React front end on Cloudflare.</li>
         </ul>
       </div>
     </section>
@@ -133,43 +134,86 @@
       </header>
       <div class="case__body">
         <ol class="flow" data-reveal>
-          <li><span class="mono flow__n">01</span><strong class="serif">Build</strong><span>Configure an agent on elizaOS — no code.</span></li>
-          <li><span class="mono flow__n">02</span><strong class="serif">Launch</strong><span>Mint the agent’s token on Solana.</span></li>
-          <li><span class="mono flow__n">03</span><strong class="serif">Secure</strong><span>The team takes up to 50% on the bonding curve, ahead of the bots.</span></li>
-          <li><span class="mono flow__n">04</span><strong class="serif">Trade</strong><span>SOL pools on Raydium, with liquidity held as an NFT.</span></li>
-          <li><span class="mono flow__n">05</span><strong class="serif">Earn</strong><span>A share of every swap fee flows back to the creator.</span></li>
+          <li><span class="mono flow__n">01</span><strong class="serif">Create</strong><span>Auto, Manual or Import — in Auto mode, AI writes the name, ticker, image and description.</span></li>
+          <li><span class="mono flow__n">02</span><strong class="serif">Launch</strong><span>One transaction creates the token and lets the creator buy first.</span></li>
+          <li><span class="mono flow__n">03</span><strong class="serif">Curve</strong><span>A constant-product curve: 1B supply, 28 SOL of virtual reserves, 1% per trade.</span></li>
+          <li><span class="mono flow__n">04</span><strong class="serif">Graduate</strong><span>At 113 SOL, liquidity moves into a Raydium pool and is locked.</span></li>
+          <li><span class="mono flow__n">05</span><strong class="serif">Earn</strong><span>The creator holds the fee-claiming NFT for 90% of the locked liquidity; Auto.fun 10%.</span></li>
         </ol>
+        <p class="case__note mono" data-reveal>Agents connect to an X account; every mint address ends in “FUN”.</p>
       </div>
     </section>
 
     <section class="case__section section" aria-labelledby="s5">
       <header class="section__head">
         <span class="mono section__index">(05)</span>
-        <h2 class="mono section__label" id="s5">Outcome</h2>
+        <h2 class="mono section__label" id="s5">The token model</h2>
       </header>
       <div class="case__body">
-        <p data-reveal>Auto.fun launched on 17 April 2025 with partner projects on day one and was covered by The Block, Cointelegraph and ForkLog. Agents started on X, with DeFi and gaming integrations on the roadmap.</p>
+        <figure class="curve" data-reveal>
+          <svg viewBox="0 0 800 412" role="img" aria-labelledby="curve-t curve-d">
+            <title id="curve-t">Auto.fun bonding curve, schematic</title>
+            <desc id="curve-d">Price rises along a constant-product curve as tokens are bought. The creator’s first buy, made in the launch transaction, can take up to half of the curve’s tokens. At 113 SOL the curve completes and liquidity graduates to Raydium.</desc>
+            <path class="c-grid" d="M70,280 H750 M70,210 H750 M70,140 H750 M70,70 H750"/>
+            <path class="c-axis" d="M70,40 V350 H760"/>
+            <path class="c-area" d="M70.0,350 L70.0,350.0 L80.7,349.5 L91.3,349.0 L102.0,348.5 L112.6,348.0 L123.3,347.5 L133.9,346.9 L144.6,346.3 L155.2,345.7 L165.9,345.0 L176.5,344.4 L187.2,343.7 L197.8,342.9 L208.5,342.2 L219.1,341.4 L229.8,340.5 L240.5,339.6 L251.1,338.7 L261.8,337.8 L272.4,336.7 L283.1,335.7 L293.7,334.5 L304.4,333.4 L315.0,332.1 L325.7,330.8 L336.3,329.4 L347.0,328.0 L357.6,326.4 L368.3,324.8 L378.9,323.1 L389.6,321.2 L400.3,319.3 L410.9,317.2 L421.6,315.0 L432.2,312.6 L442.9,310.1 L453.5,307.4 L464.2,304.5 L474.8,301.5 L485.5,298.1 L495.0,295.0 L495.0,350 Z"/>
+            <path class="c-line" d="M70.0,350.0 L80.7,349.5 L91.3,349.0 L102.0,348.5 L112.6,348.0 L123.3,347.5 L133.9,346.9 L144.6,346.3 L155.2,345.7 L165.9,345.0 L176.5,344.4 L187.2,343.7 L197.8,342.9 L208.5,342.2 L219.1,341.4 L229.8,340.5 L240.5,339.6 L251.1,338.7 L261.8,337.8 L272.4,336.7 L283.1,335.7 L293.7,334.5 L304.4,333.4 L315.0,332.1 L325.7,330.8 L336.3,329.4 L347.0,328.0 L357.6,326.4 L368.3,324.8 L378.9,323.1 L389.6,321.2 L400.3,319.3 L410.9,317.2 L421.6,315.0 L432.2,312.6 L442.9,310.1 L453.5,307.4 L464.2,304.5 L474.8,301.5 L485.5,298.1 L496.1,294.6 L506.8,290.7 L517.4,286.5 L528.1,282.0 L538.7,277.1 L549.4,271.8 L560.1,266.0 L570.7,259.7 L581.4,252.7 L592.0,245.1 L602.7,236.7 L613.3,227.4 L624.0,217.1 L634.6,205.6 L645.3,192.7 L655.9,178.2 L666.6,161.9 L677.2,143.4 L687.9,122.3 L698.5,98.0 L709.2,70.0"/>
+            <path class="c-mark" d="M495.0,350 V289.0"/>
+            <path class="c-mark" d="M709.2,350 V70"/>
+            <circle class="c-dot" cx="709.2" cy="70.0" r="5"/>
+            <text x="282.5" y="255.0" class="c-sig" text-anchor="middle">CREATOR’S FIRST BUY</text>
+            <text x="282.5" y="273.0" class="c-sig" text-anchor="middle">UP TO HALF THE CURVE</text>
+            <text x="689.2" y="96" text-anchor="end" class="c-strong">GRADUATES TO RAYDIUM</text>
+            <text x="689.2" y="114" text-anchor="end">AT 113 SOL</text>
+            <text x="78" y="56">PRICE ↑</text>
+            <text x="760" y="404" text-anchor="end">TOKENS BOUGHT FROM THE CURVE →</text>
+            <text x="70" y="374">0</text>
+            <text x="495.0" y="374" text-anchor="middle">½</text>
+            <text x="709.2" y="374" text-anchor="middle">≈¾</text>
+          </svg>
+          <figcaption class="mono"><span>Fig. 05b — the “fairer than fair” curve</span><span>Schematic · from the open-source code</span></figcaption>
+        </figure>
       </div>
     </section>
 
     <section class="case__section section" aria-labelledby="s6">
       <header class="section__head">
         <span class="mono section__index">(06)</span>
-        <h2 class="mono section__label" id="s6">Sources</h2>
+        <h2 class="mono section__label" id="s6">Outcome</h2>
+      </header>
+      <div class="case__body">
+        <ul class="case__stats" data-reveal style="--cols: 4">
+          <li><strong>15+</strong><span>partner projects at launch</span></li>
+          <li><strong>696</strong><span>commits · #2 of 19 contributors</span></li>
+          <li><strong>1B</strong><span>supply per token, on one curve</span></li>
+          <li><strong>90/10</strong><span>locked-liquidity split, creator / Auto.fun</span></li>
+        </ul>
+        <p data-reveal>Auto.fun launched on 17 April 2025 and was covered by The Block, Cointelegraph, The Defiant, ForkLog and Cryptonomist. In mid-2025 it relaunched with support for Solana, Ethereum and Base.</p>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s7">
+      <header class="section__head">
+        <span class="mono section__index">(07)</span>
+        <h2 class="mono section__label" id="s7">Sources</h2>
       </header>
       <div class="case__body">
         <ul class="case__sources" data-reveal>
-          <li><a href="https://www.theblock.co/news/ecosystems/2025-04-17-eliza-labs-auto-fun-ai-agent-launchpad-fairer-than-fair-tokenomics-351017" target="_blank" rel="noopener"><span>Eliza Labs unveils auto.fun</span><span class="mono">The Block · Apr 2025 ↗</span></a></li>
-          <li><a href="https://www.tradingview.com/news/cointelegraph:326e05ad9094b:0-eliza-labs-launches-auto-fun-a-no-code-ai-spin-on-pump-fun" target="_blank" rel="noopener"><span>Eliza Labs launches auto.fun, a no-code AI spin on pump.fun</span><span class="mono">Cointelegraph via TradingView ↗</span></a></li>
-          <li><a href="https://www.blockchaingamer.biz/news/38193/eliza-labs-ai-agent-platform-auto-fun" target="_blank" rel="noopener"><span>Launch your own AI agent via auto.fun</span><span class="mono">BlockchainGamer.biz ↗</span></a></li>
-          <li><a href="https://forklog.com/en/eliza-labs-unveils-platform-for-launching-ai-agents" target="_blank" rel="noopener"><span>Eliza Labs unveils platform for launching AI agents</span><span class="mono">ForkLog ↗</span></a></li>
+          <li><a href="https://www.theblock.co/news/ecosystems/2025-04-17-eliza-labs-auto-fun-ai-agent-launchpad-fairer-than-fair-tokenomics-351017" target="_blank" rel="noopener"><span>Eliza Labs unveils auto.fun, a no-code AI agent launchpad</span><span class="mono">The Block · Apr 2025 ↗</span></a></li>
+          <li><a href="https://cointelegraph.com/news/ai16z-s-eliza-labs-launches-ai-powered-pump-fun-alternative-auto-fun" target="_blank" rel="noopener"><span>ai16z’s Eliza Labs launches AI-powered pump.fun alternative</span><span class="mono">Cointelegraph ↗</span></a></li>
+          <li><a href="https://thedefiant.io/news/nfts-and-web3/eliza-labs-ai16z-launches-ai-agent-platform" target="_blank" rel="noopener"><span>Eliza Labs launches AI agent platform</span><span class="mono">The Defiant ↗</span></a></li>
+          <li><a href="https://forklog.com/en/eliza-labs-unveils-platform-for-launching-ai-agents" target="_blank" rel="noopener"><span>Eliza Labs unveils platform for launching AI agents</span><span class="mono">ForkLog · Apr 2025 ↗</span></a></li>
+          <li><a href="http://web.archive.org/web/20250808210856/https://auto.fun/how-it-works" target="_blank" rel="noopener"><span>How it works</span><span class="mono">auto.fun FAQ (archived) ↗</span></a></li>
+          <li><a href="http://web.archive.org/web/20250808193048/https://auto.fun/fees" target="_blank" rel="noopener"><span>Fees</span><span class="mono">auto.fun (archived) ↗</span></a></li>
+          <li><a href="https://github.com/neamm/auto.fun" target="_blank" rel="noopener"><span>Open-source code and contributors</span><span class="mono">GitHub mirror ↗</span></a></li>
+          <li><a href="https://www.theblock.co/press-releases/367687/openserv-names-joey-kheireddine-head-of-blockchain-joining-from-eliza-labs-formerly-ai16z" target="_blank" rel="noopener"><span>“He worked on the open-source token launchpad auto.fun”</span><span class="mono">Chainwire · Aug 2025 ↗</span></a></li>
         </ul>
       </div>
     </section>
 
     <nav class="case__next section" aria-label="Next case study">
       <span class="mono">Next case study</span>
-      <a class="serif" href="fluf-world.html">FLUF World &amp; <em>The Root Network</em> <span aria-hidden="true">→</span></a>
+      <a class="serif" href="fluf-world.html">FLUF World &amp; <em>its collections</em> <span aria-hidden="true">→</span></a>
     </nav>
   </main>
 
