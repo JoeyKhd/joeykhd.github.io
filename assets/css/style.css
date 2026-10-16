@@ -319,6 +319,15 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
 .js .manifesto__text .word { opacity: 0.16; }
 .js .manifesto__text .word.is-on { opacity: 1; }
 
+/* ---------- Plates beside text (About, Press) ---------- */
+.plate { margin: 0; }
+.plate__img { aspect-ratio: 4 / 5; overflow: hidden; background: var(--plate); border: 1px solid var(--line); border-radius: 2px; }
+.plate__img img { width: 100%; height: 100%; object-fit: cover; }
+.plate figcaption { display: flex; justify-content: space-between; gap: 12px; margin-top: 10px; color: var(--muted); font-size: 0.625rem; }
+.manifesto__body, .press__lead { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); align-items: start; }
+.manifesto__body .manifesto__text, .press__lead .quote--lead { grid-column: 1 / 9; }
+.manifesto__body .plate, .press__lead .plate { grid-column: 9 / 13; }
+
 /* ---------- AI × Web3 ---------- */
 .focus__grid { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: clamp(24px, 3vw, 48px); align-items: start; }
 .discipline { display: grid; gap: 22px; padding-top: 22px; border-top: 1px solid var(--line-strong); }
@@ -546,6 +555,8 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
   .hero__foot { grid-row: 5; display: grid; grid-template-columns: 1fr; gap: 24px; }
   .hero__intro, .hero__facts { grid-column: 1 / -1; }
 
+  .manifesto__body .manifesto__text, .press__lead .quote--lead { grid-column: 1 / -1; }
+  .manifesto__body .plate, .press__lead .plate { grid-column: 4 / -1; margin-top: 40px; }
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .stat { min-height: 200px; gap: 24px; }
 
@@ -595,7 +606,7 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
   html, body { background: #fff !important; color: #111; font-size: 10pt; }
   .loader, .progress, .cursor, .grain, .nav, .skip, .marquee, .hero__portrait, .hero__scroll, .hero__meta,
   .chain__aside, .chain__controls, .chain__hint, .block__fig, .block__hash, .block__status, .block + .block::before,
-  .contact__bg, .contact__links, .contact::after, .footer, .stat::before { display: none !important; }
+  .contact__bg, .contact__links, .contact::after, .footer, .stat::before, .plate { display: none !important; }
   .js [data-reveal], .js .hero__line .char, .js .hero__kicker, .js .hero__foot, .js .manifesto__text .word { opacity: 1 !important; transform: none !important; }
   .section { padding: 0; margin-top: 18pt; }
   .section__head { margin-bottom: 8pt; padding-bottom: 4pt; }
