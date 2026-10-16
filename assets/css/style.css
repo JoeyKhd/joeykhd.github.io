@@ -198,13 +198,13 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
 .nav__links a.is-active .mono { color: var(--signal); }
 .nav__end { justify-self: end; display: inline-flex; align-items: center; gap: 20px; }
 .nav__status { display: inline-flex; align-items: center; gap: 10px; color: var(--fg-dim); }
-.btn--sm { height: 36px; padding: 0 16px; }
+.btn.btn--sm { height: 36px; padding: 0 16px; }
 .pulse { position: relative; width: 8px; height: 8px; border-radius: 50%; background: var(--signal); }
 .pulse::after { content: ""; position: absolute; inset: -4px; border-radius: 50%; border: 1px solid var(--signal); animation: pulse 2s var(--ease-out) infinite; }
 @keyframes pulse { from { transform: scale(0.4); opacity: 1; } to { transform: scale(1.6); opacity: 0; } }
 
 /* ---------- Mobile / tablet menu ---------- */
-.menu-toggle { display: none; }
+.btn.menu-toggle { display: none; }
 html.menu-open, html.menu-open body { overflow: hidden; }
 .menu {
   position: fixed; inset: 0; z-index: 160; display: flex; flex-direction: column; gap: 32px; overflow-y: auto;
@@ -228,6 +228,7 @@ html.menu-open, html.menu-open body { overflow: hidden; }
 .menu__links a:hover { color: var(--signal); font-style: italic; }
 .menu__foot { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: auto; color: var(--fg-dim); }
 .menu__foot a { text-transform: none; }
+.menu__foot [data-mail-label] { font-family: var(--f-mono); font-size: inherit; letter-spacing: inherit; }
 .menu__foot a:hover { color: var(--signal); }
 
 /* ---------- Layout primitives ---------- */
@@ -528,15 +529,18 @@ html.menu-open, html.menu-open body { overflow: hidden; }
 .stack__bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; margin: calc(-1 * clamp(24px, 4vw, 56px)) 0 clamp(40px, 5vw, 64px); }
 .stack__hint { color: var(--muted); }
 .used { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+/* Tooltips only exist while shown, so hidden ones can never widen the page on phones */
+.stack { overflow-x: clip; }
 .stack [data-used] { position: relative; cursor: help; }
-.stack [data-used]::before {
+.stack [data-used]:hover::before, .stack [data-used].is-tip::before {
   content: attr(data-used); position: absolute; left: 0; bottom: calc(100% + 8px); z-index: 20;
-  width: max-content; max-width: 280px; padding: 7px 10px; border-radius: 4px;
+  width: max-content; max-width: min(280px, calc(100vw - 2 * var(--gutter))); padding: 7px 10px; border-radius: 4px;
   background: var(--fg); color: var(--bg); font: 400 10px/1.45 var(--f-mono); letter-spacing: 0.05em; text-transform: uppercase; font-style: normal;
-  opacity: 0; transform: translateY(4px); pointer-events: none; transition: opacity 0.2s, transform 0.2s;
+  pointer-events: none; animation: tip-in 0.2s var(--ease-out);
 }
-.stack [data-used]:hover::before, .stack [data-used].is-tip::before { opacity: 1; transform: none; }
-.stack--detail [data-used]::before { display: none; }
+.stack [data-used].tip-right:hover::before, .stack [data-used].tip-right.is-tip::before { left: auto; right: 0; }
+.stack--detail [data-used]:hover::before, .stack--detail [data-used].is-tip::before { content: none; }
+@keyframes tip-in { from { opacity: 0; transform: translateY(4px); } }
 .stack--detail .used {
   position: static; width: auto; height: auto; overflow: visible; clip-path: none; white-space: normal; display: block;
   margin-top: 4px; font: 400 10px/1.4 var(--f-mono); letter-spacing: 0.04em; text-transform: uppercase; font-style: normal; color: var(--signal);
@@ -596,7 +600,7 @@ html.menu-open, html.menu-open body { overflow: hidden; }
 
 @media (max-width: 1100px) {
   .nav__links { display: none; }
-  .js .menu-toggle { display: inline-flex; }
+  .js .btn.menu-toggle { display: inline-flex; }
   .nav { grid-template-columns: 1fr auto; }
   .focus__grid { grid-template-columns: 1fr; }
   .focus__x { justify-self: center; padding: 0; font-size: 96px; line-height: 0.6; }

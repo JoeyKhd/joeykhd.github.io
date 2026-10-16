@@ -254,9 +254,14 @@ function initStackUsage() {
     li.append(note);
   });
 
+  // Flip the tooltip to the left when it would run off the right edge.
+  const place = (li) => li.classList.toggle('tip-right', li.getBoundingClientRect().left + 290 > document.documentElement.clientWidth);
+  stack.addEventListener('pointerover', (e) => { const li = e.target.closest('[data-used]'); if (li) place(li); });
+
   // Touch has no hover: a tap pins the note.
   stack.addEventListener('click', (e) => {
     const li = e.target.closest('[data-used]');
+    if (li) place(li);
     $$('.is-tip', stack).forEach((x) => { if (x !== li) x.classList.remove('is-tip'); });
     li?.classList.toggle('is-tip');
   });
