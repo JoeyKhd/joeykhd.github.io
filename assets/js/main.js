@@ -227,6 +227,18 @@ function initChrome() {
   $('[data-print]')?.addEventListener('click', () => window.print());
 }
 
+/* ---------- Email: assembled at runtime so the address isn't in the HTML ---------- */
+function initMail() {
+  $$('[data-mail]').forEach((a) => {
+    const [user, domain] = a.dataset.mail.split('|');
+    const address = `${user}@${domain}`;
+    a.href = `mailto:${address}`;
+    a.setAttribute('aria-label', `Email ${address}`);
+    const label = $('[data-mail-label]', a);
+    if (label) label.textContent = address;
+  });
+}
+
 /* ---------- Cursor + magnetic buttons ---------- */
 function initCursor() {
   if (!finePointer || reduceMotion) return;
@@ -623,6 +635,7 @@ initTheme();
 splitHeroTitle();
 runLoader();
 initChrome();
+initMail();
 initReveals();
 initManifesto();
 initCursor();

@@ -49,8 +49,9 @@ The absolute URLs (canonical, Open Graph, JSON-LD) live in the `<head>` of `inde
 
 ## Privacy
 
-The site deliberately publishes no phone number, email or address. Contact goes through
-LinkedIn and GitHub. Source documents live in `docs/`, which is git-ignored and never pushed.
+The site publishes no phone number or address. Contact goes through email, LinkedIn and
+GitHub; the email address is assembled at runtime (`data-mail`) so it never appears in the
+HTML source for scrapers. Source documents live in `docs/`, which is git-ignored and never pushed.
 Image metadata was stripped when the images were re-encoded.
 
 ## Credits
