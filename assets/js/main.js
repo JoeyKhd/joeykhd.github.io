@@ -270,6 +270,50 @@ function initStackUsage() {
   });
 }
 
+/* ---------- Tightening: compact older roles, collapse very long chip lists ---------- */
+function setBlockOpen(block, open) {
+  block.classList.toggle('is-open', open);
+  const btn = $('.block__more', block);
+  if (btn) {
+    btn.setAttribute('aria-expanded', String(open));
+    btn.textContent = open ? 'Hide details' : 'Show details';
+  }
+}
+
+function initCompactBlocks() {
+  $$('.block--compact').forEach((b) => {
+    $('.block__more', b)?.addEventListener('click', () => setBlockOpen(b, !b.classList.contains('is-open')));
+  });
+}
+
+function setChipsOpen(ul, btn, open) {
+  ul.classList.toggle('chips--open', open);
+  btn.setAttribute('aria-expanded', String(open));
+  btn.textContent = open ? 'Show fewer' : `+${$$('.is-extra', ul).length} more`;
+}
+
+function initChipsMore() {
+  const LIMIT = 10;
+  $$('.stack .chips').forEach((ul) => {
+    const items = $$('li', ul);
+    if (items.length - LIMIT < 3) return; // never hide just one or two
+    items.slice(LIMIT).forEach((li) => li.classList.add('is-extra'));
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'chips__more mono';
+    ul.after(btn);
+    setChipsOpen(ul, btn, false);
+    btn.addEventListener('click', () => setChipsOpen(ul, btn, !ul.classList.contains('chips--open')));
+  });
+  // "Show where each skill shipped" reveals everything
+  $('.stack')?.addEventListener('stackdetail', (e) => {
+    $$('.stack .chips').forEach((ul) => {
+      const btn = ul.nextElementSibling;
+      if (btn?.classList.contains('chips__more')) setChipsOpen(ul, btn, e.detail);
+    });
+  });
+}
+
 /* ---------- Email: assembled at runtime so the address isn't in the HTML ---------- */
 function initMail() {
   $$('[data-mail]').forEach((a) => {
@@ -456,6 +500,7 @@ function initChain() {
     tamperBtn.textContent = tampering ? 'Stop tampering' : 'Tamper with history';
     hint.hidden = !tampering;
     setEditable(tampering);
+    if (tampering) $$('.block--compact').forEach((b) => setBlockOpen(b, true));
     chain.forEach((b) => { if (!b.shown) { paint(b); setStatus(b, 'is-valid', 'Verified'); b.shown = true; } });
     if (tampering) editable[editable.length - 1]?.focus();
   });
@@ -680,6 +725,8 @@ runLoader();
 initChrome();
 initMail();
 initStackUsage();
+initChipsMore();
+initCompactBlocks();
 initReveals();
 initManifesto();
 initCursor();
