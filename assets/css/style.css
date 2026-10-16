@@ -327,8 +327,8 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
 .block__list { margin-top: 20px; display: grid; gap: 10px; color: var(--paper-dim); }
 .block__list li { position: relative; padding-left: 22px; max-width: 64ch; }
 .block__list li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 10px; height: 1px; background: var(--signal); }
-.block__list li[contenteditable="true"] { outline: 1px dashed var(--line-strong); outline-offset: 4px; border-radius: 2px; cursor: text; color: var(--paper); }
-.block__list li[contenteditable="true"]:focus { outline-color: var(--signal); }
+.block__list li[contenteditable] { outline: 1px dashed var(--line-strong); outline-offset: 4px; border-radius: 2px; cursor: text; color: var(--paper); }
+.block__list li[contenteditable]:focus { outline-color: var(--signal); }
 
 .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
 .tags li { padding: 5px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--paper-dim); font-size: 0.6875rem; }
