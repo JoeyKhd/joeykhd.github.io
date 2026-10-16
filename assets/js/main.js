@@ -14,26 +14,27 @@ const randomHex = (n) => Array.from({ length: n }, () => ((Math.random() * 16) |
 const wait = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const store = {
-  get(k) { try { return sessionStorage.getItem(k); } catch { return null; } },
-  set(k, v) { try { sessionStorage.setItem(k, v); } catch { /* storage unavailable */ } },
+  get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+  set(k, v) { try { localStorage.setItem(k, v); } catch { /* storage unavailable */ } },
 };
 
 /* ---------- Loader ---------- */
 function runLoader() {
   const finish = () => { root.classList.add('is-loaded'); store.set('jk-mined', '1'); };
-  if (reduceMotion || store.get('jk-mined')) { finish(); return; }
+  // The mining intro plays once per visitor; returning visitors (and reduced motion) skip it.
+  if (reduceMotion || store.get('jk-mined') || !$('.loader')) { finish(); return; }
 
   const hashEl = $('[data-loader-hash]');
   const nonceEl = $('[data-loader-nonce]');
-  const fonts = Promise.race([document.fonts ? document.fonts.ready : Promise.resolve(), wait(2400)]);
+  const fonts = Promise.race([document.fonts ? document.fonts.ready : Promise.resolve(), wait(600)]);
   const start = performance.now();
   let nonce = 0;
   let done = false;
 
-  fonts.then(() => wait(Math.max(0, 1150 - (performance.now() - start)))).then(() => {
+  fonts.then(() => wait(Math.max(0, 450 - (performance.now() - start)))).then(() => {
     done = true;
     hashEl.innerHTML = `0x<b>0000</b>${randomHex(12)}`;
-    setTimeout(finish, 420);
+    setTimeout(finish, 220);
   });
 
   const tick = () => {

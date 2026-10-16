@@ -56,5 +56,5 @@ Image metadata was stripped when the images were re-encoded.
 
 ## Credits
 
-Type: Instrument Serif, Geist and Geist Mono (Google Fonts, OFL).
+Type: Instrument Serif, Geist and Geist Mono, self-hosted from `assets/fonts/` under the SIL Open Font License 1.1.
 Era illustrations were generated with Higgsfield.
