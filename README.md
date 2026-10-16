@@ -14,7 +14,7 @@ blocks break until you re-mine the chain.
 
 Other details:
 
-- Three case studies in `work/` (OpenServ launchpad, Auto.fun, FLUF World & The Root Network), each with linked sources
+- Case studies in `work/` (Auto.fun, FLUF World and its collections), each with linked sources
 - An ordered-dither (Bayer 8×8) WebGL portrait, with a true-colour lens that follows the cursor
 - Light and dark themes (system default, remembered toggle) with matching patent-plate illustrations
 - A scroll-scrubbed manifesto, count-up impact stats, and a sticky "current block" aside with era illustrations
