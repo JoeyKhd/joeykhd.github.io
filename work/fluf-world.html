@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FLUF World &amp; The Root Network — Case study · Joey Kheireddine</title>
+  <meta name="description" content="Case study: Joey Kheireddine as CTO of Non-Fungible Labs — the smart contracts behind FLUF World’s ERC-721 collections, and development on The Root Network.">
+  <meta name="theme-color" content="#0a0a0b" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#efebe2" media="(prefers-color-scheme: light)">
+  <meta name="color-scheme" content="dark light">
+
+  <link rel="canonical" href="https://joeykhd.github.io/work/fluf-world.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="FLUF World &amp; The Root Network — case study by Joey Kheireddine">
+  <meta property="og:description" content="Case study: Joey Kheireddine as CTO of Non-Fungible Labs — the smart contracts behind FLUF World’s ERC-721 collections, and development on The Root Network.">
+  <meta property="og:url" content="https://joeykhd.github.io/work/fluf-world.html">
+  <meta property="og:image" content="https://joeykhd.github.io/assets/img/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="preload" href="../assets/fonts/instrument-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.replace('no-js', 'js');
+      try { var t = localStorage.getItem('jk-theme'); if (t === 'light' || t === 'dark') d.dataset.theme = t; } catch (e) {}
+    })();
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "FLUF World & The Root Network",
+  "description": "Case study: Joey Kheireddine as CTO of Non-Fungible Labs — the smart contracts behind FLUF World’s ERC-721 collections, and development on The Root Network.",
+  "url": "https://joeykhd.github.io/work/fluf-world.html",
+  "image": "https://joeykhd.github.io/assets/img/era-03-light.webp",
+  "author": {
+    "@type": "Person",
+    "name": "Joey Kheireddine",
+    "url": "https://joeykhd.github.io/"
+  }
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="progress" aria-hidden="true"><span></span></div>
+  <div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="nav__brand" href="../" aria-label="Joey Kheireddine — home">
+      <span class="nav__mark">JK</span>
+      <span class="nav__name">Joey Kheireddine</span>
+    </a>
+    <nav class="nav__links" aria-label="Case studies">
+      <a href="openserv-launchpad.html"><span class="mono">01</span> OpenServ</a>
+      <a href="auto-fun.html"><span class="mono">02</span> Auto.fun</a>
+      <a href="fluf-world.html" class="is-active" aria-current="page"><span class="mono">03</span> FLUF World</a>
+    </nav>
+    <div class="nav__end">
+      <button class="btn btn--icon theme-toggle magnetic" type="button" data-theme-toggle data-current="dark" aria-label="Switch to light theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 2.5v2.25M12 19.25v2.25M2.5 12h2.25M19.25 12h2.25M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 14.6A7.75 7.75 0 0 1 9.4 4.5a7.75 7.75 0 1 0 10.1 10.1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      </button>
+      <a class="btn btn--solid btn--sm mono magnetic" href="../#contact">Let’s talk</a>
+    </div>
+  </header>
+
+  <main id="main" class="case">
+    <header class="case__hero" id="top">
+      <div class="case__crumbs mono"><a href="../#chain">← Back to the chain</a><span>Case study 03 / 03</span></div>
+      <div class="case__intro">
+        <p class="case__kicker mono">Non-Fungible Labs · 2021 — 2023</p>
+        <h1 class="case__title serif">FLUF World &amp; <em>The Root Network</em></h1>
+        <p class="case__lede serif">From sold-out Ethereum collections to a purpose-built layer 1 — the technical backbone of one of the early NFT ecosystems.</p>
+        <dl class="case__facts mono">
+          <div><dt>Role</dt><dd>Chief Technology Officer</dd></div>
+          <div><dt>When</dt><dd>Aug 2021 — May 2023</dd></div>
+          <div><dt>Chains</dt><dd>Ethereum · The Root Network</dd></div>
+          <div><dt>Built with</dt><dd>Solidity · ERC-721 · Merkle proofs · ECDSA · Substrate · Rust · Polkadot.js · XRPL</dd></div>
+        </dl>
+      </div>
+      <figure class="plate case__plate">
+        <div class="plate__img"><picture><source srcset="../assets/img/era-03-light.webp" media="(prefers-color-scheme: light)" data-theme-light><img src="../assets/img/era-03-dark.webp" alt="" width="800" height="1000"></picture></div>
+        <figcaption class="mono"><span>Fig. 03</span><span>Collectible minting press</span></figcaption>
+      </figure>
+    </header>
+
+    <section class="case__section section" aria-labelledby="s1">
+      <header class="section__head">
+        <span class="mono section__index">(01)</span>
+        <h2 class="mono section__label" id="s1">Context</h2>
+      </header>
+      <div class="case__body">
+        <p data-reveal>FLUF World launched in August 2021 with 10,000 Flufs — ERC-721 collectibles on Ethereum that sold out in 40 minutes — and grew into an ecosystem: Party Bears, Burrows, Scenes &amp; Sounds, Buzzies and more.</p>
+        <p data-reveal>I joined Non-Fungible Labs as CTO that same month and led engineering through the company’s merger into Futureverse in December 2022.</p>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s2">
+      <header class="section__head">
+        <span class="mono section__index">(02)</span>
+        <h2 class="mono section__label" id="s2">The challenge</h2>
+      </header>
+      <div class="case__body">
+        <p data-reveal>Every drop was a one-shot, high-stakes event: thousands of collectors hitting a contract in the same minutes, high-value airdrops to existing holders, and gas costs that made even small interactions — like renaming an NFT — painful. And Ethereum alone couldn’t carry the ecosystem’s ambitions.</p>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s3">
+      <header class="section__head">
+        <span class="mono section__index">(03)</span>
+        <h2 class="mono section__label" id="s3">What I did</h2>
+      </header>
+      <div class="case__body">
+        <ul class="case__list" data-reveal>
+          <li>Shipped the smart contracts behind dozens of ERC-721 mints: $50M+ in revenue, 30K+ international customers and 65K+ ETH of OpenSea volume.</li>
+          <li>Distributed high-value airdrops to thousands of holders with Merkle proofs, and used ECDSA signatures for gas-free interactions such as renaming.</li>
+          <li>Built custom Discord bots to take third-party bot risk out of the community.</li>
+          <li>Recruited, mentored and led a team of 20+ Web3 developers.</li>
+          <li>Led development on The Root Network, the Substrate-based layer 1 with native EVM that FLUF World architected in partnership with Ripple.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s4">
+      <header class="section__head">
+        <span class="mono section__index">(04)</span>
+        <h2 class="mono section__label" id="s4">How it fits together</h2>
+      </header>
+      <div class="case__body">
+        <ol class="flow" data-reveal>
+          <li><span class="mono flow__n">01</span><strong class="serif">Mint</strong><span>ERC-721 collections on Ethereum.</span></li>
+          <li><span class="mono flow__n">02</span><strong class="serif">Airdrop</strong><span>Holders claim with Merkle proofs.</span></li>
+          <li><span class="mono flow__n">03</span><strong class="serif">Sign</strong><span>ECDSA signatures make interactions like renaming gas-free.</span></li>
+          <li><span class="mono flow__n">04</span><strong class="serif">Scale</strong><span>The Root Network: a Substrate L1 with native EVM and XRP as gas.</span></li>
+          <li><span class="mono flow__n">05</span><strong class="serif">Bridge</strong><span>Links to XRPL and Ethereum, and a JS/TS API on Polkadot.js for developers.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s5">
+      <header class="section__head">
+        <span class="mono section__index">(05)</span>
+        <h2 class="mono section__label" id="s5">Outcome</h2>
+      </header>
+      <div class="case__body">
+        <p data-reveal>By Ripple’s announcement in June 2022, the ecosystem counted 14 collections, 195,000+ NFTs minted and 340,000+ transactions. In December 2022, Non-Fungible Labs joined the eight-company merger that formed Futureverse.</p>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s6">
+      <header class="section__head">
+        <span class="mono section__index">(06)</span>
+        <h2 class="mono section__label" id="s6">Sources</h2>
+      </header>
+      <div class="case__body">
+        <ul class="case__sources" data-reveal>
+          <li><a href="https://ripple.com/ripple-press/ripple-and-fluf-world-announce-partnership-introduce-the-root-network" target="_blank" rel="noopener"><span>Ripple and FLUF World announce partnership, introduce The Root Network</span><span class="mono">Ripple · Jun 2022 ↗</span></a></li>
+          <li><a href="https://www.prnewswire.com/news-releases/futureverse-announces-merger-of-eight-web3-companies-with-united-goal-of-creating-an-open-metaverse-ecosystem-301704394.html" target="_blank" rel="noopener"><span>Futureverse announces merger of eight Web3 companies</span><span class="mono">PR Newswire · Dec 2022 ↗</span></a></li>
+          <li><a href="https://iq.wiki/wiki/fluf-world" target="_blank" rel="noopener"><span>FLUF World</span><span class="mono">IQ.wiki ↗</span></a></li>
+          <li><a href="https://opensea.io/collection/fluf" target="_blank" rel="noopener"><span>FLUF collection</span><span class="mono">OpenSea ↗</span></a></li>
+          <li><a href="https://docs.therootnetwork.com/intro" target="_blank" rel="noopener"><span>The Root Network documentation</span><span class="mono">The Root Network ↗</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <nav class="case__next section" aria-label="Next case study">
+      <span class="mono">Next case study</span>
+      <a class="serif" href="openserv-launchpad.html">The OpenServ <em>launchpad</em> <span aria-hidden="true">→</span></a>
+    </nav>
+  </main>
+
+  <footer class="footer mono">
+    <span>© 2026 Joey Kheireddine</span>
+    <span class="hide-sm">Case study 03 of 03 · sources linked above</span>
+    <span class="footer__actions">
+      <a href="../assets/joey-kheireddine-cv.pdf" download>Download CV (PDF)</a>
+      <a href="#top">Back to top ↑</a>
+    </span>
+  </footer>
+
+  <script src="../assets/vendor/lenis/lenis.min.js" defer></script>
+  <script src="../assets/js/main.js" type="module"></script>
+</body>
+</html>
