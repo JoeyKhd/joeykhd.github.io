@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Betcha — Case study · Joey Kheireddine</title>
+  <meta name="description" content="Case study: Joey Kheireddine at Betcha — the CRM and high-throughput back end of a real-money fantasy sports app, from soft launch to its acquisition by Vivid Seats.">
+  <meta name="theme-color" content="#0a0a0b" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#efebe2" media="(prefers-color-scheme: light)">
+  <meta name="color-scheme" content="dark light">
+
+  <link rel="canonical" href="https://joeykhd.github.io/work/betcha.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Betcha — case study by Joey Kheireddine">
+  <meta property="og:description" content="Case study: Joey Kheireddine at Betcha — the CRM and high-throughput back end of a real-money fantasy sports app, from soft launch to its acquisition by Vivid Seats.">
+  <meta property="og:url" content="https://joeykhd.github.io/work/betcha.html">
+  <meta property="og:image" content="https://joeykhd.github.io/assets/img/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="preload" href="../assets/fonts/instrument-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.replace('no-js', 'js');
+      try { var t = localStorage.getItem('jk-theme'); if (t === 'light' || t === 'dark') d.dataset.theme = t; } catch (e) {}
+    })();
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Betcha: fantasy sports, real money",
+  "description": "Case study: Joey Kheireddine at Betcha — the CRM and high-throughput back end of a real-money fantasy sports app, from soft launch to its acquisition by Vivid Seats.",
+  "url": "https://joeykhd.github.io/work/betcha.html",
+  "image": "https://joeykhd.github.io/assets/img/case-betcha-light.webp",
+  "author": {
+    "@type": "Person",
+    "name": "Joey Kheireddine",
+    "url": "https://joeykhd.github.io/"
+  }
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="progress" aria-hidden="true"><span></span></div>
+  <div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav nav--case">
+    <a class="nav__brand" href="../" aria-label="Joey Kheireddine — home">
+      <span class="nav__mark">JK</span>
+      <span class="nav__name">Joey Kheireddine</span>
+    </a>
+    <nav class="nav__links" aria-label="Case studies">
+      <a href="avatars-global.html"><span class="mono">07</span> Avatars</a>
+      <a href="openserv.html"><span class="mono">06</span> OpenServ</a>
+      <a href="auto-fun.html"><span class="mono">05</span> Auto.fun</a>
+      <a href="walker-world.html"><span class="mono">04</span> Walker</a>
+      <a href="fluf-world.html"><span class="mono">03</span> FLUF</a>
+      <a href="betcha.html" class="is-active" aria-current="page"><span class="mono">02</span> Betcha</a>
+      <a href="fusion.html"><span class="mono">01</span> FUSION</a>
+    </nav>
+    <div class="nav__end">
+      <button class="btn btn--icon theme-toggle magnetic" type="button" data-theme-toggle data-current="dark" aria-label="Switch to light theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 2.5v2.25M12 19.25v2.25M2.5 12h2.25M19.25 12h2.25M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 14.6A7.75 7.75 0 0 1 9.4 4.5a7.75 7.75 0 1 0 10.1 10.1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      </button>
+      <a class="btn btn--solid btn--sm mono magnetic" href="../#contact">Let’s talk</a>
+      <button class="btn btn--ghost btn--sm mono menu-toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>Menu</button>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Case studies" data-lenis-prevent hidden>
+    <div class="menu__top mono">
+      <span>Case studies</span>
+      <button class="menu__close mono" type="button" data-menu-close>Close <span aria-hidden="true">✕</span></button>
+    </div>
+    <nav class="menu__links" aria-label="Case studies">
+        <a href="../" style="--i: 0"><span class="mono">←</span>Home</a>
+        <a href="avatars-global.html" style="--i: 1"><span class="mono">07</span>Avatars Global</a>
+        <a href="openserv.html" style="--i: 2"><span class="mono">06</span>OpenServ</a>
+        <a href="auto-fun.html" style="--i: 3"><span class="mono">05</span>Auto.fun</a>
+        <a href="walker-world.html" style="--i: 4"><span class="mono">04</span>Walker World</a>
+        <a href="fluf-world.html" style="--i: 5"><span class="mono">03</span>FLUF World</a>
+        <a href="betcha.html" aria-current="page" style="--i: 6"><span class="mono">02</span>Betcha</a>
+        <a href="fusion.html" style="--i: 7"><span class="mono">01</span>FUSION</a>
+    </nav>
+    <div class="menu__foot mono">
+      <a href="../#contact" data-mail="joey|a1g.io"><span data-mail-label>joey [at] a1g.io</span></a>
+      <a href="https://www.linkedin.com/in/joey-kheireddine/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/joeykhd" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="../assets/joey-kheireddine-cv.pdf" download>Download CV ↓</a>
+    </div>
+  </div>
+
+  <main id="main" class="case">
+    <header class="case__hero" id="top">
+      <div class="case__crumbs mono"><a href="../#work">← All case studies</a><span>Case study 06 / 07 · Block 02</span></div>
+      <div class="case__intro">
+        <p class="case__kicker mono">Betcha · 2020 — 2021</p>
+        <h1 class="case__title serif">Fantasy sports, <em>real money</em></h1>
+        <p class="case__lede serif">The back office and back end of a real-money fantasy sports app — from four months before launch to the month Vivid Seats bought it for up to $65M.</p>
+        <dl class="case__facts mono">
+          <div><dt>Role</dt><dd>Enterprise System Engineer</dd></div>
+          <div><dt>When</dt><dd>April 2020 — December 2021</dd></div>
+          <div><dt>Company</dt><dd>New York · acquired by Vivid Seats (NASDAQ: SEAT)</dd></div>
+          <div><dt>Built with</dt><dd>React · Node.js · MongoDB · REST APIs · sports-data feeds</dd></div>
+        </dl>
+      </div>
+      <figure class="plate case__plate">
+        <div class="plate__img"><picture><source srcset="../assets/img/case-betcha-light.webp" media="(prefers-color-scheme: light)" data-theme-light><img src="../assets/img/case-betcha-dark.webp" alt="Patent-style drawing of a cabinet with blank split-flap tiles, a ticker-tape printer feeding a curling paper strip and an open card-index drawer, with an American football resting on top." width="800" height="1000"></picture></div>
+        <figcaption class="mono"><span>Fig. 02</span><span>Odds and records machine</span></figcaption>
+      </figure>
+    </header>
+
+    <section class="case__section section" aria-labelledby="s1">
+      <header class="section__head">
+        <span class="mono section__index">(01)</span>
+        <h2 class="mono section__label" id="s1">Context</h2>
+      </header>
+      <div class="case__body">
+        <p data-reveal>Betcha was a real-money daily fantasy sports app built on player props: pick over or under on individual players, play against the house, and bring up to five friends into a game for bigger payouts. It soft-launched in August 2020 in 20 states and DC, on technology it built entirely in-house — down to its own player-account and compliance system.</p>
+        <p data-reveal>I joined in April 2020, four months before launch. Its co-founder and CTO had been FUSION’s CTO while I was there.</p>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s2">
+      <header class="section__head">
+        <span class="mono section__index">(02)</span>
+        <h2 class="mono section__label" id="s2">The challenge</h2>
+      </header>
+      <div class="case__body">
+        <p data-reveal>A small New York team with about $6M raised was launching mid-pandemic into a market led by DraftKings, FanDuel and PrizePicks, under state-by-state rules, and growing mostly through referrals — which piles traffic into the minutes before kick-off. It needed back-office systems to run customers, matches and odds, and a back end that held up at peak slate while staying in sync with live sports data.</p>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s3">
+      <header class="section__head">
+        <span class="mono section__index">(03)</span>
+        <h2 class="mono section__label" id="s3">What I did</h2>
+      </header>
+      <div class="case__body">
+        <ul class="case__list" data-reveal>
+          <li>Built a full CRM platform for the operations team — managing customers, matches and odds in one place.</li>
+          <li>Optimised the data flow between the platform and its sports-data providers, so slates and settlement kept pace with live stats.</li>
+          <li>Reworked back-end services for high throughput across 250K+ users and their game-day peaks.</li>
+          <li>Stayed through Vivid Seats’ acquisition of Betcha in December 2021.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s4">
+      <header class="section__head">
+        <span class="mono section__index">(04)</span>
+        <h2 class="mono section__label" id="s4">How it works</h2>
+      </header>
+      <div class="case__body">
+        <ol class="flow" data-reveal>
+          <li><span class="mono flow__n">01</span><strong class="serif">Onboard</strong><span>Sign-up, identity, age and state checks run through Betcha’s own player-account system.</span></li>
+          <li><span class="mono flow__n">02</span><strong class="serif">Pick</strong><span>Players choose over/under props from slates built on live sports-data feeds.</span></li>
+          <li><span class="mono flow__n">03</span><strong class="serif">Play together</strong><span>Each friend in the same game adds +0.1× to the payout, up to five.</span></li>
+          <li><span class="mono flow__n">04</span><strong class="serif">Settle</strong><span>Live stats grade every entry; winners are paid out in cash.</span></li>
+          <li><span class="mono flow__n">05</span><strong class="serif">Operate</strong><span>The CRM runs customers, matches, odds and promotions behind the scenes.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s5">
+      <header class="section__head">
+        <span class="mono section__index">(05)</span>
+        <h2 class="mono section__label" id="s5">Where the data flows</h2>
+      </header>
+      <div class="case__body">
+        <figure class="curve" data-reveal>
+          <div class="curve-scroll">
+            <svg viewBox="0 0 800 344" role="img" aria-labelledby="bt-t bt-d">
+              <title id="bt-t">Betcha platform data flow, schematic</title>
+              <desc id="bt-d">Sports-data providers feed an ingestion layer that normalises live stats and schedules. It feeds the props and odds that the app shows, and the settlement that grades entries and pays out. The CRM, which Joey built, manages matches and odds and the customers in the app.</desc>
+              <defs>
+                <marker id="bt-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="c-arrow"/></marker>
+                <marker id="bt-arr-sig" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="c-arrow-sig"/></marker>
+              </defs>
+              <rect x="20" y="56" width="170" height="64" rx="4" class="c-box"/>
+              <text x="36" y="84" class="c-strong">SPORTS-DATA FEEDS</text>
+              <text x="36" y="104">STATS · SCHEDULES</text>
+              <rect x="240" y="56" width="170" height="64" rx="4" class="c-box"/>
+              <text x="256" y="84" class="c-strong">INGEST</text>
+              <text x="256" y="104">NORMALISE, IN SYNC</text>
+              <rect x="460" y="56" width="170" height="64" rx="4" class="c-box"/>
+              <text x="476" y="84" class="c-strong">PROPS &amp; ODDS</text>
+              <text x="476" y="104">OVER / UNDER SLATES</text>
+              <rect x="670" y="56" width="120" height="64" rx="4" class="c-box"/>
+              <text x="686" y="84" class="c-strong">APP</text>
+              <text x="686" y="104">IOS · ANDROID</text>
+              <rect x="240" y="200" width="170" height="64" rx="4" class="c-box"/>
+              <text x="256" y="228" class="c-strong">SETTLE &amp; PAY</text>
+              <text x="256" y="248">GRADE EVERY ENTRY</text>
+              <rect x="460" y="200" width="170" height="64" rx="4" class="c-box-sig"/>
+              <text x="476" y="228" class="c-sig">CRM · BACK OFFICE</text>
+              <text x="476" y="248" class="c-sig">CUSTOMERS · MATCHES</text>
+              <path d="M190,88 H236" class="c-flow" marker-end="url(#bt-arr)"/>
+              <path d="M410,88 H456" class="c-flow" marker-end="url(#bt-arr)"/>
+              <path d="M630,88 H666" class="c-flow" marker-end="url(#bt-arr)"/>
+              <path d="M325,120 V196" class="c-flow" marker-end="url(#bt-arr)"/>
+              <path d="M325,264 V300 H750 V124" class="c-flow" marker-end="url(#bt-arr)"/>
+              <path d="M545,200 V124" class="c-flow-sig" marker-end="url(#bt-arr-sig)"/>
+              <path d="M630,232 H710 V124" class="c-flow-sig" marker-end="url(#bt-arr-sig)"/>
+              <text x="553" y="166" class="c-sig">MATCHES · ODDS</text>
+              <text x="333" y="166">LIVE STATS</text>
+              <text x="20" y="292" class="c-sig">250K+ USERS · GAME-DAY PEAKS</text>
+              <text x="760" y="320" text-anchor="end">PAYOUTS</text>
+            </svg>
+          </div>
+          <figcaption class="mono"><span>Fig. 02b — from live stats to payouts</span><span>Schematic</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s6">
+      <header class="section__head">
+        <span class="mono section__index">(06)</span>
+        <h2 class="mono section__label" id="s6">Outcome</h2>
+      </header>
+      <div class="case__body">
+        <ul class="case__stats" data-reveal style="--cols: 3">
+          <li><strong>Up to $65M</strong><span>Vivid Seats acquisition — $25M up front plus up to $40M in earn-outs</span></li>
+          <li><strong>16 mo</strong><span>from soft launch to acquisition</span></li>
+          <li><strong>20 + DC</strong><span>states where it launched with real-money play</span></li>
+          <li><strong>250K+</strong><span>users on the reworked back end</span></li>
+          <li><strong>80%</strong><span>of users who joined through referrals or word of mouth</span></li>
+          <li><strong>$2.9M</strong><span>of developed technology Vivid Seats booked from the deal</span></li>
+        </ul>
+        <p data-reveal>Vivid Seats closed the acquisition on 13 December 2021, relaunched the app as Vivid Picks in August 2022, and built its Game Center on the same technology in 2023.</p>
+      </div>
+    </section>
+
+    <section class="case__section section" aria-labelledby="s7">
+      <header class="section__head">
+        <span class="mono section__index">(07)</span>
+        <h2 class="mono section__label" id="s7">Sources</h2>
+      </header>
+      <div class="case__body">
+        <ul class="case__sources" data-reveal>
+          <li><a href="https://investors.vividseats.com/news-releases/news-release-details/vivid-seats-announces-acquisition-betcha-sports" target="_blank" rel="noopener"><span>Vivid Seats announces acquisition of Betcha Sports</span><span class="mono">Vivid Seats · Dec 2021 ↗</span></a></li>
+          <li><a href="https://www.sportsbusinessjournal.com/Daily/Issues/2020/08/05/Technology/betcha-app-social-gaming-fantasy-sports" target="_blank" rel="noopener"><span>Betcha prioritizes social gaming in new fantasy sports app</span><span class="mono">Sports Business Journal · Aug 2020 ↗</span></a></li>
+          <li><a href="https://www.sportsbusinessjournal.com/Daily/Morning-Buzz/2021/07/27/Betcha" target="_blank" rel="noopener"><span>DFS platform Betcha raises $4M</span><span class="mono">Sports Business Journal · Jul 2021 ↗</span></a></li>
+          <li><a href="https://www.prnewswire.com/news-releases/fantasygurucom-enters-into-content-partnership-with-sports-gaming-app-betcha-301346997.html" target="_blank" rel="noopener"><span>“100% internally built, owned, and operated technology”</span><span class="mono">PR Newswire · Aug 2021 ↗</span></a></li>
+          <li><a href="https://igamingbusiness.com/strategy/ma/vivid-seats-expands-into-gaming-with-25m-betcha-sports-acquisition" target="_blank" rel="noopener"><span>Vivid Seats expands into gaming with $25M Betcha acquisition</span><span class="mono">iGaming Business · Dec 2021 ↗</span></a></li>
+          <li><a href="https://www.sec.gov/Archives/edgar/data/1856031/000095017024028243/seat-20231231.htm" target="_blank" rel="noopener"><span>Form 10-K: purchase price allocation and Game Center</span><span class="mono">Vivid Seats · SEC ↗</span></a></li>
+          <li><a href="https://investors.vividseats.com/news-releases/news-release-details/vivid-seats-launches-vivid-picks-app-all-new-live-event-and" target="_blank" rel="noopener"><span>Vivid Seats launches the Vivid Picks app</span><span class="mono">Vivid Seats · Aug 2022 ↗</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <nav class="case__next section" aria-label="Next case study">
+      <span class="mono">Next case study · Block 01</span>
+      <a class="serif" href="fusion.html">FUSION — <em>a new chain’s front door</em> <span aria-hidden="true">→</span></a>
+    </nav>
+  </main>
+
+  <footer class="footer mono">
+    <span>© 2026 Joey Kheireddine</span>
+    <span class="hide-sm">Case study 06 of 07 · sources linked above</span>
+    <span class="footer__actions">
+      <a href="../assets/joey-kheireddine-cv.pdf" download>Download CV (PDF)</a>
+      <a href="#top">Back to top ↑</a>
+    </span>
+  </footer>
+
+  <script src="../assets/vendor/lenis/lenis.min.js" defer></script>
+  <script src="../assets/js/main.js" type="module"></script>
+</body>
+</html>
