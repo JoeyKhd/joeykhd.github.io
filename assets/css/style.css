@@ -127,6 +127,13 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
 .skip:focus { top: 12px; }
 .print-only { display: none; }
 
+/* ---------- Smooth scroll (Lenis) ---------- */
+html.lenis, html.lenis body { height: auto; }
+html.lenis { scroll-behavior: auto; } /* Lenis animates the scroll itself */
+.lenis:not(.lenis-autoToggle).lenis-stopped { overflow: clip; }
+.lenis [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-smooth iframe { pointer-events: none; }
+
 /* ---------- Ambient layers ---------- */
 .grain {
   position: fixed; inset: -50%; z-index: 90; pointer-events: none; opacity: var(--grain-opacity); filter: invert(var(--grain-invert));

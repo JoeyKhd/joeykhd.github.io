@@ -336,6 +336,35 @@ function initMail() {
   });
 }
 
+/* ---------- Smooth scroll (Lenis, self-hosted). Native scrolling for reduced motion & touch ---------- */
+let lenis = null;
+
+function initSmoothScroll() {
+  if (reduceMotion || typeof window.Lenis !== 'function') return;
+  lenis = new window.Lenis({ lerp: 0.1, smoothWheel: true, anchors: false, allowNestedScroll: true });
+  const tick = (t) => { lenis.raf(t); raf(tick); };
+  raf(tick);
+
+  // In-page links glide to their section (Lenis honours the CSS scroll-padding for the fixed nav), then move focus there.
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    const hash = a.getAttribute('href');
+    const target = hash.length > 1 ? document.getElementById(decodeURIComponent(hash.slice(1))) : null;
+    if (!target) return;
+    e.preventDefault();
+    history.pushState(null, '', hash);
+    lenis.scrollTo(target, {
+      duration: 1.2,
+      easing: (t) => (t === 1 ? 1 : 1 - 2 ** (-10 * t)),
+      onComplete: () => {
+        if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+      },
+    });
+  });
+}
+
 /* ---------- Mobile / tablet menu ---------- */
 function initMenu() {
   const menu = $('#menu');
@@ -349,6 +378,7 @@ function initMenu() {
     raf(() => raf(() => menu.classList.add('is-open')));
     toggle.setAttribute('aria-expanded', 'true');
     root.classList.add('menu-open');
+    lenis?.stop();
     $('.menu__links a', menu)?.focus({ preventScroll: true });
   };
   const close = (restoreFocus = true) => {
@@ -356,6 +386,7 @@ function initMenu() {
     menu.classList.remove('is-open');
     toggle.setAttribute('aria-expanded', 'false');
     root.classList.remove('menu-open');
+    lenis?.start();
     setTimeout(() => { if (!isOpen()) menu.hidden = true; }, reduceMotion ? 0 : 600);
     if (restoreFocus) lastFocus?.focus?.({ preventScroll: true });
   };
@@ -769,6 +800,7 @@ function initPortrait() {
 
 /* ---------- Boot ---------- */
 initTheme();
+initSmoothScroll();
 splitHeroTitle();
 runLoader();
 initChrome();

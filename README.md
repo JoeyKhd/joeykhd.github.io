@@ -17,6 +17,7 @@ Other details:
 - An ordered-dither (Bayer 8×8) WebGL portrait, with a true-colour lens that follows the cursor
 - A scroll-scrubbed manifesto, count-up impact stats, and a sticky "current block" aside with era illustrations
 - A two-page A4 CV, built from the print stylesheet and offered as **Download CV** (`assets/joey-kheireddine-cv.pdf`)
+- Smooth scrolling with [Lenis](https://github.com/darkroomengineering/lenis) 1.3.26 (self-hosted in `assets/vendor/lenis/`, MIT); native scrolling is kept for reduced motion and touch
 - `prefers-reduced-motion` support, a no-JS fallback, semantic HTML and JSON-LD `Person` schema
 
 ## Structure
