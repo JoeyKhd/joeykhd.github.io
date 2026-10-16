@@ -470,6 +470,7 @@ html.menu-open, html.menu-open body { overflow: hidden; }
 .block__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; color: var(--muted); padding-bottom: 18px; margin-bottom: 22px; border-bottom: 1px dashed var(--line); }
 .block__meta span:first-child { color: var(--signal); }
 .block__domain { padding: 3px 9px; border: 1px solid var(--signal-soft); background: var(--signal-soft); color: var(--signal); border-radius: 999px; font-size: 0.625rem; }
+.block__team { color: var(--fg-dim); cursor: help; }
 .block__status { margin-left: auto; display: inline-flex; align-items: center; gap: 8px; color: var(--muted); }
 .block__status::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
 .block.is-mining .block__status { color: var(--signal); }
