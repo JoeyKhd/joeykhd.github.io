@@ -280,6 +280,26 @@ function initStackUsage() {
   });
 }
 
+/* ---------- Hover: upright text rolls out, italic rolls in (font-style itself can't animate) ---------- */
+function initRollText() {
+  $$('.stack__core li, .menu__links a').forEach((el) => {
+    const node = [...el.childNodes].find((n) => n.nodeType === Node.TEXT_NODE && n.textContent.trim());
+    if (!node) return;
+    const text = node.textContent.trim();
+    const roll = document.createElement('span');
+    roll.className = 'roll';
+    const a = document.createElement('span');
+    a.className = 'roll__a';
+    a.textContent = text;
+    const b = document.createElement('span');
+    b.className = 'roll__b';
+    b.setAttribute('aria-hidden', 'true');
+    b.textContent = text;
+    roll.append(a, b);
+    node.replaceWith(roll);
+  });
+}
+
 /* ---------- Tightening: compact older roles, collapse very long chip lists ---------- */
 function setBlockOpen(block, open) {
   block.classList.toggle('is-open', open);
@@ -807,6 +827,7 @@ initChrome();
 initMenu();
 initMail();
 initStackUsage();
+initRollText();
 initChipsMore();
 initCompactBlocks();
 initReveals();
