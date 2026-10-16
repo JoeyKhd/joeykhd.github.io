@@ -45,8 +45,8 @@
     --muted: #6b6862;
     --line: rgba(20, 20, 20, 0.12);
     --line-strong: rgba(20, 20, 20, 0.28);
-    --signal: #d2410f;
-    --signal-soft: rgba(210, 65, 15, 0.1);
+    --signal: #bf3a0c;
+    --signal-soft: rgba(191, 58, 12, 0.06);
     --danger: #c81e3a;
     --ok: #1d7a3c;
     --nav-bg: rgba(239, 235, 226, 0.8);
@@ -66,8 +66,8 @@
   --muted: #6b6862;
   --line: rgba(20, 20, 20, 0.12);
   --line-strong: rgba(20, 20, 20, 0.28);
-  --signal: #d2410f;
-  --signal-soft: rgba(210, 65, 15, 0.1);
+  --signal: #bf3a0c;
+  --signal-soft: rgba(191, 58, 12, 0.06);
   --danger: #c81e3a;
   --ok: #1d7a3c;
   --nav-bg: rgba(239, 235, 226, 0.8);
@@ -497,6 +497,8 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
 .contact__title em { color: var(--signal); }
 .contact__lede { color: var(--fg-dim); max-width: 48ch; font-size: clamp(1rem, 1.25vw, 1.1875rem); }
 .contact__links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+/* the display serif draws "1" like an "l" — keep the address unambiguous */
+[data-mail-label] { font-family: var(--f-sans); font-size: 0.78em; letter-spacing: 0; }
 
 /* ---------- Footer ---------- */
 .footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; padding: 28px var(--gutter); border-top: 1px solid var(--line); color: var(--muted); }
@@ -559,7 +561,7 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
   .stack__grid { grid-template-columns: 1fr; }
   .foundations__grid { grid-template-columns: 1fr; gap: 40px; }
   .contact { min-height: 88svh; }
-  .contact__bg { object-position: 78% 50%; opacity: 0.6; }
+  .contact__bg { object-position: 78% 30%; opacity: 0.32; }
   .footer { flex-direction: column; }
 }
 
