@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Joey Kheireddine — CTO · AI &amp; Web3 Engineering Leader</title>
   <meta name="description" content="Joey Kheireddine is CTO at Avatars Global and a technology leader with 8+ years building AI-agent and Web3 platforms — from elizaOS, GitHub’s most-starred repository, to smart contracts that generated $50M+.">
-  <meta name="theme-color" content="#0a0a0b">
-  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0a0a0b" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#efebe2" media="(prefers-color-scheme: light)">
+  <meta name="color-scheme" content="dark light">
 
   <link rel="canonical" href="https://joeykhd.github.io/joey-resume.github.io/">
   <meta property="og:type" content="profile">
@@ -33,7 +34,13 @@
   <link rel="preload" as="image" href="assets/img/portrait.webp" type="image/webp">
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.replace('no-js', 'js');
+      try { var t = localStorage.getItem('jk-theme'); if (t === 'light' || t === 'dark') d.dataset.theme = t; } catch (e) {}
+    })();
+  </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -87,6 +94,10 @@
         <span class="pulse" aria-hidden="true"></span>
         <span>NL <time data-clock>--:--</time></span>
       </div>
+      <button class="btn btn--icon theme-toggle magnetic" type="button" data-theme-toggle data-current="dark" aria-label="Switch to light theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 2.5v2.25M12 19.25v2.25M2.5 12h2.25M19.25 12h2.25M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 14.6A7.75 7.75 0 0 1 9.4 4.5a7.75 7.75 0 1 0 10.1 10.1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      </button>
       <a class="btn btn--solid btn--sm mono magnetic" href="#contact">Let’s talk</a>
     </div>
   </header>

@@ -46,6 +46,60 @@ function runLoader() {
   raf(tick);
 }
 
+/* ---------- Theme: system by default, visitor choice remembered ---------- */
+const THEME_KEY = 'jk-theme';
+const THEME_COLORS = { dark: '#0a0a0b', light: '#efebe2' };
+const rgb = (hex) => [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255);
+const PORTRAIT_COLORS = {
+  dark: { off: rgb('#0a0a0b'), on: rgb('#edeae3'), bg: rgb('#0a0a0b'), mode: 0 },
+  light: { off: rgb('#141414'), on: rgb('#efebe2'), bg: rgb('#efebe2'), mode: 1 },
+};
+const systemLight = matchMedia('(prefers-color-scheme: light)');
+const currentTheme = () => root.dataset.theme || (systemLight.matches ? 'light' : 'dark');
+
+function syncTheme() {
+  const chosen = root.dataset.theme;
+  const theme = currentTheme();
+  // <picture> sources follow the OS by default; an explicit choice overrides them
+  $$('source[data-theme-light]').forEach((s) => {
+    s.media = chosen ? (chosen === 'light' ? 'all' : 'not all') : '(prefers-color-scheme: light)';
+  });
+  $$('meta[name="theme-color"]').forEach((m) => {
+    if (chosen) m.content = THEME_COLORS[chosen];
+    else m.content = m.media.includes('light') ? THEME_COLORS.light : THEME_COLORS.dark;
+  });
+  const btn = $('[data-theme-toggle]');
+  if (btn) {
+    btn.dataset.current = theme;
+    btn.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`);
+  }
+  dispatchEvent(new Event('themechange'));
+}
+
+function initTheme() {
+  syncTheme();
+  systemLight.addEventListener('change', () => { if (!root.dataset.theme) syncTheme(); });
+  const btn = $('[data-theme-toggle]');
+  btn?.addEventListener('click', () => {
+    const next = currentTheme() === 'dark' ? 'light' : 'dark';
+    const apply = () => {
+      root.dataset.theme = next;
+      try { localStorage.setItem(THEME_KEY, next); } catch { /* storage unavailable */ }
+      syncTheme();
+    };
+    if (!document.startViewTransition || reduceMotion) { apply(); return; }
+    const r = btn.getBoundingClientRect();
+    const x = r.left + r.width / 2, y = r.top + r.height / 2;
+    const end = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+    document.startViewTransition(apply).ready.then(() => {
+      root.animate(
+        { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${end}px at ${x}px ${y}px)`] },
+        { duration: 750, easing: 'cubic-bezier(0.77, 0, 0.175, 1)', pseudoElement: '::view-transition-new(root)' },
+      );
+    }).catch(() => {});
+  });
+}
+
 /* ---------- Text splitting ---------- */
 function splitHeroTitle() {
   const title = $('.hero__title');
@@ -311,6 +365,7 @@ function initChain() {
   /* --- Sticky aside: follow the block in view --- */
   const asideNum = $('[data-aside-num]');
   const asideTime = $('[data-aside-time]');
+  const asideFig = $('[data-aside-fig]');
   const eras = $$('.chain__visual img');
   const follow = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
@@ -319,6 +374,7 @@ function initChain() {
       chain.forEach((b) => b.el.classList.toggle('is-current', b.el === e.target));
       if (asideNum) asideNum.textContent = id;
       if (asideTime) asideTime.textContent = e.target.dataset.time;
+      if (asideFig) asideFig.textContent = `Fig. ${id} — ${e.target.dataset.fig}`;
       eras.forEach((img) => img.classList.toggle('is-active', img.dataset.era === id));
     });
   }, { rootMargin: '-40% 0px -55% 0px' });
@@ -413,6 +469,8 @@ uniform float uPx;
 uniform float uIntro;
 uniform vec3 uInk;
 uniform vec3 uDot;
+uniform vec3 uBg;
+uniform float uMode;
 
 float bayer2(vec2 a) { a = floor(a); return fract(a.x * 0.5 + a.y * a.y * 0.75); }
 float bayer4(vec2 a) { return bayer2(0.5 * a) * 0.25 + bayer2(a); }
@@ -423,9 +481,9 @@ void main() {
   vec2 cuv = (cell + 0.5) * uPx / uRes;
   vec3 c = texture2D(uTex, cuv).rgb;
   float l = dot(c, vec3(0.299, 0.587, 0.114));
-  // vignette: let the busy background fall away from the subject
-  float v = length((cuv - vec2(0.54, 0.5)) * vec2(1.0, 0.8));
-  l *= mix(1.0, 0.28, smoothstep(0.22, 0.62, v));
+  // vignette: let the busy background fall away into the page (dark or light)
+  float v = smoothstep(0.22, 0.62, length((cuv - vec2(0.54, 0.5)) * vec2(1.0, 0.8)));
+  l = mix(l * mix(1.0, 0.28, v), mix(l, 1.0, v * 0.92), uMode);
   l = clamp((l - 0.5) * 1.3 + 0.48, 0.0, 1.0);
   float on = step(bayer8(cell), l);
   vec3 dith = mix(uInk, uDot, on);
@@ -435,7 +493,7 @@ void main() {
   float lens = (1.0 - smoothstep(r * 0.5, r, d)) * uHover;
   vec3 col = mix(dith, texture2D(uTex, vUv).rgb, lens);
 
-  col = mix(uInk, col, step(1.0 - vUv.y, uIntro));
+  col = mix(uBg, col, step(1.0 - vUv.y, uIntro));
   gl_FragColor = vec4(col, 1.0);
 }`;
 
@@ -483,9 +541,16 @@ function initPortrait() {
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
 
     const u = (n) => gl.getUniformLocation(prog, n);
-    const U = { res: u('uRes'), mouse: u('uMouse'), hover: u('uHover'), px: u('uPx'), intro: u('uIntro'), ink: u('uInk'), dot: u('uDot') };
-    gl.uniform3f(U.ink, 10 / 255, 10 / 255, 11 / 255);
-    gl.uniform3f(U.dot, 237 / 255, 234 / 255, 227 / 255);
+    const U = { res: u('uRes'), mouse: u('uMouse'), hover: u('uHover'), px: u('uPx'), intro: u('uIntro'), ink: u('uInk'), dot: u('uDot'), bg: u('uBg'), mode: u('uMode') };
+    const setColors = () => {
+      const p = PORTRAIT_COLORS[currentTheme()];
+      gl.uniform3f(U.ink, ...p.off);
+      gl.uniform3f(U.dot, ...p.on);
+      gl.uniform3f(U.bg, ...p.bg);
+      gl.uniform1f(U.mode, p.mode);
+    };
+    setColors();
+    addEventListener('themechange', setColors);
 
     const dpr = Math.min(devicePixelRatio || 1, 2);
     const pxTarget = 2 * dpr;
@@ -552,6 +617,7 @@ function initPortrait() {
 }
 
 /* ---------- Boot ---------- */
+initTheme();
 splitHeroTitle();
 runLoader();
 initChrome();
