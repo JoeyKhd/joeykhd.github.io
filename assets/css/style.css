@@ -518,6 +518,7 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
   .hero__title { margin: 0; line-height: 1; }
   .hero__line { display: inline; font-size: 30pt !important; font-style: normal !important; }
   .hero__line--first::after { content: " "; }
+  .hero__line--first { -webkit-text-stroke: 0; }
   .hero__kicker { margin-top: 4pt; font-size: 13pt; max-width: none; }
   .hero__kicker em { display: inline; }
   .hero__foot { display: block; margin-top: 10pt; padding-top: 8pt; }
